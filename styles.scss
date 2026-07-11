@@ -1,0 +1,1103 @@
+@use "footer" as *;
+@use "base" as *;
+@use "fonts" as *;
+@use "variables" as *;
+@use "header" as *;
+@use "mixins" as *;
+@use "products" as *;
+@use "product-page" as *;
+
+.hero {
+  display: flex;
+  justify-content: center;
+  height: 698px;
+  gap: 3px;
+  background-image: url("./Hero-Section/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .hero-banner {
+    display: flex;
+    flex-direction: column;
+    width: 609px;
+    height: 384px;
+    position: relative;
+    top: 82px;
+    z-index: 3;
+    padding: 34px 60px 47px 72px;
+    background-color: rgb(136, 88, 237);
+    border-radius: 30px;
+    box-shadow: rgba(6, 5, 6, 0.41) 4.23px 9.06px 14px 6px;
+    color: white;
+
+    p:first-child {
+      margin-bottom: 15px;
+      font-family: "Roboto", sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 33px;
+    }
+
+    p:nth-child(2) {
+      margin-bottom: 11px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 70px;
+    }
+
+    p:nth-child(3) {
+      margin-bottom: 23px;
+      font-family: "Roboto", sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 33px;
+    }
+
+    button {
+      width: 132px;
+      height: 48px;
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 100px;
+      color: rgb(136, 88, 237);
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        background-color 0.4s,
+        color 0.4s;
+      &:hover,
+      &:active {
+        background-color: rgb(136, 88, 237);
+        color: white;
+      }
+    }
+  }
+
+  .hero-img {
+    position: relative;
+    top: 82px;
+    z-index: 2;
+
+    display: block;
+    width: 536px;
+    height: auto;
+
+    border-radius: 30px;
+    box-shadow: rgba(34, 33, 34, 0.6) 2.27px 4.46px 15px 5px;
+  }
+}
+
+.best-sellers {
+  @include product-gallery-section;
+}
+
+.upgrade-gear {
+  @include product-gallery-section;
+}
+
+.trending-games {
+  @include product-gallery-section;
+}
+
+.shop-by-category {
+  width: 100%;
+  height: 997px;
+  padding-top: 67px;
+
+  background:
+    linear-gradient(rgba(77, 77, 77, 0.4), rgba(77, 77, 77, 0.4)), rgb(6, 5, 6);
+
+  .shop-by-category-wrapper {
+    width: 980px;
+    margin: 0 auto;
+
+    h2 {
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 59px;
+    }
+
+    .shop-by-gallery {
+      position: relative;
+
+      .category-arrow {
+        display: none;
+      }
+    }
+
+    .category-list {
+      margin-top: 57px;
+
+      display: grid;
+      grid-template-columns: 303px 304px 303px;
+      column-gap: 35px;
+
+      .category-card {
+        width: 100%;
+        height: 404px;
+
+        color: white;
+        text-align: center;
+        text-decoration: none;
+
+        .category-image {
+          position: relative;
+
+          width: 100%;
+          height: 404px;
+
+          overflow: hidden;
+          border-radius: 30px;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            transform: scale(1);
+            transition: transform 0.7s ease-in-out;
+          }
+
+          .category-overlay {
+            position: absolute;
+            inset: 0;
+
+            background-color: rgba(136, 88, 237, 0.3);
+            opacity: 0;
+
+            pointer-events: none;
+            transition: opacity 0.4s ease-in-out;
+          }
+
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+
+            .category-overlay {
+              opacity: 1;
+            }
+          }
+        }
+
+        p {
+          margin-top: 22px;
+          line-height: 22px;
+          color: white;
+          font-family: $font-roboto;
+          font-weight: 300;
+          font-size: 22px;
+          line-height: normal;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.deals {
+  width: 100%;
+  height: 808px;
+  overflow: hidden;
+  background-color: black;
+
+  view-timeline-name: --deals-animation;
+  view-timeline-axis: block;
+
+  .deals-wrapper {
+    position: relative;
+    top: 100px;
+
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+
+    .deal-image {
+      position: absolute;
+
+      width: 385px;
+      height: 520px;
+
+      overflow: hidden;
+      border-radius: 30px;
+
+      opacity: 0;
+
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.32, 0, 0.32, 1.01);
+      animation-fill-mode: both;
+      animation-timeline: --deals-animation;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+    }
+
+    .deal-image-left {
+      top: 10px;
+      left: 60px;
+      z-index: 0;
+
+      animation-name: deal-left-reveal;
+      animation-range: entry 5% cover 35%;
+    }
+
+    .deal-image-center {
+      top: 145px;
+      left: 430px;
+      z-index: 1;
+
+      animation-name: deal-center-reveal;
+      animation-range: entry 10% cover 40%;
+    }
+
+    .deal-image-right {
+      top: 68px;
+      right: 100px;
+      z-index: 2;
+
+      animation-name: deal-right-reveal;
+      animation-range: entry 15% cover 45%;
+    }
+
+    .deals-banner {
+      position: absolute;
+      top: 48px;
+      left: 48px;
+      z-index: 3;
+
+      width: 558px;
+      height: 358px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: rgb(136, 88, 237);
+      border-radius: 30px;
+
+      color: white;
+      text-align: center;
+
+      opacity: 0;
+
+      animation-name: deal-banner-reveal;
+      animation-duration: 1.2s;
+      animation-timing-function: cubic-bezier(0.32, 0, 0.32, 1.01);
+      animation-fill-mode: both;
+      animation-timeline: --deals-animation;
+      animation-range: entry 20% cover 50%;
+
+      .deals-small-title {
+        font-family: $font-roboto;
+        font-size: 22px;
+        font-weight: 400;
+      }
+
+      .deals-discount {
+        margin-top: 12px;
+
+        font-family: $font-montserrat;
+        font-size: 138px;
+        font-weight: 700;
+        line-height: 125px;
+      }
+
+      .deals-description {
+        margin-top: 3px;
+
+        font-family: $font-montserrat;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 50px;
+      }
+
+      button {
+        width: 143px;
+        height: 44px;
+        margin-top: 32px;
+
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 30px;
+
+        color: rgb(136, 88, 237);
+        font-family: $font-montserrat;
+        font-size: 15px;
+        font-weight: 700;
+
+        cursor: pointer;
+        transition:
+          background-color 0.4s,
+          color 0.4s;
+
+        &:hover,
+        &:active {
+          background-color: rgb(136, 88, 237);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes deal-left-reveal {
+  from {
+    opacity: 0;
+    transform: translate(-30px, 50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes deal-center-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes deal-right-reveal {
+  from {
+    opacity: 0;
+    transform: translate(30px, 50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes deal-banner-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.spend-and-save {
+  position: relative;
+
+  width: 100%;
+  height: 509px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background-color: rgb(6, 5, 6);
+
+  view-timeline-name: --spend-save-animation;
+  view-timeline-axis: block;
+
+  .spend-and-save-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    transform: scale(1);
+    will-change: transform;
+
+    animation-name: spend-save-scale;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: --spend-save-animation;
+    animation-range: entry 0% exit 100%;
+  }
+
+  .spend-and-save-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+
+    h2 {
+      font-family: $font-montserrat;
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 70px;
+    }
+
+    p {
+      margin-top: 20px;
+
+      font-family: $font-roboto;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 33px;
+    }
+
+    button {
+      width: 160px;
+      height: 45px;
+      margin-top: 40px;
+
+      background-color: rgb(136, 88, 237);
+      border: none;
+      border-radius: 30px;
+
+      color: white;
+      font-family: $font-montserrat;
+      font-size: 15px;
+      font-weight: 700;
+
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover,
+      &:active {
+        background-color: rgb(163, 129, 242);
+      }
+    }
+  }
+}
+
+@keyframes spend-save-scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(3);
+  }
+}
+
+.newsletter {
+  width: 100%;
+  height: 570px;
+  padding-top: 78px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-image: url("./Newsletter-Section/background.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: white;
+
+  .newsletter-content {
+    width: 496px;
+    text-align: center;
+
+    h2 {
+      font-family: $font-montserrat;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 50px;
+    }
+
+    > p {
+      margin-top: 20px;
+
+      font-family: $font-proxima-nova;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
+
+  .newsletter-form {
+    width: 100%;
+    margin-top: 45px;
+    text-align: left;
+
+    > label {
+      display: block;
+      margin-bottom: 10px;
+
+      font-family: $font-proxima-nova;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    > input {
+      width: 100%;
+      height: 42px;
+      padding: 0 15px;
+
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 15px;
+
+      color: white;
+      font-family: $font-proxima-nova;
+      font-size: 16px;
+
+      caret-color: white;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    > input {
+      transition: border-color 0.2s;
+
+      &:focus:invalid,
+      &:user-invalid {
+        border-color: rgb(255, 45, 45);
+      }
+
+      &:focus:invalid + .newsletter-error,
+      &:user-invalid + .newsletter-error {
+        display: flex;
+      }
+    }
+
+    .newsletter-error {
+      display: none;
+      align-items: center;
+      gap: 7px;
+      margin-top: 8px;
+
+      color: rgb(255, 45, 45);
+      font-family: $font-proxima-nova;
+      font-size: 14px;
+      line-height: 18px;
+
+      &::before {
+        content: "!";
+
+        width: 13px;
+        height: 13px;
+        flex: 0 0 13px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 1px solid currentColor;
+        border-radius: 50%;
+
+        font-size: 10px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .newsletter-form-bottom {
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .newsletter-consent {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+
+      font-family: $font-proxima-nova;
+      font-size: 16px;
+      line-height: 25px;
+      cursor: pointer;
+
+      input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+
+        opacity: 0;
+
+        &:checked + span::after {
+          display: block;
+        }
+
+        &:focus-visible + span::before {
+          outline: 2px solid white;
+          outline-offset: 3px;
+        }
+      }
+
+      span {
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+          content: "";
+
+          position: absolute;
+          top: 3px;
+          left: 0;
+
+          width: 16px;
+          height: 16px;
+
+          background-color: transparent;
+          border: 2px solid white;
+        }
+
+        &::after {
+          content: "";
+          display: none;
+
+          position: absolute;
+          top: 5px;
+          left: 5px;
+
+          width: 5px;
+          height: 9px;
+
+          border-right: 2px solid white;
+          border-bottom: 2px solid white;
+
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    button {
+      width: 199px;
+      height: 44px;
+
+      background-color: rgb(255, 255, 255);
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 15px;
+
+      color: rgb(6, 5, 6);
+      font-family: $font-montserrat;
+      font-size: 15px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+
+      &:hover,
+      &:active {
+        background-color: rgb(136, 88, 237);
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+}
+@keyframes video-games-float-in {
+  from {
+    opacity: 0.35;
+    transform: translate(-50%, 120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.video-games {
+  position: relative;
+  z-index: 2;
+
+  background-color: rgb(6, 5, 6);
+
+  view-timeline-name: --video-games-animation;
+  view-timeline-axis: block;
+
+  .video-games-banner {
+    position: relative;
+    height: 315px;
+
+    background-color: rgb(136, 88, 237);
+    overflow: visible;
+
+    img {
+      position: absolute;
+      top: -75px;
+      left: 50%;
+      z-index: 1;
+
+      display: block;
+      width: 900px;
+      height: auto;
+
+      transform: translateX(-50%);
+
+      filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 24px 22px rgba(0, 0, 0, 0.3));
+
+      animation-name: video-games-float-in;
+      animation-duration: 1ms;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+
+      animation-timeline: --video-games-animation;
+      animation-range: entry 0% entry 100%;
+
+      will-change: transform, opacity;
+    }
+  }
+
+  .video-games-content {
+    background-color: rgb(6, 5, 6);
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1228px) {
+  .hero {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    .hero-img {
+      margin-left: calc(100% - 1148px);
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .hero {
+    height: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    background-attachment: scroll; // მობილურ ვერსიაზე background სურათი აღარ არის ფიქსირებული და ასქროლვისას გვერდს იყვება.
+
+    .hero-banner {
+      position: static; // ეს აუცილებელია, ვინაიდან დესკტოპ ვერსიაზე გვაქვს position: relative და top: 82px.
+
+      width: 100%;
+      max-width: 500px;
+      height: 244px;
+      padding-top: 18px;
+      padding-right: 27px;
+      padding-bottom: 26px;
+      padding-left: 27px;
+
+      // Power up your game
+      p:first-child {
+        order: 3;
+        margin-top: 2px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      // CYBER KID INFINITE
+      p:nth-child(2) {
+        order: 2;
+        margin-top: 14px;
+        font-size: 38px;
+        line-height: 39px;
+      }
+
+      // Now Available on PC & Console
+      p:nth-child(3) {
+        order: 1;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      button {
+        order: 4;
+        width: 120px;
+        height: 43px;
+        margin-top: auto;
+      }
+    }
+
+    .hero-img {
+      position: static; // ამის გარეშე Cyber Kid სურათი სექციის ქვემოთ ჩამოდის.
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+  }
+
+  .shop-by-category {
+    height: auto;
+    padding-top: 35px;
+    padding-bottom: 38px;
+    overflow: hidden;
+
+    .shop-by-category-wrapper {
+      width: 100%;
+
+      h2 {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+
+        font-size: 24px;
+        line-height: 29px;
+      }
+
+      .shop-by-gallery {
+        position: relative;
+        margin-top: 34px;
+
+        .category-arrow {
+          position: absolute;
+          top: 33.333vw;
+          z-index: 2;
+
+          width: 23px;
+          height: 39px;
+          padding: 0;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          background: none;
+          border: none;
+          color: white;
+
+          transform: translateY(-50%);
+          cursor: pointer;
+
+          svg {
+            display: block;
+            width: 23px;
+            height: 39px;
+            fill: currentColor;
+          }
+        }
+        .category-arrow-left {
+          left: 20px;
+
+          svg {
+            transform: scaleX(-1) scale(0.956522);
+          }
+        }
+
+        .category-arrow-right {
+          right: 20px;
+
+          svg {
+            transform: scaleX(1) scale(0.956522);
+          }
+        }
+      }
+
+      .category-list {
+        width: 100%;
+        margin-top: 0;
+
+        display: flex;
+        column-gap: 0;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .category-card {
+          width: 100%;
+          height: auto;
+          flex: 0 0 100%;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+
+          .category-image {
+            width: 50%;
+            height: auto;
+            aspect-ratio: 303 / 404;
+          }
+        }
+      }
+    }
+  }
+
+  .deals {
+    height: 252vw;
+
+    .deals-wrapper {
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      .deal-image {
+        width: 48%;
+        height: auto;
+        aspect-ratio: 385 / 520;
+      }
+
+      .deal-image-left {
+        top: 86vw;
+        left: 8%;
+      }
+
+      .deal-image-center {
+        top: 124vw;
+        left: 44%;
+      }
+
+      .deal-image-right {
+        top: 174vw;
+        right: auto;
+        left: 8%;
+      }
+
+      .deals-banner {
+        top: 8vw;
+        left: 8%;
+
+        width: 84%;
+        height: 66vw;
+
+        .deals-small-title {
+          font-size: 16px;
+        }
+
+        .deals-discount {
+          margin-top: 4px;
+
+          font-size: 50px;
+          line-height: 50px;
+        }
+
+        .deals-description {
+          margin-top: 3px;
+
+          font-size: 30px;
+          line-height: 36px;
+        }
+
+        button {
+          width: 105px;
+          height: 38px;
+          margin-top: 25px;
+
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .spend-and-save {
+    height: 220px;
+
+    .spend-and-save-background {
+      animation: none;
+      transform: scale(1);
+      will-change: auto;
+      object-position: center;
+    }
+
+    .spend-and-save-content {
+      h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      p {
+        width: 250px;
+        max-width: 90%;
+        margin-top: 8px;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+      }
+
+      button {
+        width: 105px;
+        height: 38px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .newsletter {
+    height: auto;
+    padding: 45px 20px 18px;
+
+    .newsletter-content {
+      width: 100%;
+      max-width: 496px;
+
+      h2 {
+        font-size: 27px;
+        line-height: 32px;
+      }
+
+      > p {
+        margin-top: 14px;
+        line-height: 23px;
+      }
+    }
+
+    .newsletter-form {
+      margin-top: 12px;
+    }
+
+    .newsletter-form-bottom {
+      flex-direction: column;
+      gap: 15px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .video-games {
+    overflow: visible;
+
+    .video-games-banner {
+      height: 80px;
+
+      img {
+        top: -30px;
+        width: 90%;
+        max-width: 320px;
+        z-index: 3;
+      }
+    }
+  }
+}
