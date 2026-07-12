@@ -6,6 +6,8 @@
 @use "mixins" as *;
 @use "products" as *;
 @use "product-page" as *;
+@use "contact-us" as *;
+@use "policy-page" as *;
 
 .hero {
   display: flex;
