@@ -1,0 +1,257 @@
+@use "../files/shared-styles/variables" as *;
+
+footer {
+  width: 100%;
+  height: 682px;
+  padding: 0 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: black;
+  color: white;
+  font-family: $font-proxima-nova;
+  font-size: 16px;
+
+  .footer-heading {
+    font-family: $font-montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .footer-up {
+    flex: 0 0 520px;
+
+    display: flex;
+    align-items: center;
+
+    .footer-up-wrapper {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+
+      display: flex;
+
+      > div {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        line-height: 1.5;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-logo {
+        padding-bottom: 50px;
+
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        font-family: $font-montserrat;
+        font-size: 22px;
+        font-weight: 700;
+
+        img {
+          width: 58px;
+          height: 58px;
+          object-fit: contain;
+        }
+      }
+
+      .footer-products,
+      .footer-store,
+      .footer-policy {
+        padding-left: 50px;
+      }
+    }
+  }
+
+  .footer-down {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 38px 10px 0;
+
+    flex: 1;
+
+    display: flex;
+    align-items: flex-start;
+
+    border-top: 1px solid rgb(77, 77, 77);
+
+    .footer-down-wrapper {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .footer-down-text {
+        width: 100%;
+        display: flex;
+
+        p:first-child {
+          width: 76%;
+        }
+
+        p:last-child {
+          width: 24%;
+        }
+      }
+
+      .footer-down-logos {
+        width: 100%;
+        display: flex;
+
+        > div:first-child {
+          width: 76%;
+        }
+
+        > div:last-child {
+          width: 24%;
+        }
+
+        .footer-payment-logos {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          img {
+            width: auto;
+            height: 28px;
+            object-fit: contain;
+          }
+        }
+
+        .footer-social-logos {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+
+          img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  footer {
+    height: auto;
+    padding: 40px 20px 30px;
+
+    .footer-up {
+      flex: none;
+      display: block;
+
+      .footer-up-wrapper {
+        flex-direction: column;
+        gap: 35px;
+
+        .footer-products,
+        .footer-policy,
+        .footer-store {
+          padding-left: 0;
+        }
+
+        > div {
+          flex: none;
+          gap: 7px;
+          padding-left: 0;
+          align-items: flex-start;
+        }
+
+        .footer-logo {
+          order: 1;
+          width: 100%;
+          padding-bottom: 0;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          font-size: 18px;
+
+          img {
+            width: 42px;
+            height: 42px;
+          }
+        }
+
+        .footer-products {
+          order: 2;
+        }
+
+        .footer-policy {
+          order: 3;
+        }
+
+        .footer-store {
+          order: 4;
+        }
+      }
+    }
+
+    .footer-down {
+      width: 100%;
+      max-width: none;
+      margin-top: 20px;
+      padding: 26px 0 0;
+      flex: none;
+
+      .footer-down-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+
+        .footer-down-text,
+        .footer-down-logos {
+          display: contents;
+        }
+
+        .footer-down-text {
+          p:first-child {
+            width: 100%;
+            grid-row: 1;
+          }
+
+          p:last-child {
+            width: 100%;
+            margin-top: 15px;
+            grid-row: 3;
+          }
+        }
+
+        .footer-down-logos {
+          > div:first-child,
+          > div:last-child {
+            width: 100%;
+          }
+
+          .footer-payment-logos {
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: repeat(4, max-content);
+            justify-content: space-between;
+            row-gap: 20px;
+          }
+
+          .footer-social-logos {
+            grid-row: 4;
+            gap: 28px;
+          }
+        }
+      }
+    }
+  }
+}

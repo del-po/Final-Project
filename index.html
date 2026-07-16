@@ -17,19 +17,24 @@
       property="og:image"
       content="https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/66ba26aa9976d1589b8f2f927dec66c1501bf5851f6a38fcf485cf1b7dbca3631641744503972.jpg"
     />
-    <meta
-      property="og:url"
-      content="https://www.wix.com/website-template/view/html/3010"
-    />
-    <meta property="og:type" content="website" />
     <title>Gaming Store Website Template | WIX</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <!-- ამ კლასის მინიჭებით შესაძლებელი ხდება ჰედერს ქონდეს განსხვავებული ფონი home-სა და სხვა გვერდებისათვის -->
     <header class="header-home">
+      <!-- ჰედერის ლოგო დესკტოპის და მობილურის ვერსიებისთვისაც ნარჩუნდება, ამიტომ ცალკე გამოვიტანე -->
       <div class="header-logo">
-        <img src="./Index/logo.png" alt="Logo" />
-        <p>ARCADE</p>
+        <a href="./index.html">
+          <img src="./files/images/logo/logo.webp" alt="Logo" />
+          <p>ARCADE</p>
+        </a>
       </div>
 
       <!-- ვიზუალური სიმარტივისათვის ჰედერის დესკტოპ და მობილური ვერსიები გამიჯნულია. ორივე მათგანი მოთავსებულია დივში header-right. -->
@@ -41,31 +46,55 @@
         <input type="checkbox" id="cart-click" />
         <input type="checkbox" id="mobile-menu-click" />
 
-        <!-- ჰედერის დესკტოპ ვერსია -->
+        <!-- ჰედერის დესკტოპ ვერსია: შედგება სამი მენიუს ლინკის, login-სა და საყიდლების კალათისგან -->
 
         <div class="header-desktop">
           <div class="header-desktop-menu">
             <div class="header-menu-products">
-              <a class="nav-link" href="">Products</a>
-              <div class="dropdown-menu">
-                <a class="nav-link" href="">Best Sellers</a>
-                <a class="nav-link" href="">Games</a>
-                <a class="nav-link" href="">Consoles</a>
-                <a class="nav-link" href="">Controllers</a>
-                <a class="nav-link" href="">Accessories</a>
+              <!-- products ცალკეა გამოტანილი, ვინაიდან აქვს dropdown -->
+              <a class="header-nav-link" href="./products/products.html"
+                >Products</a
+              >
+
+              <div class="header-products-dropdown">
+                <a class="header-nav-link" href="./products/best-sellers.html"
+                  >Best Sellers</a
+                >
+                <a class="header-nav-link" href="./products/games.html"
+                  >Games</a
+                >
+                <a class="header-nav-link" href="./products/consoles.html"
+                  >Consoles</a
+                >
+                <a class="header-nav-link" href="./products/controllers.html"
+                  >Controllers</a
+                >
+                <a class="header-nav-link" href="./products/accessories.html"
+                  >Accessories</a
+                >
               </div>
             </div>
+
             <div class="header-menu-on-sale">
-              <a class="nav-link" href="">On Sale</a>
+              <a class="header-nav-link" href="./products/on-sale.html"
+                >On Sale</a
+              >
             </div>
+
             <div class="header-menu-contact-us">
-              <a class="nav-link" href="">Contact Us</a>
+              <a class="header-nav-link" href="./contact/contact-us.html"
+                >Contact Us</a
+              >
             </div>
           </div>
+
           <div class="header-desktop-log-in">
             <div class="log-in">
               <label class="log-in-open" for="log-in-click">
-                <img src="./Header/Log-in.png" alt="Log in" />
+                <img
+                  src="./files/images/header/header-log-in.webp"
+                  alt="Log in"
+                />
                 <p>Log In</p>
               </label>
             </div>
@@ -75,7 +104,7 @@
               <label class="cart-button" for="cart-click">
                 <img
                   class="cart-icon"
-                  src="./Header/Cart.png"
+                  src="./files/images/header/header-cart.webp"
                   alt="Shopping cart"
                 />
               </label>
@@ -83,14 +112,14 @@
           </div>
         </div>
 
-        <!-- ჰედერის მობილურის ვერსია -->
+        <!-- ჰედერის მობილურის ვერსია: აქვს მხოლოდ ლოგო, საყიდლების კალათა და ბურგერ მენიუ -->
 
         <div class="header-mobile">
           <div class="header-mobile-cart">
             <label class="cart-button" for="cart-click">
               <img
                 class="cart-icon"
-                src="./Header/Cart.png"
+                src="./files/images/header/header-cart.webp"
                 alt="Shopping cart"
               />
             </label>
@@ -104,7 +133,10 @@
             <div class="header-mobile-menu-big">
               <div class="header-mobile-menu-big-header">
                 <label class="header-mobile-log-in" for="log-in-click">
-                  <img src="./Header/Log-in.png" alt="Log in" />
+                  <img
+                    src="./files/images/header/header-log-in.webp"
+                    alt="Log in"
+                  />
                   <p>Log In</p>
                 </label>
                 <label class="header-mobile-menu-close" for="mobile-menu-click">
@@ -262,253 +294,268 @@
     </header>
 
     <section class="hero">
-      <div class="hero-banner">
-        <p>Power up your game</p>
-        <p>CYBER KID INFINITE</p>
-        <p>Now Available on PC & Console</p>
-        <button>Buy Now</button>
+      <div class="hero-banner-wrapper">
+        <div class="hero-banner">
+          <p>Power up your game</p>
+          <p>CYBER KID INFINITE</p>
+          <p>Now Available on PC &amp; Console</p>
+
+          <button
+            type="button"
+            onclick="window.location.href = './products/games.html'"
+          >
+            Buy Now
+          </button>
+        </div>
       </div>
       <img
         class="hero-img"
-        src="./Hero-Section/cyber-kid.jpg"
+        src="./files/images/home/Hero-Section/hero-section-cyber-kid.jpg"
         alt="Cyber Kid Infinite"
       />
     </section>
+
     <section class="best-sellers">
       <div class="best-sellers-title">
         <p>BEST SELLERS</p>
-        <button>View All</button>
+        <button type="button">View All</button>
       </div>
-      <div class="best-sellers-gallery">
-        <button class="scroll-arrow" aria-label="Previous products">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+
+      <div class="best-sellers-gallery product-slider">
+        <div class="carousel-inner">
+          <div class="best-sellers-products product-slider-track">
+            <div class="best-seller-product product-card">
+              <a href="./products/playbox-xz-gold-edition.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/playbox-xz-gold-edition.webp"
+                    alt="Playbox XZ Gold Edition"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">
+                Playbox XZ Gold <br />
+                Edition
+              </p>
+
+              <p class="product-price">$1,000.00</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <a href="./products/echo-headset.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/echo-headset.webp"
+                    alt="Echo Headset"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Echo Headset</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <a href="./products/mach-gaming-chair.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/mach-gaming-chair.webp"
+                    alt="Mach Gaming Chair"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Mach Gaming Chair</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$129.99</span>
+                <span class="new-price">$116.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <a href="./products/x-2-wireless-mouse.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/x-2-wireless-mouse.webp"
+                    alt="X-2 Wireless Mouse"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">X-2 Wireless Mouse</p>
+
+              <p class="product-price">$24.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <a href="./products/spartan-mechanical-keyboard.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/spartan-mechanical-keyboard.webp"
+                    alt="Spartan Mechanical Keyboard"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">
+                Spartan Mechanical <br />
+                Keyboard
+              </p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$44.99</span>
+                <span class="new-price">$40.49</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <a href="./products/raptor.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/raptor.webp"
+                    alt="Raptor controller"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Raptor</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$29.99</span>
+                <span class="new-price">$26.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <a href="./products/wave.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/wave.webp"
+                    alt="Wave controller"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Wave</p>
+
+              <p class="product-price">$29.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <a href="./products/wave-gen-rx.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/wave-gen-rx.webp"
+                    alt="Wave Gen RX"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Wave Gen RX</p>
+
+              <p class="product-price">$579.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <a href="./products/ancient-souls.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/ancient-souls.webp"
+                    alt="Ancient Souls"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Ancient Souls</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="best-seller-product product-card">
+              <a href="./products/chronosplit.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Best-Seller-Section/chronosplit.webp"
+                    alt="Chronosplit"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Chronosplit</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev scroll-arrow product-slider-prev"
+          type="button"
+          aria-label="Previous product"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
             ></path>
           </svg>
         </button>
-        <div class="best-sellers-products">
-          <div class="best-seller-product1">
-            <a href="./playbox-xz-gold-edition.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product1.jpg"
-                  alt="Playbox XZ Gold Edition"
-                />
-              </div>
-            </a>
 
-            ```
-            <p>
-              Playbox XZ Gold <br />
-              Edition
-            </p>
-
-            <p>$1,000.00</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product2">
-            <a href="./echo-headset.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product2.jpg"
-                  alt="Echo Headset"
-                />
-              </div>
-            </a>
-
-            ```
-            <p>Echo Headset</p>
-            <p>$39.99</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product3">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
-            <a href="./mach-gaming-chair.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product3.jpg"
-                  alt="Mach Gaming Chair"
-                />
-              </div>
-            </a>
-
-            <p>Mach Gaming Chair</p>
-
-            <p class="sale-price">
-              <span class="old-price">$129.99</span>
-              <span>$116.99</span>
-            </p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product4">
-            <a href="./x-2-wireless-mouse.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product4.jpg"
-                  alt="X-2 Wireless Mouse"
-                />
-              </div>
-            </a>
-
-            ```
-            <p>X-2 Wireless Mouse</p>
-            <p>$24.99</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product5">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
-            <a href="./spartan-mechanical-keyboard.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product5.jpg"
-                  alt="Spartan Mechanical Keyboard"
-                />
-              </div>
-            </a>
-
-            <p>
-              Spartan Mechanical <br />
-              Keyboard
-            </p>
-
-            <p class="sale-price">
-              <span class="old-price">$44.99</span>
-              <span>$40.49</span>
-            </p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product6">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
-            <a href="./raptor.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product6.jpg"
-                  alt="Raptor controller"
-                />
-              </div>
-            </a>
-
-            <p>Raptor</p>
-
-            <p class="sale-price">
-              <span class="old-price">$29.99</span>
-              <span>$26.99</span>
-            </p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product7">
-            <a href="./wave.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product7.jpg"
-                  alt="Wave controller"
-                />
-              </div>
-            </a>
-
-            ```
-            <p>Wave</p>
-            <p>$29.99</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product8">
-            <a href="./wave-gen-rx.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product8.jpg"
-                  alt="Wave Gen RX"
-                />
-              </div>
-            </a>
-
-            ```
-            <p>Wave Gen RX</p>
-            <p>$579.99</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product9">
-            <a href="./ancient-souls.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product9.jpg"
-                  alt="Ancient Souls"
-                />
-              </div>
-            </a>
-
-            ```
-            <p>Ancient Souls</p>
-            <p>$39.99</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-
-          <div class="best-seller-product10">
-            <a href="./chronosplit.html">
-              <div class="product-image">
-                <img
-                  src="./Best-Seller-Section/product10.jpg"
-                  alt="Chronosplit"
-                />
-              </div>
-            </a>
-
-            ```
-            <p>Chronosplit</p>
-            <p>$39.99</p>
-
-            <button type="button">Add to Cart</button>
-            ```
-          </div>
-        </div>
-
-        <button class="scroll-arrow" aria-label="Next products">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <button
+          class="carousel-control-next scroll-arrow product-slider-next"
+          type="button"
+          aria-label="Next product"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
@@ -517,9 +564,11 @@
         </button>
       </div>
     </section>
+
     <section class="shop-by-category">
       <div class="shop-by-category-wrapper">
         <h2>SHOP BY CATEGORY</h2>
+
         <div class="shop-by-gallery">
           <button
             class="category-arrow category-arrow-left"
@@ -543,7 +592,7 @@
             <a class="category-card" href="#">
               <div class="category-image">
                 <img
-                  src="./Shop-By-Category-Section/product1.jpg"
+                  src="./files/images/home/Shop-By-Category-Section/consoles.webp"
                   alt="Gaming consoles"
                 />
                 <div class="category-overlay"></div>
@@ -555,7 +604,7 @@
             <a class="category-card" href="#">
               <div class="category-image">
                 <img
-                  src="./Shop-By-Category-Section/product2.jpg"
+                  src="./files/images/home/Shop-By-Category-Section/accessories.jpg"
                   alt="Gaming accessories"
                 />
                 <div class="category-overlay"></div>
@@ -567,7 +616,7 @@
             <a class="category-card" href="#">
               <div class="category-image">
                 <img
-                  src="./Shop-By-Category-Section/product3.jpg"
+                  src="./files/images/home/Shop-By-Category-Section/controllers.jpg"
                   alt="Gaming controllers"
                 />
                 <div class="category-overlay"></div>
@@ -576,6 +625,7 @@
               <p>Controllers</p>
             </a>
           </div>
+
           <button
             class="category-arrow category-arrow-right"
             type="button"
@@ -596,44 +646,236 @@
         </div>
       </div>
     </section>
+
     <section class="deals">
       <div class="deals-wrapper">
-        <div class="deal-image deal-image-left">
-          <img
-            src="./Deals-Section/product1.jpg"
-            alt="Kira and the Fading Islands"
-          />
-        </div>
-
-        <div class="deal-image deal-image-center">
-          <img src="./Deals-Section/product2.jpg" alt="Dead at Last" />
-        </div>
-
-        <div class="deal-image deal-image-right">
-          <img src="./Deals-Section/product3.jpg" alt="Chronosplit" />
-        </div>
-
         <div class="deals-banner">
-          <p class="deals-small-title">THIS WEEK'S DEALS</p>
-          <p class="deals-discount">10%</p>
-          <p class="deals-description">off all games</p>
-          <button>Shop Now</button>
+          <div class="deals-banner-wrapper">
+            <p class="deals-small-title">THIS WEEK'S DEALS</p>
+
+            <p class="deals-discount">
+              <span class="deals-discount-percentage">10%</span><br />
+              <span class="deals-discount-text">off all games</span>
+            </p>
+
+            <button type="button">Shop Now</button>
+          </div>
+        </div>
+        <div class="deals-images-group">
+          <div class="deal-image deal-image-left">
+            <img
+              src="./files/images/home/Deals-Section/kira-and-the-fading-islands.webp"
+              alt="Kira and the Fading Islands"
+            />
+          </div>
+
+          <div class="deal-image deal-image-center">
+            <img
+              src="./files/images/home/Deals-Section/dead-at-last.webp"
+              alt="Dead at Last"
+            />
+          </div>
+
+          <div class="deal-image deal-image-right">
+            <img
+              src="./files/images/home/Deals-Section/chronosplit.webp"
+              alt="Chronosplit"
+            />
+          </div>
         </div>
       </div>
     </section>
+
     <section class="upgrade-gear">
       <div class="upgrade-gear-title">
         <p>UPGRADE YOUR GEAR</p>
-        <button>View All</button>
+        <button type="button">View All</button>
       </div>
 
-      <div class="upgrade-gear-gallery">
+      <div class="upgrade-gear-gallery product-slider">
+        <div class="carousel-inner">
+          <div class="upgrade-gear-products product-slider-track">
+            <div class="upgrade-gear-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <a href="./products/l503-headset.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/l503-headset.webp"
+                    alt="L503 Headset"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">L503 Headset</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$29.99</span>
+                <span class="new-price">$26.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <a href="./products/echo-headset.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/echo-headset.webp"
+                    alt="Echo Headset"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Echo Headset</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <a href="./products/impact-gaming-chair.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/impact-gaming-chair.webp"
+                    alt="Impact Gaming Chair"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Impact Gaming Chair</p>
+
+              <p class="product-price">$159.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <a href="./products/mach-gaming-chair.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/mach-gaming-chair.webp"
+                    alt="Mach Gaming Chair"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Mach Gaming Chair</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$129.99</span>
+                <span class="new-price">$116.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <a href="./products/x-2-wireless-mouse.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/x-2-wireless-mouse.webp"
+                    alt="X-2 Wireless Mouse"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">X-2 Wireless Mouse</p>
+
+              <p class="product-price">$24.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <a href="./products/blaze-wireless-mouse.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/blaze-wireless-mouse.webp"
+                    alt="Blaze Wireless Mouse"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Blaze Wireless Mouse</p>
+
+              <p class="product-price">$24.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <a href="./products/spartan-mechanical-keyboard.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/spartan-mechanical-keyboard.webp"
+                    alt="Spartan Mechanical Keyboard"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">
+                Spartan Mechanical <br />
+                Keyboard
+              </p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$44.99</span>
+                <span class="new-price">$40.49</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="upgrade-gear-product product-card">
+              <a href="./products/co-21-mechanical-keyboard.html">
+                <div class="product-image">
+                  <img
+                    src="./files/images/home/Upgrade-Gear-Section/co-21-mechanical-keyboard.webp"
+                    alt="CO-21 Mechanical Keyboard"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">
+                CO-21 Mechanical <br />
+                Keyboard
+              </p>
+
+              <p class="product-price">$44.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
         <button
-          class="scroll-arrow"
+          class="carousel-control-prev scroll-arrow product-slider-prev"
           type="button"
-          aria-label="Previous products"
+          aria-label="Previous product"
         >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
@@ -641,188 +883,21 @@
           </svg>
         </button>
 
-        <div class="upgrade-gear-products">
-          <div class="upgrade-gear-product1">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
-            <a href="./l503-headset.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product1.jpg"
-                  alt="L503 Headset"
-                />
-              </div>
-            </a>
-
-            <p>L503 Headset</p>
-
-            <p class="sale-price">
-              <span class="old-price">$29.99</span>
-              <span>$26.99</span>
-            </p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product2">
-            <a href="./echo-headset.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product2.jpg"
-                  alt="Echo Headset"
-                />
-              </div>
-            </a>
-
-            <p>Echo Headset</p>
-            <p>$39.99</p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product3">
-            <a href="./impact-gaming-chair.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product3.jpg"
-                  alt="Impact Gaming Chair"
-                />
-              </div>
-            </a>
-
-            <p>Impact Gaming Chair</p>
-            <p>$159.99</p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product4">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            <a href="./mach-gaming-chair.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product4.jpg"
-                  alt="Mach Gaming Chair"
-                />
-              </div>
-            </a>
-
-            <p>Mach Gaming Chair</p>
-
-            <p class="sale-price">
-              <span class="old-price">$129.99</span>
-              <span>$116.99</span>
-            </p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product5">
-            <a href="./x-2-wireless-mouse.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product5.jpg"
-                  alt="X-2 Wireless Mouse"
-                />
-              </div>
-            </a>
-
-            <p>X-2 Wireless Mouse</p>
-            <p>$24.99</p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product6">
-            <a href="./blaze-wireless-mouse.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product6.jpg"
-                  alt="Blaze Wireless Mouse"
-                />
-              </div>
-            </a>
-
-            <p>Blaze Wireless Mouse</p>
-            <p>$24.99</p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product7">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            <a href="./spartan-mechanical-keyboard.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product7.jpg"
-                  alt="Spartan Mechanical Keyboard"
-                />
-              </div>
-            </a>
-
-            <p>
-              Spartan Mechanical <br />
-              Keyboard
-            </p>
-
-            <p class="sale-price">
-              <span class="old-price">$44.99</span>
-              <span>$40.49</span>
-            </p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-
-          <div class="upgrade-gear-product8">
-            <a href="./co-21-mechanical-keyboard.html">
-              <div class="product-image">
-                <img
-                  src="./Upgrade-Gear-Section/product8.jpg"
-                  alt="CO-21 Mechanical Keyboard"
-                />
-              </div>
-            </a>
-
-            <p>
-              CO-21 Mechanical <br />
-              Keyboard
-            </p>
-
-            <p>$44.99</p>
-
-            <button type="button">Add to Cart</button>
-          </div>
-          ```
-        </div>
-
-        <button class="scroll-arrow" type="button" aria-label="Next products">
-          ```
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-            ``` ```
+        <button
+          class="carousel-control-next scroll-arrow product-slider-next"
+          type="button"
+          aria-label="Next product"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
             ></path>
           </svg>
-          ```
         </button>
       </div>
     </section>
+
     <section class="spend-and-save">
       <img
         class="spend-and-save-background"
@@ -839,15 +914,144 @@
         <button>Shop Now</button>
       </div>
     </section>
+
     <section class="trending-games">
       <div class="trending-games-title">
         <p>TRENDING GAMES</p>
-        <button>View All</button>
+        <button type="button">View All</button>
       </div>
 
-      <div class="trending-games-gallery">
-        <button class="scroll-arrow" aria-label="Previous products">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+      <div class="trending-games-gallery product-slider">
+        <div class="carousel-inner">
+          <div class="trending-games-products product-slider-track">
+            <div class="trending-games-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <div class="product-image">
+                <img
+                  src="./files/images/home/Trending-Games-Section/dead-at-last.webp"
+                  alt="Dead at Last"
+                />
+              </div>
+
+              <p class="product-name">Dead at Last</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$39.99</span>
+                <span class="new-price">$35.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="trending-games-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <div class="product-image">
+                <img
+                  src="./files/images/home/Trending-Games-Section/kira-and-the-fading-islands.webp"
+                  alt="Kira and the Fading Islands"
+                />
+              </div>
+
+              <p class="product-name">
+                Kira and the Fading <br />
+                Islands
+              </p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$39.99</span>
+                <span class="new-price">$35.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="trending-games-product product-card">
+              <div class="product-image">
+                <img
+                  src="./files/images/home/Trending-Games-Section/ancient-souls.webp"
+                  alt="Ancient Souls"
+                />
+              </div>
+
+              <p class="product-name">Ancient Souls</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="trending-games-product product-card">
+              <span class="product-tag">SALE</span>
+
+              <div class="product-image">
+                <img
+                  src="./files/images/home/Trending-Games-Section/ice-dome-exile.webp"
+                  alt="Ice Dome: Exile"
+                />
+              </div>
+
+              <p class="product-name">Ice Dome: Exile</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$39.99</span>
+                <span class="new-price">$35.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="trending-games-product product-card">
+              <div class="product-image">
+                <img
+                  src="./files/images/home/Trending-Games-Section/chronosplit.webp"
+                  alt="Chronosplit"
+                />
+              </div>
+
+              <p class="product-name">Chronosplit</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="trending-games-product product-card">
+              <div class="product-image">
+                <img
+                  src="./files/images/home/Trending-Games-Section/cyber-kid-infinite.webp"
+                  alt="Cyber Kid Infinite"
+                />
+              </div>
+
+              <p class="product-name">Cyber Kid Infinite</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev scroll-arrow product-slider-prev"
+          type="button"
+          aria-label="Previous product"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
@@ -855,127 +1059,12 @@
           </svg>
         </button>
 
-        <div class="trending-games-products">
-          <div class="trending-games-product1">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            <div class="product-image">
-              <img
-                src="./Trending-Games-Section/product1.jpg"
-                alt="Dead at Last"
-              />
-            </div>
-
-            <p>Dead at Last</p>
-
-            <p class="sale-price">
-              <span class="old-price">$39.99</span>
-              <span>$35.99</span>
-            </p>
-
-            <button>Add to Cart</button>
-          </div>
-
-          <div class="trending-games-product2">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            <div class="product-image">
-              <img
-                src="./Trending-Games-Section/product2.jpg"
-                alt="Kira and the Fading Islands"
-              />
-            </div>
-
-            <p>
-              Kira and the Fading <br />
-              Islands
-            </p>
-
-            <p class="sale-price">
-              <span class="old-price">$39.99</span>
-              <span>$35.99</span>
-            </p>
-
-            <button>Add to Cart</button>
-          </div>
-
-          <div class="trending-games-product3">
-            <div class="product-image">
-              <img
-                src="./Trending-Games-Section/product3.jpg"
-                alt="Ancient Souls"
-              />
-            </div>
-
-            <p>Ancient Souls</p>
-            <p>$39.99</p>
-
-            <button>Add to Cart</button>
-          </div>
-
-          <div class="trending-games-product4">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            <div class="product-image">
-              <img
-                src="./Trending-Games-Section/product4.jpg"
-                alt="Ice Dome: Exile"
-              />
-            </div>
-
-            <p>Ice Dome: Exile</p>
-
-            <p class="sale-price">
-              <span class="old-price">$39.99</span>
-              <span>$35.99</span>
-            </p>
-
-            <button>Add to Cart</button>
-          </div>
-
-          <div class="trending-games-product5">
-            <div class="product-image">
-              <img
-                src="./Trending-Games-Section/product5.jpg"
-                alt="Chronosplit"
-              />
-            </div>
-
-            <p>Chronosplit</p>
-            <p>$39.99</p>
-
-            <button>Add to Cart</button>
-          </div>
-
-          <div class="trending-games-product6">
-            <div class="product-image">
-              <img
-                src="./Trending-Games-Section/product6.jpg"
-                alt="Cyber Kid Infinite"
-              />
-            </div>
-
-            <p>Cyber Kid Infinite</p>
-            <p>$39.99</p>
-
-            <button>Add to Cart</button>
-          </div>
-        </div>
-
-        <button class="scroll-arrow" aria-label="Next products">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <button
+          class="carousel-control-next scroll-arrow product-slider-next"
+          type="button"
+          aria-label="Next product"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
@@ -984,6 +1073,7 @@
         </button>
       </div>
     </section>
+
     <section class="newsletter">
       <div class="newsletter-content">
         <h2>NEWSLETTER</h2>
@@ -1023,21 +1113,23 @@
         </form>
       </div>
     </section>
+
     <section class="video-games">
       <div class="video-games-banner">
         <img
-          src="./Video-Games/video-games.png"
+          src="./files/images/home/Video-Games/video-games.png"
           alt="Collection of video game cases"
         />
       </div>
 
       <div class="video-games-content"></div>
     </section>
+
     <footer>
       <div class="footer-up">
         <div class="footer-up-wrapper">
           <div class="footer-logo">
-            <img src="./Footer/logo.png" alt="" />
+            <img src="./files/images/logo/logo.webp" alt="" />
             <p>ARCADE</p>
           </div>
           <div class="footer-products">
@@ -1131,5 +1223,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./files/shared-styles/product-slider.js"></script>
   </body>
 </html>

@@ -1,0 +1,487 @@
+@use "../files/shared-styles/variables" as *;
+
+.contact-section {
+  width: 100%;
+  padding-top: 46px;
+  padding-bottom: 68px;
+  background-color: #060506;
+
+  .contact-wrapper {
+    padding: 8.7%; // იგივე, რაც header-ს აქვს.
+
+    > h1 {
+      color: white;
+      font-family: $font-montserrat;
+      font-size: 70px;
+      font-weight: 700;
+    }
+
+    .contact {
+      margin-top: 58px;
+      padding-right: 3%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10%;
+
+      .contact-details {
+        width: 45%;
+
+        h2 {
+          color: white;
+          font-family: $font-roboto;
+          font-size: 22px;
+          font-weight: 300;
+        }
+
+        .contact-information {
+          margin-top: 70px;
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+
+          p {
+            color: white;
+            font-family: $font-proxima-nova;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.35;
+          }
+        }
+
+        .contact-map {
+          width: 460px;
+          height: 220px;
+          margin-top: 60px;
+
+          iframe {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .contact-form {
+        width: 42.41%;
+        padding-top: 42px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .contact-form-row {
+          display: flex;
+          gap: 24px;
+        }
+
+        .contact-field {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          &.contact-field-message {
+            width: 100%;
+          }
+
+          label {
+            font-family: $font-proxima-nova;
+            font-size: 15px;
+            font-weight: 400;
+            color: white;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #8858ed;
+            border-radius: 15px;
+            outline: none;
+            background-color: #060506;
+            color: white;
+            font-family: $font-proxima-nova;
+            font-size: 16px;
+
+            transition:
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+
+            &:hover,
+            &:focus {
+              border-color: white;
+              background-color: #9f7de8;
+            }
+          }
+
+          input {
+            height: 42px;
+          }
+
+          textarea {
+            height: 92px;
+          }
+
+          .contact-phone-input {
+            width: 100%;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+
+            border: 2px solid rgb(136, 88, 237);
+            border-radius: 16px;
+
+            transition:
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+
+            &:hover,
+            &:focus {
+              border-color: white;
+              background-color: #9f7de8;
+            }
+
+            .contact-phone-prefix {
+              width: 72px;
+              height: 100%;
+              flex: 0 0 72px;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 4px;
+
+              color: white;
+
+              .contact-phone-globe {
+                width: 24px;
+                height: 24px;
+              }
+
+              .contact-phone-arrow {
+                width: 20px;
+                height: 20px;
+              }
+            }
+
+            input {
+              min-width: 0;
+              height: 100%;
+              flex: 1;
+              padding: 0 14px;
+
+              background-color: transparent;
+              border: none;
+              outline: none;
+
+              color: white;
+              font-family: "Proxima Nova", sans-serif;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .contact-submit {
+          width: 100%;
+          height: 44px;
+
+          border: 2px solid rgb(136, 88, 237);
+          border-radius: 15px;
+          background-color: rgb(136, 88, 237);
+
+          color: white;
+          font-family: $font-montserrat;
+          font-size: 15px;
+          font-weight: 700;
+
+          cursor: pointer;
+          transition:
+            background-color 0.25s ease,
+            color 0.25s ease;
+
+          &:hover,
+          &:focus-visible {
+            font-weight: 300;
+            border-color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.faq-section {
+  width: 100%;
+  padding-top: 105px;
+  padding-right: 20%;
+  padding-bottom: 70px;
+  padding-left: 20%;
+
+  background-image: url("../files/images/contact-us/faq-section-background.avif");
+  background-size: cover;
+
+  .faq-wrapper {
+    h2 {
+      color: white;
+      font-family: $font-montserrat;
+      font-size: 42px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .faq-toolbar {
+      margin-top: 54px;
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        font-family: $font-proxima-nova;
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .faq-search {
+        position: relative;
+        width: 256px;
+
+        input {
+          width: 100%;
+          height: 40px;
+          padding-right: 30px;
+          padding-bottom: 10px;
+
+          border: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+          background-color: transparent;
+
+          color: white;
+          font-family: $font-proxima-nova;
+          font-size: 16px;
+
+          &::placeholder {
+            color: white;
+          }
+        }
+
+        svg {
+          position: absolute;
+          top: 2px;
+          right: 0;
+          width: 24px;
+          height: 24px;
+          color: white;
+        }
+      }
+    }
+
+    .faq-tabs {
+      height: 48px;
+      margin-top: 30px;
+
+      display: flex;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+      span {
+        padding-right: 28px;
+        padding-left: 28px;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-family: $font-proxima-nova;
+        font-size: 14px;
+      }
+
+      .active-faq-tab {
+        border-bottom: 3px solid #8858ed;
+        color: #9f7de8;
+      }
+    }
+
+    .faq-list {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      details {
+        border: 1px solid #8858ed;
+        background-color: black;
+
+        summary {
+          height: 74px;
+          padding-right: 24px;
+          padding-left: 24px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: white;
+          font-family: $font-proxima-nova;
+          font-size: 16px;
+          font-weight: 400;
+          cursor: pointer;
+
+          .faq-arrow {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.2s ease;
+          }
+        }
+
+        &[open] {
+          .faq-arrow {
+            transform: rotate(180deg);
+          }
+        }
+
+        .faq-answer {
+          padding-right: 24px;
+          padding-bottom: 27px;
+          padding-left: 24px;
+
+          p {
+            width: 845px;
+            color: white;
+            font-family: $font-proxima-nova;
+            font-size: 16px;
+            font-weight: 400;
+          }
+
+          .faq-social {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            a,
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              border: none;
+              background-color: transparent;
+              color: white;
+              text-decoration: none;
+
+              cursor: pointer;
+
+              svg {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .contact-page {
+    .contact-section {
+      padding: 45px 20px 70px;
+
+      .contact-wrapper {
+        width: 100%;
+
+        > h1 {
+          font-size: 42px;
+          line-height: 1.05;
+        }
+
+        .contact-grid {
+          margin-top: 45px;
+          gap: 50px;
+
+          .contact-details {
+            h2 {
+              font-size: 20px;
+            }
+
+            .contact-information {
+              margin-top: 38px;
+              gap: 14px;
+
+              a,
+              address {
+                font-size: 16px;
+              }
+            }
+
+            .contact-map {
+              height: 220px;
+              margin-top: 40px;
+            }
+          }
+
+          .contact-form {
+            gap: 20px;
+
+            .contact-form-row {
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .faq-section {
+      padding: 70px 20px 55px;
+
+      .faq-wrapper {
+        width: 100%;
+
+        > h2 {
+          font-size: 32px;
+          text-align: left;
+        }
+
+        .faq-toolbar {
+          margin-top: 42px;
+
+          flex-direction: column;
+          align-items: stretch;
+          gap: 26px;
+
+          .faq-search {
+            width: 100%;
+          }
+        }
+
+        .faq-tabs {
+          margin-top: 24px;
+
+          span {
+            padding: 0 18px;
+          }
+        }
+
+        .faq-list {
+          details {
+            summary {
+              min-height: 68px;
+              padding-left: 18px;
+              padding-right: 48px;
+
+              &::after {
+                right: 20px;
+              }
+            }
+
+            .faq-answer {
+              padding: 0 18px 24px;
+
+              p {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,123 +1,298 @@
-@use "footer" as *;
-@use "base" as *;
-@use "fonts" as *;
-@use "variables" as *;
-@use "header" as *;
-@use "mixins" as *;
-@use "products" as *;
-@use "product-page" as *;
-@use "contact-us" as *;
-@use "policy-page" as *;
+@use "files/shared-styles/variables" as *;
+@use "files/shared-styles/mixins" as *;
+@use "files/shared-styles/base";
+@use "files/fonts/fonts";
+@use "files/shared-styles/keyframes";
+@use "header/header";
+@use "footer/footer";
+@use "products/products";
+@use "products/product-page";
+@use "contact/contact-us";
+@use "policy/policy-page";
+
+// Hero დავარქვი home გვერდის პირველ დიდ სექციას, სადა ჩანს ძირითადი ბანერი და სურათი. რეალურად, ამ სექციას აქვს ორი ნაწილი: სურათი და ბანერი.
 
 .hero {
-  display: flex;
-  justify-content: center;
+  position: relative;
+
+  width: 100%;
   height: 698px;
-  gap: 3px;
-  background-image: url("./Hero-Section/background.jpg");
+  padding-left: 8.7%;
+
+  background-image: url("./files/images/home/Hero-Section/hero-section-background.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 
-  .hero-banner {
-    display: flex;
-    flex-direction: column;
-    width: 609px;
-    height: 384px;
+  .hero-banner-wrapper {
     position: relative;
     top: 82px;
     z-index: 3;
-    padding: 34px 60px 47px 72px;
-    background-color: rgb(136, 88, 237);
-    border-radius: 30px;
-    box-shadow: rgba(6, 5, 6, 0.41) 4.23px 9.06px 14px 6px;
-    color: white;
 
-    p:first-child {
-      margin-bottom: 15px;
-      font-family: "Roboto", sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 33px;
-    }
+    width: 609px;
+    height: 384px;
 
-    p:nth-child(2) {
-      margin-bottom: 11px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 70px;
-      font-weight: 700;
-      line-height: 70px;
-    }
+    .hero-banner {
+      width: 100%;
+      height: 100%;
+      padding-top: 34px;
+      padding-right: 60px;
+      padding-bottom: 47px;
+      padding-left: 72px;
 
-    p:nth-child(3) {
-      margin-bottom: 23px;
-      font-family: "Roboto", sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 33px;
-    }
+      display: flex;
+      flex-direction: column;
 
-    button {
-      width: 132px;
-      height: 48px;
-      background-color: white;
-      border: 2px solid white;
-      border-radius: 100px;
-      color: rgb(136, 88, 237);
-      font-family: "Montserrat", sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      transition:
-        background-color 0.4s,
-        color 0.4s;
-      &:hover,
-      &:active {
-        background-color: rgb(136, 88, 237);
-        color: white;
+      background-color: #8858ed;
+      border-radius: 30px;
+      box-shadow: rgba(6, 5, 6, 0.41) 4.23px 9.06px 14px 6px;
+
+      color: white;
+
+      p:first-child {
+        margin-bottom: 15px;
+
+        font-family: "Roboto", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 33px;
+      }
+
+      p:nth-child(2) {
+        margin-bottom: 11px;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 70px;
+        font-weight: 700;
+        line-height: 70px;
+      }
+
+      p:nth-child(3) {
+        margin-bottom: 23px;
+
+        font-family: "Roboto", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 33px;
+      }
+
+      button {
+        width: 132px;
+        height: 48px;
+        flex-shrink: 0;
+
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 100px;
+
+        color: #8858ed;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition:
+          background-color 0.4s,
+          color 0.4s;
+
+        &:hover,
+        &:active {
+          background-color: #8858ed;
+          color: white;
+        }
       }
     }
   }
 
   .hero-img {
-    position: relative;
+    position: absolute;
     top: 82px;
+    right: 11.6%;
     z-index: 2;
 
-    display: block;
     width: 536px;
-    height: auto;
+    height: 689px;
+    display: block;
 
+    object-fit: cover;
     border-radius: 30px;
     box-shadow: rgba(34, 33, 34, 0.6) 2.27px 4.46px 15px 5px;
   }
 }
 
-.best-sellers {
-  @include product-gallery-section;
+.product-card {
+  @include product;
 }
 
-.upgrade-gear {
-  @include product-gallery-section;
-}
-
+.best-sellers,
+.upgrade-gear,
 .trending-games {
-  @include product-gallery-section;
+  width: 100%;
+  height: calc(21.3056vw + 447.833px);
+  min-height: 0;
+  padding-top: 100px;
+  padding-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+.best-sellers-title,
+.upgrade-gear-title,
+.trending-games-title {
+  width: 80%;
+  margin: 0 auto 76px;
+  padding: 0 32px 0 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    width: 595px;
+    margin: 0;
+
+    color: white;
+    font-family: $font-montserrat;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 59px;
+  }
+
+  button {
+    width: 132px;
+    height: 38px;
+    padding: 0;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 100px;
+
+    color: rgb(136, 88, 237);
+    font-family: $font-montserrat;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+      background-color 0.4s,
+      color 0.4s;
+
+    &:hover,
+    &:active {
+      background-color: rgb(136, 88, 237);
+      color: white;
+    }
+  }
+}
+
+.product-slider {
+  position: relative;
+  width: 100%;
+
+  .carousel-inner {
+    width: calc(100% - 250px);
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .product-slider-track {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+
+    transition: transform 0.4s ease;
+    will-change: transform;
+
+    .product-card {
+      width: calc((100% - 72px) / 4);
+      min-width: 0;
+      flex: 0 0 calc((100% - 72px) / 4);
+
+      .product-image {
+        width: 100%;
+      }
+    }
+  }
+
+  .scroll-arrow {
+    position: absolute;
+    top: calc((100vw - 322px) / 8);
+    bottom: auto;
+    z-index: 5;
+
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    display: block;
+
+    background: none;
+    border: none;
+
+    color: white;
+    opacity: 1;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    transition:
+      color 0.3s,
+      opacity 0.3s;
+
+    &:hover {
+      color: rgb(204, 204, 204);
+      opacity: 1;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .carousel-control-prev {
+    left: 7%;
+  }
+
+  .carousel-control-next {
+    right: 7%;
+  }
 }
 
 .shop-by-category {
   width: 100%;
-  height: 997px;
+  height: auto;
+  min-height: 997px;
   padding-top: 67px;
+  padding-bottom: 54px;
+  overflow: hidden;
+
+  box-sizing: border-box;
 
   background:
     linear-gradient(rgba(77, 77, 77, 0.4), rgba(77, 77, 77, 0.4)), rgb(6, 5, 6);
 
   .shop-by-category-wrapper {
-    width: 980px;
+    width: calc(100% - 300px);
     margin: 0 auto;
 
     h2 {
+      margin: 0;
+
       color: white;
       font-family: "Montserrat", sans-serif;
       font-size: 42px;
@@ -134,15 +309,16 @@
     }
 
     .category-list {
+      width: 100%;
       margin-top: 57px;
 
       display: grid;
-      grid-template-columns: 303px 304px 303px;
-      column-gap: 35px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 36px;
 
       .category-card {
         width: 100%;
-        height: 404px;
+        height: auto;
 
         color: white;
         text-align: center;
@@ -152,18 +328,21 @@
           position: relative;
 
           width: 100%;
-          height: 404px;
-
+          height: auto;
+          aspect-ratio: 3 / 4;
           overflow: hidden;
+
           border-radius: 30px;
 
           img {
             display: block;
+
             width: 100%;
             height: 100%;
 
             object-fit: cover;
             transform: scale(1);
+
             transition: transform 0.7s ease-in-out;
           }
 
@@ -175,6 +354,7 @@
             opacity: 0;
 
             pointer-events: none;
+
             transition: opacity 0.4s ease-in-out;
           }
 
@@ -191,12 +371,13 @@
 
         p {
           margin-top: 22px;
-          line-height: 22px;
+          margin-bottom: 0;
+
           color: white;
           font-family: $font-roboto;
-          font-weight: 300;
           font-size: 22px;
-          line-height: normal;
+          font-weight: 400;
+          line-height: 22px;
           text-align: center;
         }
       }
@@ -205,9 +386,13 @@
 }
 
 .deals {
+  position: relative;
+
   width: 100%;
   height: 808px;
+  padding-top: 55px;
   overflow: hidden;
+
   background-color: black;
 
   view-timeline-name: --deals-animation;
@@ -215,79 +400,85 @@
 
   .deals-wrapper {
     position: relative;
-    top: 100px;
 
-    width: 1200px;
-    height: 100%;
+    width: calc(100% - 60px);
+    max-width: 1500px;
+    height: 668px;
     margin: 0 auto;
 
-    .deal-image {
+    .deals-images-group {
       position: absolute;
-
-      width: 385px;
-      height: 520px;
-
-      overflow: hidden;
-      border-radius: 30px;
-
-      opacity: 0;
-
-      animation-duration: 1s;
-      animation-timing-function: cubic-bezier(0.32, 0, 0.32, 1.01);
-      animation-fill-mode: both;
-      animation-timeline: --deals-animation;
-
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-      }
-    }
-
-    .deal-image-left {
-      top: 10px;
-      left: 60px;
-      z-index: 0;
-
-      animation-name: deal-left-reveal;
-      animation-range: entry 5% cover 35%;
-    }
-
-    .deal-image-center {
-      top: 145px;
-      left: 430px;
+      top: 0;
+      right: 0;
       z-index: 1;
 
-      animation-name: deal-center-reveal;
-      animation-range: entry 10% cover 40%;
-    }
+      width: 1043px;
+      height: 668px;
 
-    .deal-image-right {
-      top: 68px;
-      right: 100px;
-      z-index: 2;
+      .deal-image {
+        position: absolute;
 
-      animation-name: deal-right-reveal;
-      animation-range: entry 15% cover 45%;
+        width: 388px;
+        height: 523px;
+        overflow: hidden;
+
+        border-radius: 30px;
+        opacity: 0;
+
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.32, 0, 0.32, 1.01);
+        animation-fill-mode: both;
+        animation-timeline: --deals-animation;
+
+        img {
+          display: block;
+
+          width: 100%;
+          height: 100%;
+
+          object-fit: cover;
+        }
+      }
+
+      .deal-image-left {
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        animation-name: deal-left-reveal;
+        animation-range: entry 5% cover 35%;
+      }
+
+      .deal-image-center {
+        top: 145px;
+        left: 370px;
+        z-index: 2;
+
+        animation-name: deal-center-reveal;
+        animation-range: entry 10% cover 40%;
+      }
+
+      .deal-image-right {
+        top: 68px;
+        left: 655px;
+        z-index: 3;
+
+        animation-name: deal-right-reveal;
+        animation-range: entry 15% cover 45%;
+      }
     }
 
     .deals-banner {
       position: absolute;
-      top: 48px;
-      left: 48px;
-      z-index: 3;
+      top: 40px;
+      left: 140px;
+      z-index: 4;
 
-      width: 558px;
-      height: 358px;
+      width: 557px;
+      height: 359.8px;
+      overflow: hidden;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      background-color: rgb(136, 88, 237);
+      background-color: #8858ed;
       border-radius: 30px;
 
       color: white;
@@ -302,53 +493,78 @@
       animation-timeline: --deals-animation;
       animation-range: entry 20% cover 50%;
 
-      .deals-small-title {
-        font-family: $font-roboto;
-        font-size: 22px;
-        font-weight: 400;
-      }
+      .deals-banner-wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 37px 30px 25px;
 
-      .deals-discount {
-        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
 
-        font-family: $font-montserrat;
-        font-size: 138px;
-        font-weight: 700;
-        line-height: 125px;
-      }
+        line-height: 1;
 
-      .deals-description {
-        margin-top: 3px;
+        .deals-small-title {
+          font-family: $font-roboto;
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 1.2;
+        }
 
-        font-family: $font-montserrat;
-        font-size: 42px;
-        font-weight: 700;
-        line-height: 50px;
-      }
+        .deals-discount {
+          margin: 0;
 
-      button {
-        width: 143px;
-        height: 44px;
-        margin-top: 32px;
+          br {
+            display: none;
+          }
 
-        background-color: white;
-        border: 2px solid white;
-        border-radius: 30px;
+          .deals-discount-percentage {
+            display: block;
 
-        color: rgb(136, 88, 237);
-        font-family: $font-montserrat;
-        font-size: 15px;
-        font-weight: 700;
+            font-family: $font-montserrat;
+            font-size: 140px;
+            font-weight: 700;
+            line-height: 0.85;
+          }
 
-        cursor: pointer;
-        transition:
-          background-color 0.4s,
-          color 0.4s;
+          .deals-discount-text {
+            display: block;
 
-        &:hover,
-        &:active {
-          background-color: rgb(136, 88, 237);
-          color: white;
+            font-family: $font-montserrat;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.1;
+            white-space: nowrap;
+          }
+        }
+
+        button {
+          flex-shrink: 0;
+
+          width: 143px;
+          height: 44px;
+
+          background-color: white;
+          border: 2px solid white;
+          border-radius: 30px;
+
+          color: #8858ed;
+          font-family: $font-montserrat;
+          font-size: 15px;
+          font-weight: 700;
+
+          cursor: pointer;
+
+          transition:
+            background-color 0.4s,
+            color 0.4s;
+
+          &:hover,
+          &:active {
+            background-color: #8858ed;
+            color: white;
+          }
         }
       }
     }
@@ -485,7 +701,9 @@
 
       &:hover,
       &:active {
-        background-color: rgb(163, 129, 242);
+        background-color: white;
+        border: 2px solid rgb(136, 88, 237);
+        color: #8858ed;
       }
     }
   }
@@ -510,14 +728,19 @@
   justify-content: center;
   align-items: flex-start;
 
-  background-image: url("./Newsletter-Section/background.jpg");
+  background-image: url("./files/images/home/Newsletter-Section/newsletter-section-background.jpg");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
+
   color: white;
 
+  view-timeline-name: --newsletter-animation;
+  view-timeline-axis: block;
+
   .newsletter-content {
-    width: 496px;
+    width: 512px;
+
     text-align: center;
 
     h2 {
@@ -525,6 +748,10 @@
       font-size: 42px;
       font-weight: 700;
       line-height: 50px;
+
+      animation: newsletter-fade-in 1ms linear both;
+      animation-timeline: --newsletter-animation;
+      animation-range: entry 0% cover 80%;
     }
 
     > p {
@@ -538,8 +765,9 @@
   }
 
   .newsletter-form {
-    width: 100%;
+    width: 512px;
     margin-top: 45px;
+
     text-align: left;
 
     > label {
@@ -552,8 +780,8 @@
     }
 
     > input {
-      width: 100%;
-      height: 42px;
+      width: 512px;
+      height: 42.41px;
       padding: 0 15px;
 
       background-color: transparent;
@@ -566,13 +794,11 @@
 
       caret-color: white;
 
+      transition: border-color 0.2s;
+
       &:focus {
         outline: none;
       }
-    }
-
-    > input {
-      transition: border-color 0.2s;
 
       &:focus:invalid,
       &:user-invalid {
@@ -617,6 +843,7 @@
   }
 
   .newsletter-form-bottom {
+    width: 512px;
     margin-top: 24px;
 
     display: flex;
@@ -624,17 +851,20 @@
     align-items: flex-start;
 
     .newsletter-consent {
+      position: relative;
+
       display: flex;
       align-items: flex-start;
-      position: relative;
 
       font-family: $font-proxima-nova;
       font-size: 16px;
       line-height: 25px;
+
       cursor: pointer;
 
       input {
         position: absolute;
+
         width: 1px;
         height: 1px;
         margin: 0;
@@ -671,7 +901,6 @@
 
         &::after {
           content: "";
-          display: none;
 
           position: absolute;
           top: 5px;
@@ -679,6 +908,8 @@
 
           width: 5px;
           height: 9px;
+
+          display: none;
 
           border-right: 2px solid white;
           border-bottom: 2px solid white;
@@ -689,11 +920,12 @@
     }
 
     button {
-      width: 199px;
+      width: 199.93px;
       height: 44px;
+      flex-shrink: 0;
 
-      background-color: rgb(255, 255, 255);
-      border: 2px solid rgb(255, 255, 255);
+      background-color: white;
+      border: 2px solid white;
       border-radius: 15px;
 
       color: rgb(6, 5, 6);
@@ -710,11 +942,12 @@
       &:hover,
       &:active {
         background-color: rgb(136, 88, 237);
-        color: rgb(255, 255, 255);
+        color: white;
       }
     }
   }
 }
+
 @keyframes video-games-float-in {
   from {
     opacity: 0.35;
@@ -724,6 +957,16 @@
   to {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes newsletter-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -738,10 +981,11 @@
 
   .video-games-banner {
     position: relative;
+
     height: 315px;
+    overflow: visible;
 
     background-color: rgb(136, 88, 237);
-    overflow: visible;
 
     img {
       position: absolute;
@@ -750,9 +994,11 @@
       z-index: 1;
 
       display: block;
-      width: 900px;
-      height: auto;
 
+      width: 961px;
+      height: 309px;
+
+      object-fit: contain;
       transform: translateX(-50%);
 
       filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.45))
@@ -762,7 +1008,6 @@
       animation-duration: 1ms;
       animation-timing-function: linear;
       animation-fill-mode: both;
-
       animation-timeline: --video-games-animation;
       animation-range: entry 0% entry 100%;
 
@@ -775,98 +1020,207 @@
   }
 }
 
-@media (min-width: 751px) and (max-width: 1228px) {
-  .hero {
-    padding-left: 40px;
-    padding-right: 40px;
-
-    .hero-img {
-      margin-left: calc(100% - 1148px);
-    }
-  }
-}
-
 @media (max-width: 750px) {
   .hero {
     height: auto;
-    padding-top: 20px;
+    padding-top: 44px;
     padding-right: 20px;
     padding-bottom: 40px;
     padding-left: 20px;
 
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 40px;
 
-    background-attachment: scroll; // მობილურ ვერსიაზე background სურათი აღარ არის ფიქსირებული და ასქროლვისას გვერდს იყვება.
+    background-attachment: scroll;
 
-    .hero-banner {
-      position: static; // ეს აუცილებელია, ვინაიდან დესკტოპ ვერსიაზე გვაქვს position: relative და top: 82px.
+    .hero-banner-wrapper {
+      position: relative;
+      top: 0;
+      z-index: 3;
 
-      width: 100%;
-      max-width: 500px;
-      height: 244px;
-      padding-top: 18px;
-      padding-right: 27px;
-      padding-bottom: 26px;
-      padding-left: 27px;
+      width: 280px;
+      height: 262px;
+      flex-shrink: 0;
 
-      // Power up your game
-      p:first-child {
-        order: 3;
-        margin-top: 2px;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-      }
+      .hero-banner {
+        width: 280px;
+        height: 262px;
+        padding-top: 34px;
+        padding-right: 27px;
+        padding-bottom: 26px;
+        padding-left: 27px;
 
-      // CYBER KID INFINITE
-      p:nth-child(2) {
-        order: 2;
-        margin-top: 14px;
-        font-size: 38px;
-        line-height: 39px;
-      }
+        display: flex;
+        flex-direction: column;
 
-      // Now Available on PC & Console
-      p:nth-child(3) {
-        order: 1;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-      }
+        background-color: #8858ed;
+        border-radius: 30px;
 
-      button {
-        order: 4;
-        width: 120px;
-        height: 43px;
-        margin-top: auto;
+        color: white;
+
+        transform: none;
+
+        // Now Available on PC & Console
+
+        p:nth-child(3) {
+          order: 1;
+          margin: 0;
+
+          font-family: "Roboto", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20px;
+        }
+
+        // CYBER KID INFINITE
+
+        p:nth-child(2) {
+          order: 2;
+
+          margin-top: 16px;
+          margin-right: 0;
+          margin-bottom: 0;
+          margin-left: 0;
+
+          font-family: "Montserrat", sans-serif;
+          font-size: 38px;
+          font-weight: 700;
+          line-height: 39px;
+        }
+
+        // Power up your game
+
+        p:first-child {
+          order: 3;
+
+          margin-top: 2px;
+          margin-right: 0;
+          margin-bottom: 0;
+          margin-left: 0;
+
+          font-family: "Roboto", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20px;
+        }
+
+        button {
+          order: 4;
+
+          width: 120px;
+          height: 42px;
+          margin-top: auto;
+          flex-shrink: 0;
+
+          background-color: white;
+          border: 2px solid white;
+          border-radius: 100px;
+
+          color: #8858ed;
+          font-family: "Montserrat", sans-serif;
+          font-size: 14px;
+          font-weight: 700;
+
+          cursor: pointer;
+        }
       }
     }
 
     .hero-img {
-      position: static; // ამის გარეშე Cyber Kid სურათი სექციის ქვემოთ ჩამოდის.
+      position: static;
+
+      width: 280px;
+      height: 360px;
+      max-width: none;
+      display: block;
+      flex-shrink: 0;
+
+      object-fit: cover;
+      border-radius: 30px;
+    }
+  }
+
+  .best-sellers,
+  .upgrade-gear,
+  .trending-games {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 60px;
+  }
+
+  .best-sellers-title,
+  .upgrade-gear-title,
+  .trending-games-title {
+    width: 238px;
+    margin: 0 auto 20px;
+    padding: 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    p {
       width: 100%;
-      max-width: 500px;
-      height: auto;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    button {
+      width: 110px;
+      height: 40px;
+    }
+  }
+
+  .product-slider {
+    .carousel-inner {
+      width: 238px;
+    }
+
+    .product-slider-track {
+      .product-card {
+        width: 238px;
+        flex: 0 0 238px;
+
+        .product-image {
+          width: 238px;
+        }
+      }
+    }
+
+    .scroll-arrow {
+      top: 119px;
+    }
+
+    .carousel-control-prev {
+      left: 4%;
+    }
+
+    .carousel-control-next {
+      right: 4%;
     }
   }
 
   .shop-by-category {
-    height: auto;
+    width: 100%;
+    height: 390.59px;
+    min-height: 0;
     padding-top: 35px;
-    padding-bottom: 38px;
+    padding-bottom: 33.59px;
     overflow: hidden;
 
     .shop-by-category-wrapper {
       width: 100%;
+      height: 100%;
 
       h2 {
-        width: calc(100% - 40px);
+        // width: calc(100% - 40px);
         margin: 0 auto;
-
         font-size: 24px;
         line-height: 29px;
+        text-align: center;
       }
 
       .shop-by-gallery {
@@ -875,7 +1229,7 @@
 
         .category-arrow {
           position: absolute;
-          top: 33.333vw;
+          top: 107.5px;
           z-index: 2;
 
           width: 23px;
@@ -888,20 +1242,24 @@
 
           background: none;
           border: none;
+
           color: white;
 
           transform: translateY(-50%);
+
           cursor: pointer;
 
           svg {
             display: block;
             width: 23px;
             height: 39px;
+
             fill: currentColor;
           }
         }
+
         .category-arrow-left {
-          left: 20px;
+          left: 30%;
 
           svg {
             transform: scaleX(-1) scale(0.956522);
@@ -909,7 +1267,7 @@
         }
 
         .category-arrow-right {
-          right: 20px;
+          right: 30%;
 
           svg {
             transform: scaleX(1) scale(0.956522);
@@ -945,77 +1303,113 @@
           scroll-snap-stop: always;
 
           .category-image {
-            width: 50%;
-            height: auto;
-            aspect-ratio: 303 / 404;
+            width: 161px;
+            height: 215px;
+          }
+
+          p {
+            margin-top: 22px;
+
+            font-size: 22px;
+            line-height: 22px;
           }
         }
       }
     }
   }
-
   .deals {
-    height: 252vw;
+    height: 900px;
+    padding-top: 0;
+    padding-top: 5%;
 
     .deals-wrapper {
-      top: 0;
-
       width: 100%;
-      height: 100%;
-
-      .deal-image {
-        width: 48%;
-        height: auto;
-        aspect-ratio: 385 / 520;
-      }
-
-      .deal-image-left {
-        top: 86vw;
-        left: 8%;
-      }
-
-      .deal-image-center {
-        top: 124vw;
-        left: 44%;
-      }
-
-      .deal-image-right {
-        top: 174vw;
-        right: auto;
-        left: 8%;
-      }
+      max-width: none;
+      height: 900px;
+      margin: 0;
 
       .deals-banner {
-        top: 8vw;
-        left: 8%;
+        top: 4px;
+        left: calc(50% - 140px);
+        z-index: 4;
 
-        width: 84%;
-        height: 66vw;
+        width: 280px;
+        height: 219.2px;
 
-        .deals-small-title {
-          font-size: 16px;
+        border-radius: 30px;
+
+        .deals-banner-wrapper {
+          width: 100%;
+          height: 100%;
+          padding: 18px 15px 14px;
+
+          justify-content: space-between;
+
+          .deals-small-title {
+            font-size: 16px;
+            line-height: 1.2;
+          }
+
+          .deals-discount {
+            margin: 0;
+
+            br {
+              display: none;
+            }
+
+            .deals-discount-percentage {
+              display: block;
+
+              font-size: 60px;
+              line-height: 0.9;
+            }
+
+            .deals-discount-text {
+              display: block;
+
+              font-size: 30px;
+              line-height: 1.05;
+              white-space: nowrap;
+            }
+          }
+
+          button {
+            width: 120px;
+            height: 42px;
+
+            font-size: 15px;
+          }
+        }
+      }
+
+      .deals-images-group {
+        top: 270px;
+        right: auto;
+        left: calc(50% - 160px);
+
+        width: 320px;
+        height: 545px;
+
+        .deal-image {
+          width: 162px;
+          height: 215px;
+
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
-        .deals-discount {
-          margin-top: 4px;
-
-          font-size: 50px;
-          line-height: 50px;
+        .deal-image-left {
+          top: 0;
+          left: 16px;
         }
 
-        .deals-description {
-          margin-top: 3px;
-
-          font-size: 30px;
-          line-height: 36px;
+        .deal-image-center {
+          top: 145px;
+          left: 142px;
         }
 
-        button {
-          width: 105px;
-          height: 38px;
-          margin-top: 25px;
-
-          font-size: 14px;
+        .deal-image-right {
+          top: 330px;
+          left: 8px;
         }
       }
     }
@@ -1023,6 +1417,7 @@
 
   .spend-and-save {
     height: 220px;
+    width: 100%;
 
     .spend-and-save-background {
       animation: none;
@@ -1057,11 +1452,14 @@
 
   .newsletter {
     height: auto;
-    padding: 45px 20px 18px;
+    padding-top: 45px;
+    padding-right: 20px;
+    padding-bottom: 18px;
+    padding-left: 20px;
 
     .newsletter-content {
-      width: 100%;
-      max-width: 496px;
+      width: 280px;
+      max-width: none;
 
       h2 {
         font-size: 27px;
@@ -1075,19 +1473,27 @@
     }
 
     .newsletter-form {
+      width: 280px;
       margin-top: 12px;
+
+      > input {
+        width: 280px;
+        height: 42.41px;
+      }
     }
 
     .newsletter-form-bottom {
+      width: 280px;
+
       flex-direction: column;
       gap: 15px;
 
       button {
-        width: 100%;
+        width: 280px;
+        height: 44px;
       }
     }
   }
-
   .video-games {
     overflow: visible;
 
@@ -1096,9 +1502,13 @@
 
       img {
         top: -30px;
-        width: 90%;
-        max-width: 320px;
         z-index: 3;
+
+        width: 280px;
+        height: 90px;
+        max-width: none;
+
+        object-fit: contain;
       }
     }
   }
