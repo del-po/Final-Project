@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".product-slider").forEach((slider) => {
-    const track = slider.querySelector(".product-slider-track");
-    const previousButton = slider.querySelector(".product-slider-prev");
-    const nextButton = slider.querySelector(".product-slider-next");
+    const track = slider.querySelector(".product-gallery-track");
+    const leftArrow = slider.querySelector(".left-arrow");
+    const rightArrow = slider.querySelector(".right-arrow");
 
-    if (!track || !previousButton || !nextButton) return;
+    if (!track || !leftArrow || !rightArrow) return;
 
     const originalProducts = Array.from(track.children);
 
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getStepSize() {
       const productWidth = originalProducts[0].getBoundingClientRect().width;
-
       const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
 
       return productWidth + gap;
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function createInfiniteTrack() {
       track
-        .querySelectorAll(".product-slider-clone")
+        .querySelectorAll(".product-gallery-clone")
         .forEach((clone) => clone.remove());
 
       visibleProducts = window.innerWidth <= 750 ? 1 : 4;
@@ -40,7 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .slice(0, visibleProducts)
         .map((product) => {
           const clone = product.cloneNode(true);
-          clone.classList.add("product-slider-clone");
+          clone.classList.add("product-gallery-clone");
+
           return clone;
         });
 
@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .slice(-visibleProducts)
         .map((product) => {
           const clone = product.cloneNode(true);
-          clone.classList.add("product-slider-clone");
+          clone.classList.add("product-gallery-clone");
+
           return clone;
         });
 
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    nextButton.addEventListener("click", () => {
+    rightArrow.addEventListener("click", () => {
       if (isMoving) return;
 
       isMoving = true;
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       moveSlider();
     });
 
-    previousButton.addEventListener("click", () => {
+    leftArrow.addEventListener("click", () => {
       if (isMoving) return;
 
       isMoving = true;
@@ -89,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (currentPosition < visibleProducts) {
         currentPosition = originalProducts.length + visibleProducts - 1;
-
         moveSlider(false);
       }
 

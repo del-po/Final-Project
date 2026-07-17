@@ -837,6 +837,7 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
   width: 280px;
   aspect-ratio: 1;
   overflow: hidden;
+  position: relative;
   cursor: pointer;
 }
 .products-page .products-catalog .products-grid > div .product-image img {
@@ -1542,6 +1543,7 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
   width: 280px;
   aspect-ratio: 1;
   overflow: hidden;
+  position: relative;
   cursor: pointer;
 }
 .you-might-also-like .product-image img {
@@ -2287,6 +2289,7 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
   width: 280px;
   aspect-ratio: 1;
   overflow: hidden;
+  position: relative;
   cursor: pointer;
 }
 .product-card .product-image img {
@@ -2362,31 +2365,36 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
 .upgrade-gear,
 .trending-games {
   width: 100%;
-  height: calc(21.3056vw + 447.833px);
-  min-height: 0;
-  padding-top: 100px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  min-height: 730px;
+  padding: 100px 0 80px;
   background-color: black;
   color: white;
 }
-
-.best-sellers-title,
-.upgrade-gear-title,
-.trending-games-title {
-  width: 80%;
-  margin: 0 auto 76px;
-  padding: 0 32px 0 35px;
+.best-sellers .product-slider,
+.upgrade-gear .product-slider,
+.trending-games .product-slider {
+  width: min(100%, 82.6% + 140px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  grid-template-areas: ". title ." "left gallery right";
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 76px;
+  align-items: start;
+}
+.best-sellers .product-slider-title,
+.upgrade-gear .product-slider-title,
+.trending-games .product-slider-title {
+  grid-area: title;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.best-sellers-title p,
-.upgrade-gear-title p,
-.trending-games-title p {
-  width: 595px;
+.best-sellers .product-slider-title p,
+.upgrade-gear .product-slider-title p,
+.trending-games .product-slider-title p {
   margin: 0;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -2394,9 +2402,9 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
   font-weight: 700;
   line-height: 59px;
 }
-.best-sellers-title button,
-.upgrade-gear-title button,
-.trending-games-title button {
+.best-sellers .product-slider-title button,
+.upgrade-gear .product-slider-title button,
+.trending-games .product-slider-title button {
   width: 132px;
   height: 38px;
   padding: 0;
@@ -2414,70 +2422,189 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
   cursor: pointer;
   transition: background-color 0.4s, color 0.4s;
 }
-.best-sellers-title button:hover, .best-sellers-title button:active,
-.upgrade-gear-title button:hover,
-.upgrade-gear-title button:active,
-.trending-games-title button:hover,
-.trending-games-title button:active {
+.best-sellers .product-slider-title button:hover, .best-sellers .product-slider-title button:active,
+.upgrade-gear .product-slider-title button:hover,
+.upgrade-gear .product-slider-title button:active,
+.trending-games .product-slider-title button:hover,
+.trending-games .product-slider-title button:active {
   background-color: rgb(136, 88, 237);
   color: white;
 }
-
-.product-slider {
-  position: relative;
+.best-sellers .product-gallery,
+.upgrade-gear .product-gallery,
+.trending-games .product-gallery {
+  grid-area: gallery;
   width: 100%;
-}
-.product-slider .carousel-inner {
-  width: calc(100% - 250px);
-  margin: 0 auto;
+  min-width: 0;
   overflow: hidden;
 }
-.product-slider .product-slider-track {
+.best-sellers .product-gallery-track,
+.upgrade-gear .product-gallery-track,
+.trending-games .product-gallery-track {
+  width: 100%;
   display: flex;
   align-items: stretch;
-  gap: 24px;
-  transition: transform 0.4s ease;
-  will-change: transform;
+  gap: 30px;
 }
-.product-slider .product-slider-track .product-card {
-  width: calc((100% - 72px) / 4);
+.best-sellers .product-gallery-track > .product-card,
+.upgrade-gear .product-gallery-track > .product-card,
+.trending-games .product-gallery-track > .product-card {
+  position: relative;
+  width: calc((100% - 90px) / 4);
   min-width: 0;
-  flex: 0 0 calc((100% - 72px) / 4);
+  flex: 0 0 calc((100% - 90px) / 4);
 }
-.product-slider .product-slider-track .product-card .product-image {
+.best-sellers .product-gallery-track > .product-card > a,
+.upgrade-gear .product-gallery-track > .product-card > a,
+.trending-games .product-gallery-track > .product-card > a {
+  display: block;
   width: 100%;
 }
-.product-slider .scroll-arrow {
-  position: absolute;
-  top: calc((100vw - 322px) / 8);
-  bottom: auto;
-  z-index: 5;
-  width: 24px;
-  height: 24px;
-  padding: 0;
+.best-sellers .product-gallery-track > .product-card .product-image,
+.upgrade-gear .product-gallery-track > .product-card .product-image,
+.trending-games .product-gallery-track > .product-card .product-image {
+  width: 100%;
+  aspect-ratio: 1/1;
   display: block;
-  background: none;
-  border: none;
-  color: white;
-  opacity: 1;
-  transform: translateY(-50%);
-  cursor: pointer;
-  transition: color 0.3s, opacity 0.3s;
+  overflow: hidden;
 }
-.product-slider .scroll-arrow:hover {
-  color: rgb(204, 204, 204);
-  opacity: 1;
-}
-.product-slider .scroll-arrow svg {
+.best-sellers .product-gallery-track > .product-card .product-image img,
+.upgrade-gear .product-gallery-track > .product-card .product-image img,
+.trending-games .product-gallery-track > .product-card .product-image img {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.product-slider .carousel-control-prev {
-  left: 7%;
+.best-sellers .left-arrow,
+.best-sellers .right-arrow,
+.upgrade-gear .left-arrow,
+.upgrade-gear .right-arrow,
+.trending-games .left-arrow,
+.trending-games .right-arrow {
+  width: 40px;
+  height: 40px;
+  margin-top: 120px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
-.product-slider .carousel-control-next {
-  right: 7%;
+.best-sellers .left-arrow svg,
+.best-sellers .right-arrow svg,
+.upgrade-gear .left-arrow svg,
+.upgrade-gear .right-arrow svg,
+.trending-games .left-arrow svg,
+.trending-games .right-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+.best-sellers .left-arrow:disabled,
+.best-sellers .right-arrow:disabled,
+.upgrade-gear .left-arrow:disabled,
+.upgrade-gear .right-arrow:disabled,
+.trending-games .left-arrow:disabled,
+.trending-games .right-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.best-sellers .left-arrow,
+.upgrade-gear .left-arrow,
+.trending-games .left-arrow {
+  grid-area: left;
+}
+.best-sellers .right-arrow,
+.upgrade-gear .right-arrow,
+.trending-games .right-arrow {
+  grid-area: right;
+}
+@media (max-width: 750px) {
+  .best-sellers,
+  .upgrade-gear,
+  .trending-games {
+    min-height: 0;
+    padding: 60px 0;
+  }
+  .best-sellers .product-slider,
+  .upgrade-gear .product-slider,
+  .trending-games .product-slider {
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 28px 238px 28px;
+    grid-template-areas: ". title ." "left gallery right";
+    justify-content: center;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    row-gap: 30px;
+  }
+  .best-sellers .product-slider-title,
+  .upgrade-gear .product-slider-title,
+  .trending-games .product-slider-title {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 25px;
+  }
+  .best-sellers .product-slider-title p,
+  .upgrade-gear .product-slider-title p,
+  .trending-games .product-slider-title p {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .best-sellers .product-slider-title button,
+  .upgrade-gear .product-slider-title button,
+  .trending-games .product-slider-title button {
+    width: 110px;
+    height: 40px;
+  }
+  .best-sellers .product-gallery,
+  .upgrade-gear .product-gallery,
+  .trending-games .product-gallery {
+    width: 238px;
+  }
+  .best-sellers .product-gallery-track,
+  .upgrade-gear .product-gallery-track,
+  .trending-games .product-gallery-track {
+    width: 100%;
+    gap: 20px;
+  }
+  .best-sellers .product-gallery-track > .product-card,
+  .upgrade-gear .product-gallery-track > .product-card,
+  .trending-games .product-gallery-track > .product-card {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .best-sellers .product-gallery-track > .product-card .product-image,
+  .upgrade-gear .product-gallery-track > .product-card .product-image,
+  .trending-games .product-gallery-track > .product-card .product-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .best-sellers .left-arrow,
+  .best-sellers .right-arrow,
+  .upgrade-gear .left-arrow,
+  .upgrade-gear .right-arrow,
+  .trending-games .left-arrow,
+  .trending-games .right-arrow {
+    width: 28px;
+    height: 40px;
+    margin-top: 99px;
+  }
+  .best-sellers .left-arrow svg,
+  .best-sellers .right-arrow svg,
+  .upgrade-gear .left-arrow svg,
+  .upgrade-gear .right-arrow svg,
+  .trending-games .left-arrow svg,
+  .trending-games .right-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .shop-by-category {
@@ -3138,218 +3265,6 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 30px;
-  }
-  .best-sellers,
-  .upgrade-gear,
-  .trending-games {
-    height: auto;
-    min-height: 0;
-    padding-bottom: 60px;
-  }
-  .best-sellers-title,
-  .upgrade-gear-title,
-  .trending-games-title {
-    width: 238px;
-    margin: 0 auto 20px;
-    padding: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-  }
-  .best-sellers-title p,
-  .upgrade-gear-title p,
-  .trending-games-title p {
-    width: 100%;
-    font-size: 24px;
-    line-height: 1.2;
-  }
-  .best-sellers-title button,
-  .upgrade-gear-title button,
-  .trending-games-title button {
-    width: 110px;
-    height: 40px;
-  }
-  .product-slider .carousel-inner {
-    width: 238px;
-  }
-  .product-slider .product-slider-track .product-card {
-    width: 238px;
-    flex: 0 0 238px;
-  }
-  .product-slider .product-slider-track .product-card .product-image {
-    width: 238px;
-  }
-  .product-slider .scroll-arrow {
-    top: 119px;
-  }
-  .product-slider .carousel-control-prev {
-    left: 4%;
-  }
-  .product-slider .carousel-control-next {
-    right: 4%;
-  }
-  .shop-by-category {
-    width: 100%;
-    height: 390.59px;
-    min-height: 0;
-    padding-top: 35px;
-    padding-bottom: 33.59px;
-    overflow: hidden;
-  }
-  .shop-by-category .shop-by-category-wrapper {
-    width: 100%;
-    height: 100%;
-  }
-  .shop-by-category .shop-by-category-wrapper h2 {
-    margin: 0 auto;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery {
-    position: relative;
-    margin-top: 34px;
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery .category-arrow {
-    position: absolute;
-    top: 107.5px;
-    z-index: 2;
-    width: 23px;
-    height: 39px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    color: white;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery .category-arrow svg {
-    display: block;
-    width: 23px;
-    height: 39px;
-    fill: currentColor;
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery .category-arrow-left {
-    left: 30%;
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery .category-arrow-left svg {
-    transform: scaleX(-1) scale(0.956522);
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery .category-arrow-right {
-    right: 30%;
-  }
-  .shop-by-category .shop-by-category-wrapper .shop-by-gallery .category-arrow-right svg {
-    transform: scaleX(1) scale(0.956522);
-  }
-  .shop-by-category .shop-by-category-wrapper .category-list {
-    width: 100%;
-    margin-top: 0;
-    display: flex;
-    -moz-column-gap: 0;
-         column-gap: 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-  .shop-by-category .shop-by-category-wrapper .category-list::-webkit-scrollbar {
-    display: none;
-  }
-  .shop-by-category .shop-by-category-wrapper .category-list .category-card {
-    width: 100%;
-    height: auto;
-    flex: 0 0 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-  .shop-by-category .shop-by-category-wrapper .category-list .category-card .category-image {
-    width: 161px;
-    height: 215px;
-  }
-  .shop-by-category .shop-by-category-wrapper .category-list .category-card p {
-    margin-top: 22px;
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .deals {
-    height: 900px;
-    padding-top: 0;
-    padding-top: 5%;
-  }
-  .deals .deals-wrapper {
-    width: 100%;
-    max-width: none;
-    height: 900px;
-    margin: 0;
-  }
-  .deals .deals-wrapper .deals-banner {
-    top: 4px;
-    left: calc(50% - 140px);
-    z-index: 4;
-    width: 280px;
-    height: 219.2px;
-    border-radius: 30px;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper {
-    width: 100%;
-    height: 100%;
-    padding: 18px 15px 14px;
-    justify-content: space-between;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-small-title {
-    font-size: 16px;
-    line-height: 1.2;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-discount {
-    margin: 0;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-discount br {
-    display: none;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-discount .deals-discount-percentage {
-    display: block;
-    font-size: 60px;
-    line-height: 0.9;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-discount .deals-discount-text {
-    display: block;
-    font-size: 30px;
-    line-height: 1.05;
-    white-space: nowrap;
-  }
-  .deals .deals-wrapper .deals-banner .deals-banner-wrapper button {
-    width: 120px;
-    height: 42px;
-    font-size: 15px;
-  }
-  .deals .deals-wrapper .deals-images-group {
-    top: 270px;
-    right: auto;
-    left: calc(50% - 160px);
-    width: 320px;
-    height: 545px;
-  }
-  .deals .deals-wrapper .deals-images-group .deal-image {
-    width: 162px;
-    height: 215px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  }
-  .deals .deals-wrapper .deals-images-group .deal-image-left {
-    top: 0;
-    left: 16px;
-  }
-  .deals .deals-wrapper .deals-images-group .deal-image-center {
-    top: 145px;
-    left: 142px;
-  }
-  .deals .deals-wrapper .deals-images-group .deal-image-right {
-    top: 330px;
-    left: 8px;
   }
   .spend-and-save {
     height: 220px;

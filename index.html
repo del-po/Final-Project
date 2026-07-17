@@ -316,15 +316,24 @@
     </section>
 
     <section class="best-sellers">
-      <div class="best-sellers-title">
-        <p>BEST SELLERS</p>
-        <button type="button">View All</button>
-      </div>
+      <div class="product-slider">
+        <div class="product-slider-title">
+          <p>BEST SELLERS</p>
+          <button type="button">View All</button>
+        </div>
 
-      <div class="best-sellers-gallery product-slider">
-        <div class="carousel-inner">
-          <div class="best-sellers-products product-slider-track">
-            <div class="best-seller-product product-card">
+        <button class="left-arrow" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
+            ></path>
+          </svg>
+        </button>
+
+        <div class="product-gallery">
+          <div class="product-gallery-track">
+            <div class="product-card">
               <a href="./products/playbox-xz-gold-edition.html">
                 <div class="product-image">
                   <img
@@ -346,7 +355,7 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
+            <div class="product-card">
               <a href="./products/echo-headset.html">
                 <div class="product-image">
                   <img
@@ -365,11 +374,10 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <a href="./products/mach-gaming-chair.html">
                 <div class="product-image">
+                  <span class="product-tag">SALE</span>
                   <img
                     src="./files/images/home/Best-Seller-Section/mach-gaming-chair.webp"
                     alt="Mach Gaming Chair"
@@ -389,7 +397,7 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
+            <div class="product-card">
               <a href="./products/x-2-wireless-mouse.html">
                 <div class="product-image">
                   <img
@@ -408,11 +416,11 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <a href="./products/spartan-mechanical-keyboard.html">
                 <div class="product-image">
+                  <span class="product-tag">SALE</span>
+
                   <img
                     src="./files/images/home/Best-Seller-Section/spartan-mechanical-keyboard.webp"
                     alt="Spartan Mechanical Keyboard"
@@ -435,11 +443,10 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <a href="./products/raptor.html">
                 <div class="product-image">
+                  <span class="product-tag">SALE</span>
                   <img
                     src="./files/images/home/Best-Seller-Section/raptor.webp"
                     alt="Raptor controller"
@@ -459,7 +466,7 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
+            <div class="product-card">
               <a href="./products/wave.html">
                 <div class="product-image">
                   <img
@@ -478,7 +485,7 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
+            <div class="product-card">
               <a href="./products/wave-gen-rx.html">
                 <div class="product-image">
                   <img
@@ -497,7 +504,7 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
+            <div class="product-card">
               <a href="./products/ancient-souls.html">
                 <div class="product-image">
                   <img
@@ -516,7 +523,7 @@
               </button>
             </div>
 
-            <div class="best-seller-product product-card">
+            <div class="product-card">
               <a href="./products/chronosplit.html">
                 <div class="product-image">
                   <img
@@ -537,24 +544,7 @@
           </div>
         </div>
 
-        <button
-          class="carousel-control-prev scroll-arrow product-slider-prev"
-          type="button"
-          aria-label="Previous product"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              fill-rule="evenodd"
-              d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
-            ></path>
-          </svg>
-        </button>
-
-        <button
-          class="carousel-control-next scroll-arrow product-slider-next"
-          type="button"
-          aria-label="Next product"
-        >
+        <button class="right-arrow" type="button">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
@@ -687,19 +677,27 @@
     </section>
 
     <section class="upgrade-gear">
-      <div class="upgrade-gear-title">
-        <p>UPGRADE YOUR GEAR</p>
-        <button type="button">View All</button>
-      </div>
+      <div class="product-slider">
+        <div class="product-slider-title">
+          <p>UPGRADE YOUR GEAR</p>
+          <button type="button">View All</button>
+        </div>
 
-      <div class="upgrade-gear-gallery product-slider">
-        <div class="carousel-inner">
-          <div class="upgrade-gear-products product-slider-track">
-            <div class="upgrade-gear-product product-card">
-              <span class="product-tag">SALE</span>
+        <button class="left-arrow" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
+            ></path>
+          </svg>
+        </button>
 
+        <div class="product-gallery">
+          <div class="product-gallery-track">
+            <div class="product-card">
               <a href="./products/l503-headset.html">
                 <div class="product-image">
+                  <span class="product-tag">SALE</span>
                   <img
                     src="./files/images/home/Upgrade-Gear-Section/l503-headset.webp"
                     alt="L503 Headset"
@@ -719,7 +717,7 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
+            <div class="product-card">
               <a href="./products/echo-headset.html">
                 <div class="product-image">
                   <img
@@ -738,7 +736,7 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
+            <div class="product-card">
               <a href="./products/impact-gaming-chair.html">
                 <div class="product-image">
                   <img
@@ -757,11 +755,10 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <a href="./products/mach-gaming-chair.html">
                 <div class="product-image">
+                  <span class="product-tag">SALE</span>
                   <img
                     src="./files/images/home/Upgrade-Gear-Section/mach-gaming-chair.webp"
                     alt="Mach Gaming Chair"
@@ -781,7 +778,7 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
+            <div class="product-card">
               <a href="./products/x-2-wireless-mouse.html">
                 <div class="product-image">
                   <img
@@ -800,7 +797,7 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
+            <div class="product-card">
               <a href="./products/blaze-wireless-mouse.html">
                 <div class="product-image">
                   <img
@@ -819,11 +816,10 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <a href="./products/spartan-mechanical-keyboard.html">
                 <div class="product-image">
+                  <span class="product-tag">SALE</span>
                   <img
                     src="./files/images/home/Upgrade-Gear-Section/spartan-mechanical-keyboard.webp"
                     alt="Spartan Mechanical Keyboard"
@@ -846,7 +842,7 @@
               </button>
             </div>
 
-            <div class="upgrade-gear-product product-card">
+            <div class="product-card">
               <a href="./products/co-21-mechanical-keyboard.html">
                 <div class="product-image">
                   <img
@@ -870,24 +866,7 @@
           </div>
         </div>
 
-        <button
-          class="carousel-control-prev scroll-arrow product-slider-prev"
-          type="button"
-          aria-label="Previous product"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              fill-rule="evenodd"
-              d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
-            ></path>
-          </svg>
-        </button>
-
-        <button
-          class="carousel-control-next scroll-arrow product-slider-next"
-          type="button"
-          aria-label="Next product"
-        >
+        <button class="right-arrow" type="button">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
@@ -916,18 +895,26 @@
     </section>
 
     <section class="trending-games">
-      <div class="trending-games-title">
-        <p>TRENDING GAMES</p>
-        <button type="button">View All</button>
-      </div>
+      <div class="product-slider">
+        <div class="product-slider-title">
+          <p>TRENDING GAMES</p>
+          <button type="button">View All</button>
+        </div>
 
-      <div class="trending-games-gallery product-slider">
-        <div class="carousel-inner">
-          <div class="trending-games-products product-slider-track">
-            <div class="trending-games-product product-card">
-              <span class="product-tag">SALE</span>
+        <button class="left-arrow" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
+            ></path>
+          </svg>
+        </button>
 
+        <div class="product-gallery">
+          <div class="product-gallery-track">
+            <div class="product-card">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
                 <img
                   src="./files/images/home/Trending-Games-Section/dead-at-last.webp"
                   alt="Dead at Last"
@@ -946,10 +933,9 @@
               </button>
             </div>
 
-            <div class="trending-games-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
                 <img
                   src="./files/images/home/Trending-Games-Section/kira-and-the-fading-islands.webp"
                   alt="Kira and the Fading Islands"
@@ -971,7 +957,7 @@
               </button>
             </div>
 
-            <div class="trending-games-product product-card">
+            <div class="product-card">
               <div class="product-image">
                 <img
                   src="./files/images/home/Trending-Games-Section/ancient-souls.webp"
@@ -988,10 +974,9 @@
               </button>
             </div>
 
-            <div class="trending-games-product product-card">
-              <span class="product-tag">SALE</span>
-
+            <div class="product-card">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
                 <img
                   src="./files/images/home/Trending-Games-Section/ice-dome-exile.webp"
                   alt="Ice Dome: Exile"
@@ -1010,7 +995,7 @@
               </button>
             </div>
 
-            <div class="trending-games-product product-card">
+            <div class="product-card">
               <div class="product-image">
                 <img
                   src="./files/images/home/Trending-Games-Section/chronosplit.webp"
@@ -1027,7 +1012,7 @@
               </button>
             </div>
 
-            <div class="trending-games-product product-card">
+            <div class="product-card">
               <div class="product-image">
                 <img
                   src="./files/images/home/Trending-Games-Section/cyber-kid-infinite.webp"
@@ -1046,24 +1031,7 @@
           </div>
         </div>
 
-        <button
-          class="carousel-control-prev scroll-arrow product-slider-prev"
-          type="button"
-          aria-label="Previous product"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              fill-rule="evenodd"
-              d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
-            ></path>
-          </svg>
-        </button>
-
-        <button
-          class="carousel-control-next scroll-arrow product-slider-next"
-          type="button"
-          aria-label="Next product"
-        >
+        <button class="right-arrow" type="button">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"

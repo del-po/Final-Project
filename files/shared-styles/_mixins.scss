@@ -1,7 +1,7 @@
 @mixin product(
   $card-width: 280px,
   $mobile-card-width: 238px,
-  // $image-ratio: 1,
+  $image-ratio: 1,
   $image-width: 280px,
   $mobile-image-width: 238px,
   $tag-width: 58.53px,
@@ -44,7 +44,7 @@
     width: $image-width;
     aspect-ratio: $image-ratio;
     overflow: hidden;
-
+    position: relative;
     cursor: pointer;
 
     img {
@@ -128,6 +128,244 @@
     .add-to-cart-button {
       width: $mobile-button-width;
       height: $mobile-button-height;
+    }
+  }
+}
+
+@mixin gallery-section(
+  $product-gap: 30px,
+  $arrow-size: 40px,
+  $arrow-gap: 30px,
+  $visible-products: 4
+) {
+  $total-product-gap: $product-gap * ($visible-products - 1);
+  $product-width: calc((100% - #{$total-product-gap}) / #{$visible-products});
+
+  width: 100%;
+  min-height: 730px;
+  padding: 100px 0 80px;
+
+  background-color: black;
+  color: white;
+
+  .product-slider {
+    width: min(100%, calc(82.6% + 140px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: $arrow-size minmax(0, 1fr) $arrow-size;
+    grid-template-areas:
+      ". title ."
+      "left gallery right";
+    column-gap: $arrow-gap;
+    row-gap: 76px;
+    align-items: start;
+  }
+
+  .product-slider-title {
+    grid-area: title;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 59px;
+    }
+
+    button {
+      width: 132px;
+      height: 38px;
+      padding: 0;
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 100px;
+
+      color: rgb(136, 88, 237);
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background-color 0.4s,
+        color 0.4s;
+
+      &:hover,
+      &:active {
+        background-color: rgb(136, 88, 237);
+        color: white;
+      }
+    }
+  }
+
+  .product-gallery {
+    grid-area: gallery;
+
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .product-gallery-track {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+    gap: $product-gap;
+  }
+
+  .product-gallery-track > .product-card {
+    position: relative;
+
+    width: $product-width;
+    min-width: 0;
+    flex: 0 0 $product-width;
+
+    > a {
+      display: block;
+      width: 100%;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      display: block;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+    }
+  }
+
+  .left-arrow,
+  .right-arrow {
+    width: $arrow-size;
+    height: $arrow-size;
+    margin-top: 120px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+
+    color: white;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  .left-arrow {
+    grid-area: left;
+  }
+
+  .right-arrow {
+    grid-area: right;
+  }
+
+  @media (max-width: 750px) {
+    $mobile-arrow-size: 28px;
+    $mobile-product-width: 238px;
+    $mobile-product-gap: 20px;
+
+    min-height: 0;
+    padding: 60px 0;
+
+    .product-slider {
+      width: 100%;
+      margin: 0 auto;
+
+      grid-template-columns:
+        $mobile-arrow-size $mobile-product-width
+        $mobile-arrow-size;
+      grid-template-areas:
+        ". title ."
+        "left gallery right";
+
+      justify-content: center;
+      column-gap: 8px;
+      row-gap: 30px;
+    }
+
+    .product-slider-title {
+      width: 100%;
+
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 25px;
+
+      p {
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      button {
+        width: 110px;
+        height: 40px;
+      }
+    }
+
+    .product-gallery {
+      width: $mobile-product-width;
+    }
+
+    .product-gallery-track {
+      width: 100%;
+      gap: $mobile-product-gap;
+    }
+
+    .product-gallery-track > .product-card {
+      width: 100%;
+      flex: 0 0 100%;
+
+      .product-image {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    .left-arrow,
+    .right-arrow {
+      width: $mobile-arrow-size;
+      height: 40px;
+      margin-top: 99px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }
