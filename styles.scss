@@ -247,8 +247,9 @@
   position: relative;
 
   width: 100%;
-  height: 808px;
-  padding-top: 55px;
+  height: auto;
+  padding-top: clamp(35px, 3.67vw, 55px);
+  padding-bottom: clamp(50px, 5.67vw, 85px);
   overflow: hidden;
 
   background-color: black;
@@ -261,7 +262,8 @@
 
     width: calc(100% - 60px);
     max-width: 1500px;
-    height: 668px;
+    height: auto;
+    aspect-ratio: 1500 / 668;
     margin: 0 auto;
 
     .deals-images-group {
@@ -270,17 +272,18 @@
       right: 0;
       z-index: 1;
 
-      width: 1043px;
-      height: 668px;
+      width: 69.53%;
+      height: 100%;
 
       .deal-image {
         position: absolute;
 
-        width: 388px;
-        height: 523px;
+        width: 37.2%;
+        height: auto;
+        aspect-ratio: 388 / 523;
         overflow: hidden;
 
-        border-radius: 30px;
+        border-radius: clamp(14px, 2vw, 30px);
         opacity: 0;
 
         animation-duration: 1s;
@@ -308,8 +311,8 @@
       }
 
       .deal-image-center {
-        top: 145px;
-        left: 370px;
+        top: 21.71%;
+        left: 35.47%;
         z-index: 2;
 
         animation-name: deal-center-reveal;
@@ -317,8 +320,8 @@
       }
 
       .deal-image-right {
-        top: 68px;
-        left: 655px;
+        top: 10.18%;
+        left: 62.8%;
         z-index: 3;
 
         animation-name: deal-right-reveal;
@@ -328,16 +331,17 @@
 
     .deals-banner {
       position: absolute;
-      top: 40px;
-      left: 140px;
+      top: 5.99%;
+      left: 9.33%;
       z-index: 4;
 
-      width: 557px;
-      height: 359.8px;
+      width: 37.13%;
+      height: auto;
+      aspect-ratio: 557 / 359.8;
       overflow: hidden;
 
       background-color: #8858ed;
-      border-radius: 30px;
+      border-radius: clamp(14px, 2vw, 30px);
 
       color: white;
       text-align: center;
@@ -354,7 +358,8 @@
       .deals-banner-wrapper {
         width: 100%;
         height: 100%;
-        padding: 37px 30px 25px;
+        padding: clamp(17px, 2.47vw, 37px) clamp(14px, 2vw, 30px)
+          clamp(12px, 1.67vw, 25px);
 
         display: flex;
         flex-direction: column;
@@ -365,7 +370,7 @@
 
         .deals-small-title {
           font-family: $font-roboto;
-          font-size: 22px;
+          font-size: clamp(11px, calc((100vw - 60px) * 0.014667), 22px);
           font-weight: 400;
           line-height: 1.2;
         }
@@ -381,7 +386,7 @@
             display: block;
 
             font-family: $font-montserrat;
-            font-size: 140px;
+            font-size: clamp(64px, calc((100vw - 60px) * 0.093333), 140px);
             font-weight: 700;
             line-height: 0.85;
           }
@@ -390,7 +395,7 @@
             display: block;
 
             font-family: $font-montserrat;
-            font-size: 42px;
+            font-size: clamp(19px, calc((100vw - 60px) * 0.028), 42px);
             font-weight: 700;
             line-height: 1.1;
             white-space: nowrap;
@@ -400,8 +405,8 @@
         button {
           flex-shrink: 0;
 
-          width: 143px;
-          height: 44px;
+          width: clamp(90px, calc((100vw - 60px) * 0.095333), 143px);
+          height: clamp(34px, calc((100vw - 60px) * 0.029333), 44px);
 
           background-color: white;
           border: 2px solid white;
@@ -409,8 +414,9 @@
 
           color: #8858ed;
           font-family: $font-montserrat;
-          font-size: 15px;
+          font-size: clamp(12px, 1vw, 15px);
           font-weight: 700;
+          white-space: nowrap;
 
           cursor: pointer;
 
@@ -840,24 +846,23 @@
   .video-games-banner {
     position: relative;
 
-    height: 315px;
+    height: clamp(240px, 32.8vw, 315px);
     overflow: visible;
 
     background-color: rgb(136, 88, 237);
 
     img {
       position: absolute;
-      top: -75px;
+      top: clamp(-75px, -7.8vw, -40px);
       left: 50%;
       z-index: 1;
 
       display: block;
 
-      width: 961px;
-      height: 309px;
+      width: min(961px, calc(100% - 80px));
+      height: auto;
 
       object-fit: contain;
-      transform: translateX(-50%);
 
       filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.45))
         drop-shadow(0 24px 22px rgba(0, 0, 0, 0.3));
@@ -1290,7 +1295,6 @@
 
         width: 280px;
         height: 90px;
-        max-width: none;
 
         object-fit: contain;
       }

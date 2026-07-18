@@ -23,13 +23,16 @@
     />
     <meta property="og:type" content="website" />
     <title>Gaming Store Website Template | WIX</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <header>
+      <!-- ჰედერის ლოგო დესკტოპის და მობილურის ვერსიებისთვისაც ნარჩუნდება, ამიტომ ცალკე გამოვიტანე -->
       <div class="header-logo">
-        <img src="./Index/logo.png" alt="Logo" />
-        <p>ARCADE</p>
+        <a href="../index.html">
+          <img src="../files/images/logo/logo.webp" alt="Logo" />
+          <p>ARCADE</p>
+        </a>
       </div>
 
       <!-- ვიზუალური სიმარტივისათვის ჰედერის დესკტოპ და მობილური ვერსიები გამიჯნულია. ორივე მათგანი მოთავსებულია დივში header-right. -->
@@ -41,32 +44,55 @@
         <input type="checkbox" id="cart-click" />
         <input type="checkbox" id="mobile-menu-click" />
 
-        <!-- ჰედერის დესკტოპ ვერსია -->
+        <!-- ჰედერის დესკტოპ ვერსია: შედგება სამი მენიუს ლინკის, login-სა და საყიდლების კალათისგან -->
 
         <div class="header-desktop">
           <div class="header-desktop-menu">
             <div class="header-menu-products">
-              <a class="nav-link" href="">Products</a>
-              <div class="dropdown-menu">
-                <a class="nav-link" href="">Best Sellers</a>
-                <a href="./on-sale.html">On Sale</a>
-                <a class="nav-link" href="">Games</a>
-                <a class="nav-link" href="">Consoles</a>
-                <a class="nav-link" href="">Controllers</a>
-                <a class="nav-link" href="">Accessories</a>
+              <!-- products ცალკეა გამოტანილი, ვინაიდან აქვს dropdown -->
+              <a class="header-nav-link" href="../products/products.html"
+                >Products</a
+              >
+
+              <div class="header-products-dropdown">
+                <a class="header-nav-link" href="../products/best-sellers.html"
+                  >Best Sellers</a
+                >
+                <a class="header-nav-link" href="../products/games.html"
+                  >Games</a
+                >
+                <a class="header-nav-link" href="../products/consoles.html"
+                  >Consoles</a
+                >
+                <a class="header-nav-link" href="../products/controllers.html"
+                  >Controllers</a
+                >
+                <a class="header-nav-link" href="../products/accessories.html"
+                  >Accessories</a
+                >
               </div>
             </div>
+
             <div class="header-menu-on-sale">
-              <a class="nav-link" href="">On Sale</a>
+              <a class="header-nav-link" href="../products/on-sale.html"
+                >On Sale</a
+              >
             </div>
+
             <div class="header-menu-contact-us">
-              <a class="nav-link" href="">Contact Us</a>
+              <a class="header-nav-link" href="../contact/contact-us.html"
+                >Contact Us</a
+              >
             </div>
           </div>
+
           <div class="header-desktop-log-in">
             <div class="log-in">
               <label class="log-in-open" for="log-in-click">
-                <img src="./Header/Log-in.png" alt="Log in" />
+                <img
+                  src="../files/images/header/header-log-in.webp"
+                  alt="Log in"
+                />
                 <p>Log In</p>
               </label>
             </div>
@@ -76,7 +102,7 @@
               <label class="cart-button" for="cart-click">
                 <img
                   class="cart-icon"
-                  src="./Header/Cart.png"
+                  src="../files/images/header/header-cart.webp"
                   alt="Shopping cart"
                 />
               </label>
@@ -84,14 +110,14 @@
           </div>
         </div>
 
-        <!-- ჰედერის მობილურის ვერსია -->
+        <!-- ჰედერის მობილურის ვერსია: აქვს მხოლოდ ლოგო, საყიდლების კალათა და ბურგერ მენიუ -->
 
         <div class="header-mobile">
           <div class="header-mobile-cart">
             <label class="cart-button" for="cart-click">
               <img
                 class="cart-icon"
-                src="./Header/Cart.png"
+                src="./files/images/header/header-cart.webp"
                 alt="Shopping cart"
               />
             </label>
@@ -105,7 +131,10 @@
             <div class="header-mobile-menu-big">
               <div class="header-mobile-menu-big-header">
                 <label class="header-mobile-log-in" for="log-in-click">
-                  <img src="./Header/Log-in.png" alt="Log in" />
+                  <img
+                    src="./files/images/header/header-log-in.webp"
+                    alt="Log in"
+                  />
                   <p>Log In</p>
                 </label>
                 <label class="header-mobile-menu-close" for="mobile-menu-click">
@@ -141,21 +170,33 @@
                         ></path>
                       </svg>
                     </label>
-                    <a class="nav-link" href="">Products</a>
+                    <a class="nav-link" href="./products/products.html"
+                      >Products</a
+                    >
                   </div>
                   <div class="header-mobile-products-dropdown-menu">
-                    <a class="nav-link" href="">Best Sellers</a>
-                    <a class="nav-link" href="">Games</a>
-                    <a class="nav-link" href="">Consoles</a>
-                    <a class="nav-link" href="">Controllers</a>
-                    <a class="nav-link" href="">Accessories</a>
+                    <a class="nav-link" href="./products/best-sellers.html"
+                      >Best Sellers</a
+                    >
+                    <a class="nav-link" href="./products/games.html">Games</a>
+                    <a class="nav-link" href="./products/consoles.html"
+                      >Consoles</a
+                    >
+                    <a class="nav-link" href="./products/controllers.html"
+                      >Controllers</a
+                    >
+                    <a class="nav-link" href="./products/accessories.html"
+                      >Accessories</a
+                    >
                   </div>
                 </div>
                 <div class="header-mobile-menu-on-sale">
-                  <a class="nav-link" href="">On Sale</a>
+                  <a class="nav-link" href="./products/on-sale.html">On Sale</a>
                 </div>
                 <div class="header-mobile-menu-contact-us">
-                  <a class="nav-link" href="">Contact Us</a>
+                  <a class="nav-link" href="./contact/contact-us.html"
+                    >Contact Us</a
+                  >
                 </div>
               </div>
             </div>
@@ -266,7 +307,7 @@
         <div class="product-gallery">
           <div class="product-main-image">
             <img
-              src="./Products/playbox-xz-gold-edition.jpg"
+              src="../files/images/products/playbox-xz-gold-edition.webp"
               alt="Playbox XZ Gold Edition console"
             />
           </div>
@@ -274,7 +315,7 @@
           <div class="product-thumbnails">
             <button class="product-thumbnail" type="button">
               <img
-                src="./Products/playbox-xz-gold-edition.jpg"
+                src="../files/images/products/playbox-xz-gold-edition.webp"
                 alt="Playbox XZ Gold Edition thumbnail"
               />
             </button>
@@ -282,7 +323,7 @@
             <button class="product-thumbnail" type="button">
               <img
                 class="product-thumbnail-close-up"
-                src="./Products/playbox-xz-gold-edition.jpg"
+                src="../files/images/products/playbox-xz-gold-edition.webp"
                 alt="Playbox XZ Gold Edition close-up thumbnail"
               />
             </button>
@@ -754,17 +795,13 @@
     </main>
 
     <section class="you-might-also-like">
-      <div class="you-might-also-like-title">
-        <p>YOU MIGHT ALSO LIKE</p>
-      </div>
+      <div class="product-slider">
+        <div class="product-slider-title">
+          <p>You Might Also Like</p>
+        </div>
 
-      <div class="you-might-also-like-gallery">
-        <button
-          class="scroll-arrow"
-          type="button"
-          aria-label="Previous products"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <button class="left-arrow" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M15.0729595,5 L15.7800663,5.70710678 L9.41020654,12.074 L15.7800663,18.4363861 L15.0729595,19.1434929 L7.99920654,12.077895 L8.00220654,12.074 L8,12.0717464 L15.0729595,5 Z"
@@ -772,172 +809,249 @@
           </svg>
         </button>
 
-        ```
-        <div class="you-might-also-like-products">
-          <div>
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product1.jpg"
-                alt="Playbox XZ Gold Edition"
-              />
+        <div class="product-gallery">
+          <div class="product-gallery-track">
+            <!-- 1. Playbox XZ Gold Edition -->
+
+            <div class="product-card">
+              <a href="./playbox-xz-gold-edition.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/playbox-xz-gold-edition.webp"
+                    alt="Playbox XZ Gold Edition"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">
+                Playbox XZ Gold <br />
+                Edition
+              </p>
+
+              <p class="product-price">$1,000.00</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <p>
-              Playbox XZ Gold <br />
-              Edition
-            </p>
+            <!-- 2. Echo Headset -->
 
-            <p>$1,000.00</p>
-          </div>
+            <div class="product-card">
+              <a href="./echo-headset.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/echo-headset.webp"
+                    alt="Echo Headset"
+                  />
+                </div>
+              </a>
 
-          <div>
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product2.jpg"
-                alt="Echo Headset"
-              />
+              <p class="product-name">Echo Headset</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <p>Echo Headset</p>
-            <p>$39.99</p>
-          </div>
+            <!-- 3. Mach Gaming Chair -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
+            <div class="product-card">
+              <a href="./mach-gaming-chair.html">
+                <div class="product-image">
+                  <span class="product-tag">SALE</span>
+
+                  <img
+                    src="../files/images/products/mach-gaming-chair.webp"
+                    alt="Mach Gaming Chair"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Mach Gaming Chair</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$129.99</span>
+                <span class="new-price">$116.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product3.jpg"
-                alt="Mach Gaming Chair"
-              />
+            <!-- 4. X-2 Wireless Mouse -->
+
+            <div class="product-card">
+              <a href="./x-2-wireless-mouse.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/x-2-wireless-mouse.webp"
+                    alt="X-2 Wireless Mouse"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">X-2 Wireless Mouse</p>
+
+              <p class="product-price">$24.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <p>Mach Gaming Chair</p>
+            <!-- 5. Spartan Mechanical Keyboard -->
 
-            <p class="sale-price">
-              <span class="old-price">$129.99</span>
-              <span>$116.99</span>
-            </p>
-          </div>
+            <div class="product-card">
+              <a href="./spartan-mechanical-keyboard.html">
+                <div class="product-image">
+                  <span class="product-tag">SALE</span>
 
-          <div>
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product4.jpg"
-                alt="X-2 Wireless Mouse"
-              />
+                  <img
+                    src="../files/images/products/spartan-mechanical-keyboard.webp"
+                    alt="Spartan Mechanical Keyboard"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">
+                Spartan Mechanical <br />
+                Keyboard
+              </p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$44.99</span>
+                <span class="new-price">$40.49</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <p>X-2 Wireless Mouse</p>
-            <p>$24.99</p>
-          </div>
+            <!-- 6. Raptor -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
+            <div class="product-card">
+              <a href="./raptor.html">
+                <div class="product-image">
+                  <span class="product-tag">SALE</span>
+
+                  <img
+                    src="../files/images/products/raptor.webp"
+                    alt="Raptor controller"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Raptor</p>
+
+              <p class="product-price sale-price">
+                <span class="old-price">$29.99</span>
+                <span class="new-price">$26.99</span>
+              </p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product5.jpg"
-                alt="Spartan Mechanical Keyboard"
-              />
+            <!-- 7. Wave -->
+
+            <div class="product-card">
+              <a href="./wave.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/wave.webp"
+                    alt="Wave controller"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Wave</p>
+
+              <p class="product-price">$29.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <p>
-              Spartan Mechanical <br />
-              Keyboard
-            </p>
+            <!-- 8. Wave Gen RX -->
 
-            <p class="sale-price">
-              <span class="old-price">$44.99</span>
-              <span>$40.49</span>
-            </p>
-          </div>
+            <div class="product-card">
+              <a href="./wave-gen-rx.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/wave-gen-rx.webp"
+                    alt="Wave Gen RX"
+                  />
+                </div>
+              </a>
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
+              <p class="product-name">Wave Gen RX</p>
+
+              <p class="product-price">$579.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product6.jpg"
-                alt="Raptor controller"
-              />
+            <!-- 9. Ancient Souls -->
+
+            <div class="product-card">
+              <a href="./ancient-souls.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/ancient-souls.webp"
+                    alt="Ancient Souls"
+                  />
+                </div>
+              </a>
+
+              <p class="product-name">Ancient Souls</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
 
-            <p>Raptor</p>
+            <!-- 10. Chronosplit -->
 
-            <p class="sale-price">
-              <span class="old-price">$29.99</span>
-              <span>$26.99</span>
-            </p>
-          </div>
+            <div class="product-card">
+              <a href="./chronosplit.html">
+                <div class="product-image">
+                  <img
+                    src="../files/images/products/chronosplit.webp"
+                    alt="Chronosplit"
+                  />
+                </div>
+              </a>
 
-          <div>
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product7.jpg"
-                alt="Wave controller"
-              />
+              <p class="product-name">Chronosplit</p>
+
+              <p class="product-price">$39.99</p>
+
+              <button class="add-to-cart-button" type="button">
+                Add to Cart
+              </button>
             </div>
-
-            <p>Wave</p>
-            <p>$29.99</p>
-          </div>
-
-          <div>
-            <div class="product-image">
-              <img src="./Best-Seller-Section/product8.jpg" alt="Wave Gen RX" />
-            </div>
-
-            <p>Wave Gen RX</p>
-            <p>$579.99</p>
-          </div>
-
-          <div>
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product9.jpg"
-                alt="Ancient Souls"
-              />
-            </div>
-
-            <p>Ancient Souls</p>
-            <p>$39.99</p>
-          </div>
-
-          <div>
-            <div class="product-image">
-              <img
-                src="./Best-Seller-Section/product10.jpg"
-                alt="Chronosplit"
-              />
-            </div>
-
-            <p>Chronosplit</p>
-            <p>$39.99</p>
           </div>
         </div>
 
-        <button class="scroll-arrow" type="button" aria-label="Next products">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <button class="right-arrow" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
               d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
             ></path>
           </svg>
         </button>
-        ```
       </div>
     </section>
 
@@ -945,7 +1059,7 @@
       <div class="footer-up">
         <div class="footer-up-wrapper">
           <div class="footer-logo">
-            <img src="./Footer/logo.png" alt="" />
+            <img src="../files/images/logo/logo.webp" alt="" />
             <p>ARCADE</p>
           </div>
           <div class="footer-products">
@@ -985,53 +1099,53 @@
           <div class="footer-down-logos">
             <div class="footer-payment-logos">
               <img
-                src="https://static.wixstatic.com/media/c837a6_e0547a35fd3b42eb8fc45f9f73b77246~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Visa.png"
+                src="../files/images/footer/payment-methods/visa.avif"
                 alt="Visa"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_ad29ff701fee45629d63f3e4f3f2894b~mv2.png/v1/fill/w_50,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Master%20Card.png"
+                src="../files/images/footer/payment-methods/master-card.avif"
                 alt="Master Card"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_f73858b81fdb40388c28ec8a78c7d69f~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/American%20Express.png"
+                src="../files/images/footer/payment-methods/american-express.avif"
                 alt="American Express"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_1947c7dbf840480ea8638b9b0c29c030~mv2.png/v1/fill/w_37,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/JCB.png"
+                src="../files/images/footer/payment-methods/jcb.avif"
                 alt="JCB"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_0164b1a8ce80423890095a8b3d8a62eb~mv2.png/v1/crop/x_0,y_0,w_176,h_109/fill/w_45,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Discover.png"
+                src="../files/images/footer/payment-methods/discover.avif"
                 alt="Discover"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_5fa529be46ae437db9ad6e58fa085ce1~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/China%20Union%20Pay.png"
+                src="../files/images/footer/payment-methods/china-union-pay.avif"
                 alt="Union Pay"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_bbd810de83bc447f96dc4bb0addbfaed~mv2.png/v1/crop/x_1,y_1,w_149,h_109/fill/w_38,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Diners.png"
+                src="../files/images/footer/payment-methods/diners.avif"
                 alt="Diners Club"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_e0d5f0c365864fda9b7d65df15eecaf5~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PayPal.png"
+                src="../files/images/footer/payment-methods/paypal.avif"
                 alt="PayPal"
               />
             </div>
             <div class="footer-social-logos">
               <img
-                src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/23fd2a2be53141ed810f4d3dcdcd01fa.png"
+                src="../files/images/footer/payment-methods/facebook.avif"
                 alt="Facebook"
               />
               <img
-                src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81af6121f84c41a5b4391d7d37fce12a.png"
+                src="../files/images/footer/payment-methods/instagram.avif"
                 alt="Instagram"
               />
               <img
-                src="https://static.wixstatic.com/media/203dcdc2ac8b48de89313f90d2a4cda1.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/203dcdc2ac8b48de89313f90d2a4cda1.png"
+                src="../files/images/footer/payment-methods/youtube.avif"
                 alt="YouTube"
               />
               <img
-                src="https://static.wixstatic.com/media/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png"
+                src="../files/images/footer/payment-methods/tiktok.avif"
                 alt="TikTok"
               />
             </div>

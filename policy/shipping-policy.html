@@ -23,49 +23,61 @@
     />
     <meta property="og:type" content="website" />
     <title>Shipping Policy | ARCADE</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <header>
+      <!-- ჰედერის ლოგო დესკტოპის და მობილურის ვერსიებისთვისაც ნარჩუნდება, ამიტომ ცალკე გამოვიტანე -->
       <div class="header-logo">
-        <img src="./Index/logo.png" alt="Logo" />
-        <p>ARCADE</p>
+        <a href="../index.html">
+          <img alt="Logo" src="../files/images/logo/logo.webp" />
+          <p>ARCADE</p>
+        </a>
       </div>
-
       <!-- ვიზუალური სიმარტივისათვის ჰედერის დესკტოპ და მობილური ვერსიები გამიჯნულია. ორივე მათგანი მოთავსებულია დივში header-right. -->
-
       <div class="header-right">
         <!-- ჰედერის სამი ჩეკბოქსი: (1) ლოგინზე დაწკაპუნება, რომელსაც გამოაქვს დემო შეტყობინება, (2) საყიდლების კალათაზე დაწკაპუნება, რომელსაც გამოაქვს კალათის დიდი ბანერი, და (3) ბურგერ-მენიუზე დაწკაპუნება, რომელსაც გამოაქვს მობილური მენიუ. -->
-
-        <input type="checkbox" id="log-in-click" />
-        <input type="checkbox" id="cart-click" />
-        <input type="checkbox" id="mobile-menu-click" />
-
-        <!-- ჰედერის დესკტოპ ვერსია -->
-
+        <input id="log-in-click" type="checkbox" />
+        <input id="cart-click" type="checkbox" />
+        <input id="mobile-menu-click" type="checkbox" />
+        <!-- ჰედერის დესკტოპ ვერსია: შედგება სამი მენიუს ლინკის, login-სა და საყიდლების კალათისგან -->
         <div class="header-desktop">
           <div class="header-desktop-menu">
             <div class="header-menu-products">
-              <a class="nav-link" href="">Products</a>
-              <div class="dropdown-menu">
-                <a class="nav-link" href="">Best Sellers</a>
-                <a class="nav-link" href="">Games</a>
-                <a class="nav-link" href="">Consoles</a>
-                <a class="nav-link" href="">Controllers</a>
-                <a class="nav-link" href="">Accessories</a>
+              <!-- products ცალკეა გამოტანილი, ვინაიდან აქვს dropdown -->
+              <a class="header-nav-link active" href="./products.html">
+                Products
+              </a>
+              <div class="header-products-dropdown">
+                <a class="header-nav-link" href="./best-sellers.html">
+                  Best Sellers
+                </a>
+                <a class="header-nav-link" href="./games.html"> Games </a>
+                <a class="header-nav-link" href="./consoles.html"> Consoles </a>
+                <a class="header-nav-link" href="./controllers.html">
+                  Controllers
+                </a>
+                <a class="header-nav-link" href="./accessories.html">
+                  Accessories
+                </a>
               </div>
             </div>
             <div class="header-menu-on-sale">
-              <a class="nav-link" href="">On Sale</a>
+              <a class="header-nav-link" href="./on-sale.html"> On Sale </a>
             </div>
             <div class="header-menu-contact-us">
-              <a class="nav-link" href="">Contact Us</a>
+              <a class="header-nav-link" href="../contact/contact-us.html">
+                Contact Us
+              </a>
             </div>
           </div>
           <div class="header-desktop-log-in">
             <div class="log-in">
               <label class="log-in-open" for="log-in-click">
-                <img src="./Header/Log-in.png" alt="Log in" />
+                <img
+                  alt="Log in"
+                  src="../files/images/header/header-log-in.webp"
+                />
                 <p>Log In</p>
               </label>
             </div>
@@ -74,24 +86,22 @@
             <div class="cart">
               <label class="cart-button" for="cart-click">
                 <img
-                  class="cart-icon"
-                  src="./Header/Cart.png"
                   alt="Shopping cart"
+                  class="cart-icon"
+                  src="../files/images/header/header-cart.webp"
                 />
               </label>
             </div>
           </div>
         </div>
-
-        <!-- ჰედერის მობილურის ვერსია -->
-
+        <!-- ჰედერის მობილურის ვერსია: აქვს მხოლოდ ლოგო, საყიდლების კალათა და ბურგერ მენიუ -->
         <div class="header-mobile">
           <div class="header-mobile-cart">
             <label class="cart-button" for="cart-click">
               <img
-                class="cart-icon"
-                src="./Header/Cart.png"
                 alt="Shopping cart"
+                class="cart-icon"
+                src="../files/images/header/header-cart.webp"
               />
             </label>
           </div>
@@ -104,121 +114,129 @@
             <div class="header-mobile-menu-big">
               <div class="header-mobile-menu-big-header">
                 <label class="header-mobile-log-in" for="log-in-click">
-                  <img src="./Header/Log-in.png" alt="Log in" />
+                  <img
+                    alt="Log in"
+                    src="../files/images/header/header-log-in.webp"
+                  />
                   <p>Log In</p>
                 </label>
                 <label class="header-mobile-menu-close" for="mobile-menu-click">
                   <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
+                    fill="currentColor"
+                    viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
                       d="M18.77 4 20 5.23 13.23 12 20 18.77 18.77 20 12 13.23 5.23 20 4 18.77 10.769 12 4 5.23 5.23 4 12 10.769 18.77 4Z"
+                      fill-rule="evenodd"
                     ></path>
                   </svg>
                 </label>
               </div>
               <div class="header-mobile-navigation">
                 <div class="header-mobile-menu-products">
-                  <input type="checkbox" id="mobile-products-click" />
+                  <input id="mobile-products-click" type="checkbox" />
                   <div class="header-mobile-menu-products-title">
                     <label
                       class="header-mobile-products-arrow"
                       for="mobile-products-click"
                     >
                       <svg
-                        viewBox="0 0 9.2828 4.89817"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true"
+                        fill="currentColor"
+                        viewbox="0 0 9.2828 4.89817"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           d="M4.64116,4.89817a.5001.5001,0,0,1-.34277-.13574L.15727.86448A.50018.50018,0,0,1,.84282.136L4.64116,3.71165,8.44.136a.50018.50018,0,0,1,.68555.72852L4.98393,4.76243A.5001.5001,0,0,1,4.64116,4.89817Z"
                         ></path>
                       </svg>
                     </label>
-                    <a class="nav-link" href="">Products</a>
+                    <a class="header-nav-link active" href="./products.html">
+                      Products
+                    </a>
                   </div>
                   <div class="header-mobile-products-dropdown-menu">
-                    <a class="nav-link" href="">Best Sellers</a>
-                    <a class="nav-link" href="">Games</a>
-                    <a class="nav-link" href="">Consoles</a>
-                    <a class="nav-link" href="">Controllers</a>
-                    <a class="nav-link" href="">Accessories</a>
+                    <a class="header-nav-link" href="./best-sellers.html">
+                      Best Sellers
+                    </a>
+                    <a class="header-nav-link" href="./games.html"> Games </a>
+                    <a class="header-nav-link" href="./consoles.html">
+                      Consoles
+                    </a>
+                    <a class="header-nav-link" href="./controllers.html">
+                      Controllers
+                    </a>
+                    <a class="header-nav-link active" href="./accessories.html">
+                      Accessories
+                    </a>
                   </div>
                 </div>
                 <div class="header-mobile-menu-on-sale">
-                  <a class="nav-link" href="">On Sale</a>
+                  <a class="header-nav-link" href="./on-sale.html"> On Sale </a>
                 </div>
                 <div class="header-mobile-menu-contact-us">
-                  <a class="nav-link" href="">Contact Us</a>
+                  <a class="header-nav-link" href="../contact/contact-us.html">
+                    Contact Us
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <!-- დემო შეტყობინება - იხსნება ლოგინზე დაკლიკებით -->
-
         <div class="demo-notification">
           <label class="log-in-close" for="log-in-click">
             <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
                 <filter
+                  height="135.5%"
                   id="close-shadow"
                   width="136.7%"
-                  height="135.5%"
                   x="-18.3%"
                   y="-17.8%"
                 >
-                  <feMorphology
+                  <femorphology
                     in="SourceAlpha"
                     operator="dilate"
                     radius="9"
                     result="shadow-spread"
-                  ></feMorphology>
-
-                  <feOffset
+                  ></femorphology>
+                  <feoffset
                     dx="2"
                     dy="12"
                     in="shadow-spread"
                     result="shadow-offset"
-                  ></feOffset>
-
-                  <feGaussianBlur
+                  ></feoffset>
+                  <fegaussianblur
                     in="shadow-offset"
-                    stdDeviation="14"
                     result="shadow-blur"
-                  ></feGaussianBlur>
-
-                  <feColorMatrix
+                    stddeviation="14"
+                  ></fegaussianblur>
+                  <fecolormatrix
                     in="shadow-blur"
+                    result="shadow-color"
                     values="0 0 0 0 0
                 0 0 0 0 0
                 0 0 0 0 0
                 0 0 0 0.15 0"
-                    result="shadow-color"
-                  ></feColorMatrix>
-
-                  <feMerge>
-                    <feMergeNode in="shadow-color"></feMergeNode>
-                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                  </feMerge>
+                  ></fecolormatrix>
+                  <femerge>
+                    <femergenode in="shadow-color"></femergenode>
+                    <femergenode in="SourceGraphic"></femergenode>
+                  </femerge>
                 </filter>
               </defs>
-
               <path
-                filter="url(#close-shadow)"
-                fill-rule="evenodd"
                 d="M18.77 4 20 5.23 13.23 12 20 18.77 18.77 20 12 13.23 5.23 20 4 18.77 10.769 12 4 5.23 5.23 4 12 10.769 18.77 4Z"
+                fill-rule="evenodd"
+                filter="url(#close-shadow)"
               ></path>
             </svg>
           </label>
@@ -230,26 +248,24 @@
             </label>
           </div>
         </div>
-
         <!-- დიდი საყიდლების კალათა - იხსნება საყიდლების კალათაზე დაკლიკებით -->
-
-        <label class="cart-fade" for="cart-click"></label>
+        <label class="cart-fade" for="cart-click"> </label>
         <aside class="cart-big">
           <div class="cart-big-header">
             <div class="cart-title">
               <h2>Cart</h2>
-              <span>(0 items)</span>
+              <span> (0 items) </span>
             </div>
             <label class="cart-close" for="cart-click">
               <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
+                fill="currentColor"
+                viewbox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
                   d="M19.2928932,3.99989322 L20,4.707 L12.7068932,11.9998932 L20,19.2928932 L19.2928932,20 L11.9998932,12.7068932 L4.707,20 L3.99989322,19.2928932 L11.2928932,11.9998932 L3.99989322,4.707 L4.707,3.99989322 L11.9998932,11.2928932 L19.2928932,3.99989322 Z"
+                  fill-rule="evenodd"
                 ></path>
               </svg>
             </label>
@@ -302,15 +318,15 @@
       <div class="footer-up">
         <div class="footer-up-wrapper">
           <div class="footer-logo">
-            <img src="./Footer/logo.png" alt="" />
+            <img src="../files/images/logo/logo.webp" alt="" />
             <p>ARCADE</p>
           </div>
           <div class="footer-products">
             <a href="#" class="footer-heading">Products</a>
-            <a href="#">Games</a>
-            <a href="#">Consoles</a>
-            <a href="#">Controllers</a>
-            <a href="#">Accessories</a>
+            <a href="../products/games.html">Games</a>
+            <a href="../products/consoles.html">Consoles</a>
+            <a href="../products/controllers.html">Controllers</a>
+            <a href="../products/accessories.html">Accessories</a>
           </div>
           <div class="footer-store">
             <a href="#" class="footer-heading">Store</a>
@@ -324,12 +340,12 @@
           </div>
           <div class="footer-policy">
             <a href="#" class="footer-heading">Policy</a>
-            <a href="./terms-and-conditions.html">Terms & Conditions</a>
-            <a href="./shipping-policy.html">Shipping Policy</a>
-            <a href="#">Refund Policy</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
-            <a href="#">FAQ</a>
+            <a href="../policy/terms-and-conditions.html">Terms & Conditions</a>
+            <a href="../policy/shipping-policy.html">Shipping Policy</a>
+            <a href="../policy/refund-policy.html">Refund Policy</a>
+            <a href="../policy/privacy-policy.html">Privacy Policy</a>
+            <a href="../policy/cookies-policy.html">Cookie Policy</a>
+            <a href="../contact/contact-us.html">FAQ</a>
           </div>
         </div>
       </div>
@@ -342,53 +358,53 @@
           <div class="footer-down-logos">
             <div class="footer-payment-logos">
               <img
-                src="https://static.wixstatic.com/media/c837a6_e0547a35fd3b42eb8fc45f9f73b77246~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Visa.png"
+                src="../files/images/footer/payment-methods/visa.avif"
                 alt="Visa"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_ad29ff701fee45629d63f3e4f3f2894b~mv2.png/v1/fill/w_50,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Master%20Card.png"
+                src="../files/images/footer/payment-methods/master-card.avif"
                 alt="Master Card"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_f73858b81fdb40388c28ec8a78c7d69f~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/American%20Express.png"
+                src="../files/images/footer/payment-methods/american-express.avif"
                 alt="American Express"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_1947c7dbf840480ea8638b9b0c29c030~mv2.png/v1/fill/w_37,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/JCB.png"
+                src="../files/images/footer/payment-methods/jcb.avif"
                 alt="JCB"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_0164b1a8ce80423890095a8b3d8a62eb~mv2.png/v1/crop/x_0,y_0,w_176,h_109/fill/w_45,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Discover.png"
+                src="../files/images/footer/payment-methods/discover.avif"
                 alt="Discover"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_5fa529be46ae437db9ad6e58fa085ce1~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/China%20Union%20Pay.png"
+                src="../files/images/footer/payment-methods/china-union-pay.avif"
                 alt="Union Pay"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_bbd810de83bc447f96dc4bb0addbfaed~mv2.png/v1/crop/x_1,y_1,w_149,h_109/fill/w_38,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Diners.png"
+                src="../files/images/footer/payment-methods/diners.avif"
                 alt="Diners Club"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_e0d5f0c365864fda9b7d65df15eecaf5~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PayPal.png"
+                src="../files/images/footer/payment-methods/paypal.avif"
                 alt="PayPal"
               />
             </div>
             <div class="footer-social-logos">
               <img
-                src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/23fd2a2be53141ed810f4d3dcdcd01fa.png"
+                src="../files/images/footer/payment-methods/facebook.avif"
                 alt="Facebook"
               />
               <img
-                src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81af6121f84c41a5b4391d7d37fce12a.png"
+                src="../files/images/footer/payment-methods/instagram.avif"
                 alt="Instagram"
               />
               <img
-                src="https://static.wixstatic.com/media/203dcdc2ac8b48de89313f90d2a4cda1.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/203dcdc2ac8b48de89313f90d2a4cda1.png"
+                src="../files/images/footer/payment-methods/youtube.avif"
                 alt="YouTube"
               />
               <img
-                src="https://static.wixstatic.com/media/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png"
+                src="../files/images/footer/payment-methods/tiktok.avif"
                 alt="TikTok"
               />
             </div>

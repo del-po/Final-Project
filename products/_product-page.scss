@@ -710,5 +710,24 @@
 }
 
 .you-might-also-like {
-  @include product;
+  @include gallery-section;
+
+  .product-slider-title {
+    justify-content: center;
+    text-align: center;
+
+    p {
+      font-family: Roboto;
+      font-size: 25px;
+      font-weight: 300;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .product-slider-title {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
 }

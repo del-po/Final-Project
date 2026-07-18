@@ -87,8 +87,11 @@
   }
 
   .add-to-cart-button {
-    width: $button-width;
+    width: 100%;
+    max-width: $button-width;
+    min-width: 0;
     height: $button-height;
+    padding: 0 12px;
     margin-top: auto; // ღილაკს წევს ქვედა მხარეს.
     display: flex;
     align-items: center;

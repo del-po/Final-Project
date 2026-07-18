@@ -1128,8 +1128,11 @@ footer .footer-down .footer-down-wrapper .footer-down-logos .footer-social-logos
   text-decoration: line-through;
 }
 .products-page .products-catalog .products-grid > .product-card .add-to-cart-button {
-  width: 180px;
+  width: 100%;
+  max-width: 180px;
+  min-width: 0;
   height: 38px;
+  padding: 0 12px;
   margin-top: auto;
   display: flex;
   align-items: center;
@@ -2022,105 +2025,196 @@ body:has(#filter-sort-click:checked) {
   }
 }
 .you-might-also-like {
-  position: relative;
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  min-height: 730px;
+  padding: 100px 0 80px;
+  background-color: black;
   color: white;
-  text-align: center;
 }
-.you-might-also-like .product-tag {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 58.53px;
-  height: 25.59px;
+.you-might-also-like .product-slider {
+  width: min(100%, 82.6% + 140px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  grid-template-areas: ". title ." "left gallery right";
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 76px;
+  align-items: start;
+}
+.you-might-also-like .product-slider-title {
+  grid-area: title;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.you-might-also-like .product-slider-title p {
+  margin: 0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 59px;
+}
+.you-might-also-like .product-slider-title button {
+  width: 132px;
+  height: 38px;
+  padding: 0;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(136, 88, 237);
-  border-radius: 30px;
-  color: white;
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-}
-.you-might-also-like .product-image {
-  width: 280px;
-  aspect-ratio: 1;
-  overflow: hidden;
-  position: relative;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 100px;
+  color: rgb(136, 88, 237);
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
 }
-.you-might-also-like .product-image img {
+.you-might-also-like .product-slider-title button:hover, .you-might-also-like .product-slider-title button:active {
+  background-color: rgb(136, 88, 237);
+  color: white;
+}
+.you-might-also-like .product-gallery {
+  grid-area: gallery;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.you-might-also-like .product-gallery-track {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+}
+.you-might-also-like .product-gallery-track > .product-card {
+  position: relative;
+  width: calc((100% - 90px) / 4);
+  min-width: 0;
+  flex: 0 0 calc((100% - 90px) / 4);
+}
+.you-might-also-like .product-gallery-track > .product-card > a {
+  display: block;
+  width: 100%;
+}
+.you-might-also-like .product-gallery-track > .product-card .product-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: block;
+  overflow: hidden;
+}
+.you-might-also-like .product-gallery-track > .product-card .product-image img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transform: scale(1);
-  transition: transform 0.4s ease;
 }
-.you-might-also-like .product-image:hover img {
-  transform: scale(1.08);
-}
-.you-might-also-like .product-name {
-  margin-top: 20px;
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-}
-.you-might-also-like .product-price {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-}
-.you-might-also-like .sale-price {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-}
-.you-might-also-like .sale-price .old-price {
-  text-decoration: line-through;
-}
-.you-might-also-like .add-to-cart-button {
-  width: 180px;
-  height: 38px;
-  margin-top: auto;
+.you-might-also-like .left-arrow,
+.you-might-also-like .right-arrow {
+  width: 40px;
+  height: 40px;
+  margin-top: 120px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(136, 88, 237);
-  border: 2px solid rgb(136, 88, 237);
-  border-radius: 20px;
+  background-color: transparent;
+  border: none;
   color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-.you-might-also-like .add-to-cart-button:hover, .you-might-also-like .add-to-cart-button:active, .you-might-also-like .add-to-cart-button:focus-visible {
-  background-color: white;
-  border-color: white;
-  color: rgb(136, 88, 237);
-  text-decoration: underline;
+.you-might-also-like .left-arrow svg,
+.you-might-also-like .right-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+.you-might-also-like .left-arrow:disabled,
+.you-might-also-like .right-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.you-might-also-like .left-arrow {
+  grid-area: left;
+}
+.you-might-also-like .right-arrow {
+  grid-area: right;
 }
 @media (max-width: 750px) {
   .you-might-also-like {
+    min-height: 0;
+    padding: 60px 0;
+  }
+  .you-might-also-like .product-slider {
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 28px 238px 28px;
+    grid-template-areas: ". title ." "left gallery right";
+    justify-content: center;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    row-gap: 30px;
+  }
+  .you-might-also-like .product-slider-title {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 25px;
+  }
+  .you-might-also-like .product-slider-title p {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .you-might-also-like .product-slider-title button {
+    width: 110px;
+    height: 40px;
+  }
+  .you-might-also-like .product-gallery {
     width: 238px;
   }
-  .you-might-also-like .product-image {
-    width: 238px;
+  .you-might-also-like .product-gallery-track {
+    width: 100%;
+    gap: 20px;
   }
-  .you-might-also-like .add-to-cart-button {
-    width: 138px;
-    height: 38.5px;
+  .you-might-also-like .product-gallery-track > .product-card {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .you-might-also-like .product-gallery-track > .product-card .product-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .you-might-also-like .left-arrow,
+  .you-might-also-like .right-arrow {
+    width: 28px;
+    height: 40px;
+    margin-top: 99px;
+  }
+  .you-might-also-like .left-arrow svg,
+  .you-might-also-like .right-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+.you-might-also-like .product-slider-title {
+  justify-content: center;
+  text-align: center;
+}
+.you-might-also-like .product-slider-title p {
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 300;
+}
+@media (max-width: 750px) {
+  .you-might-also-like .product-slider-title {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -2898,8 +2992,11 @@ body:has(#filter-sort-click:checked) {
   text-decoration: line-through;
 }
 .product-card .add-to-cart-button {
-  width: 180px;
+  width: 100%;
+  max-width: 180px;
+  min-width: 0;
   height: 38px;
+  padding: 0 12px;
   margin-top: auto;
   display: flex;
   align-items: center;
@@ -3267,8 +3364,9 @@ body:has(#filter-sort-click:checked) {
 .deals {
   position: relative;
   width: 100%;
-  height: 808px;
-  padding-top: 55px;
+  height: auto;
+  padding-top: clamp(35px, 3.67vw, 55px);
+  padding-bottom: clamp(50px, 5.67vw, 85px);
   overflow: hidden;
   background-color: black;
   view-timeline-name: --deals-animation;
@@ -3278,7 +3376,8 @@ body:has(#filter-sort-click:checked) {
   position: relative;
   width: calc(100% - 60px);
   max-width: 1500px;
-  height: 668px;
+  height: auto;
+  aspect-ratio: 1500/668;
   margin: 0 auto;
 }
 .deals .deals-wrapper .deals-images-group {
@@ -3286,15 +3385,16 @@ body:has(#filter-sort-click:checked) {
   top: 0;
   right: 0;
   z-index: 1;
-  width: 1043px;
-  height: 668px;
+  width: 69.53%;
+  height: 100%;
 }
 .deals .deals-wrapper .deals-images-group .deal-image {
   position: absolute;
-  width: 388px;
-  height: 523px;
+  width: 37.2%;
+  height: auto;
+  aspect-ratio: 388/523;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: clamp(14px, 2vw, 30px);
   opacity: 0;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.32, 0, 0.32, 1.01);
@@ -3316,29 +3416,30 @@ body:has(#filter-sort-click:checked) {
   animation-range: entry 5% cover 35%;
 }
 .deals .deals-wrapper .deals-images-group .deal-image-center {
-  top: 145px;
-  left: 370px;
+  top: 21.71%;
+  left: 35.47%;
   z-index: 2;
   animation-name: deal-center-reveal;
   animation-range: entry 10% cover 40%;
 }
 .deals .deals-wrapper .deals-images-group .deal-image-right {
-  top: 68px;
-  left: 655px;
+  top: 10.18%;
+  left: 62.8%;
   z-index: 3;
   animation-name: deal-right-reveal;
   animation-range: entry 15% cover 45%;
 }
 .deals .deals-wrapper .deals-banner {
   position: absolute;
-  top: 40px;
-  left: 140px;
+  top: 5.99%;
+  left: 9.33%;
   z-index: 4;
-  width: 557px;
-  height: 359.8px;
+  width: 37.13%;
+  height: auto;
+  aspect-ratio: 557/359.8;
   overflow: hidden;
   background-color: #8858ed;
-  border-radius: 30px;
+  border-radius: clamp(14px, 2vw, 30px);
   color: white;
   text-align: center;
   opacity: 0;
@@ -3352,7 +3453,7 @@ body:has(#filter-sort-click:checked) {
 .deals .deals-wrapper .deals-banner .deals-banner-wrapper {
   width: 100%;
   height: 100%;
-  padding: 37px 30px 25px;
+  padding: clamp(17px, 2.47vw, 37px) clamp(14px, 2vw, 30px) clamp(12px, 1.67vw, 25px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3361,7 +3462,7 @@ body:has(#filter-sort-click:checked) {
 }
 .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-small-title {
   font-family: "Roboto", sans-serif;
-  font-size: 22px;
+  font-size: clamp(11px, (100vw - 60px) * 0.014667, 22px);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -3374,29 +3475,30 @@ body:has(#filter-sort-click:checked) {
 .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-discount .deals-discount-percentage {
   display: block;
   font-family: "Montserrat", sans-serif;
-  font-size: 140px;
+  font-size: clamp(64px, (100vw - 60px) * 0.093333, 140px);
   font-weight: 700;
   line-height: 0.85;
 }
 .deals .deals-wrapper .deals-banner .deals-banner-wrapper .deals-discount .deals-discount-text {
   display: block;
   font-family: "Montserrat", sans-serif;
-  font-size: 42px;
+  font-size: clamp(19px, (100vw - 60px) * 0.028, 42px);
   font-weight: 700;
   line-height: 1.1;
   white-space: nowrap;
 }
 .deals .deals-wrapper .deals-banner .deals-banner-wrapper button {
   flex-shrink: 0;
-  width: 143px;
-  height: 44px;
+  width: clamp(90px, (100vw - 60px) * 0.095333, 143px);
+  height: clamp(34px, (100vw - 60px) * 0.029333, 44px);
   background-color: white;
   border: 2px solid white;
   border-radius: 30px;
   color: #8858ed;
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: clamp(12px, 1vw, 15px);
   font-weight: 700;
+  white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.4s, color 0.4s;
 }
@@ -3718,21 +3820,20 @@ body:has(#filter-sort-click:checked) {
 }
 .video-games .video-games-banner {
   position: relative;
-  height: 315px;
+  height: clamp(240px, 32.8vw, 315px);
   overflow: visible;
   background-color: rgb(136, 88, 237);
 }
 .video-games .video-games-banner img {
   position: absolute;
-  top: -75px;
+  top: clamp(-75px, -7.8vw, -40px);
   left: 50%;
   z-index: 1;
   display: block;
-  width: 961px;
-  height: 309px;
+  width: min(961px, 100% - 80px);
+  height: auto;
   -o-object-fit: contain;
      object-fit: contain;
-  transform: translateX(-50%);
   filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.45)) drop-shadow(0 24px 22px rgba(0, 0, 0, 0.3));
   animation-name: video-games-float-in;
   animation-duration: 1ms;
@@ -4064,7 +4165,6 @@ body:has(#filter-sort-click:checked) {
     z-index: 3;
     width: 280px;
     height: 90px;
-    max-width: none;
     -o-object-fit: contain;
        object-fit: contain;
   }
