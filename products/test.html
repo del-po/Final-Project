@@ -36,3 +36,67 @@
     <!-- მარჯვენა ისარის SVG -->
   </button>
 </div>
+
+Product Sidebar Sample
+
+<aside class="products-sidebar">
+  <nav class="home-to-category">
+    <a href="../index.html">Home</a>
+
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path
+        fill-rule="evenodd"
+        d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
+      ></path>
+    </svg>
+
+    <span>All Products</span>
+  </nav>
+
+  <div class="products-categories">
+    <h2>Browse by</h2>
+
+    <nav class="products-categories-list">
+      <a class="active-category" href="./products.html">All Products</a>
+      <a href="./accessories.html">Accessories</a>
+      <a href="./best-sellers.html">Best Sellers</a>
+      <a href="./consoles.html">Consoles</a>
+      <a href="./controllers.html">Controllers</a>
+      <a href="./games.html">Games</a>
+      <a href="./on-sale.html">On Sale</a>
+    </nav>
+  </div>
+
+  <div class="products-filter">
+    <h2>Filter by</h2>
+
+    <details class="price-filter" open>
+      <summary>Price</summary>
+
+      <div class="price-filter-controls">
+        <div class="price-range">
+          <input
+            class="price-range-min"
+            type="range"
+            min="24"
+            max="1000"
+            value="24"
+          />
+
+          <input
+            class="price-range-max"
+            type="range"
+            min="24"
+            max="1000"
+            value="1000"
+          />
+        </div>
+
+        <div class="price-values">
+          <span class="price-min-value">$24</span>
+          <span class="price-max-value">$1,000</span>
+        </div>
+      </div>
+    </details>
+  </div>
+</aside>

@@ -622,7 +622,7 @@ header {
 @media (max-width: 750px) {
   header {
     height: 84px;
-    padding-inline: 20px;
+    padding-inline: max(20px, calc((100% - 320px) / 2));
 
     background-color: #060506;
 
@@ -642,47 +642,6 @@ header {
         p {
           font-size: 17px;
         }
-      }
-    }
-
-    .header-right {
-      .header-desktop {
-        display: none;
-      }
-
-      .header-mobile {
-        display: flex;
-      }
-
-      .cart-big {
-        width: 100%;
-      }
-    }
-  }
-}
-
-// Mobile version
-
-@media (max-width: 750px) {
-  header {
-    height: 84px;
-    padding-inline: 20px;
-    background-color: #060506;
-
-    &.header-home {
-      background-image: none;
-    }
-
-    .header-logo {
-      gap: 11px;
-
-      img {
-        width: 38px;
-        height: 38px;
-      }
-
-      p {
-        font-size: 17px;
       }
     }
 

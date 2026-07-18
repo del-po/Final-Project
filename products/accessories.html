@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="An engaging, dark template as action-packed as your merchandise. The Wix Stores slider gallery on the home page is perfect for featuring your best sellers or newest arrivals, while additional pages invite customers to explore specific product categories. At the same time, banner images and hover effects provide the captivating user experience that your site visitors value. Ready to watch your sales skyrocket? Click Edit to begin."
+      content="Shop gaming accessories, including headsets, chairs, mice, and keyboards."
     />
-    <meta name="author" content="Wixpress" />
-    <meta property="og:title" content="Gaming Store Website Template | WIX" />
-    <meta
-      property="og:description"
-      content="An engaging, dark template as action-packed as your merchandise. The Wix Stores slider gallery on the home page is perfect for featuring your best sellers or newest arrivals, while additional pages invite customers to explore specific product categories. At the same time, banner images and hover effects provide the captivating user experience that your site visitors value. Ready to watch your sales skyrocket? Click Edit to begin."
-    />
-    <meta
-      property="og:image"
-      content="https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/66ba26aa9976d1589b8f2f927dec66c1501bf5851f6a38fcf485cf1b7dbca3631641744503972.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://www.wix.com/website-template/view/html/3010"
-    />
-    <meta property="og:type" content="website" />
-    <title>Gaming Store Website Template | WIX</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Accessories | ARCADE</title>
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <header>
+      <!-- ჰედერის ლოგო დესკტოპის და მობილურის ვერსიებისთვისაც ნარჩუნდება, ამიტომ ცალკე გამოვიტანე -->
       <div class="header-logo">
-        <img src="./Index/logo.png" alt="Logo" />
-        <p>ARCADE</p>
+        <a href="../index.html">
+          <img src="../files/images/logo/logo.webp" alt="Logo" />
+          <p>ARCADE</p>
+        </a>
       </div>
 
       <!-- ვიზუალური სიმარტივისათვის ჰედერის დესკტოპ და მობილური ვერსიები გამიჯნულია. ორივე მათგანი მოთავსებულია დივში header-right. -->
@@ -41,32 +29,49 @@
         <input type="checkbox" id="cart-click" />
         <input type="checkbox" id="mobile-menu-click" />
 
-        <!-- ჰედერის დესკტოპ ვერსია -->
+        <!-- ჰედერის დესკტოპ ვერსია: შედგება სამი მენიუს ლინკის, login-სა და საყიდლების კალათისგან -->
 
         <div class="header-desktop">
           <div class="header-desktop-menu">
             <div class="header-menu-products">
-              <a class="nav-link" href="">Products</a>
-              <div class="dropdown-menu">
-                <a class="nav-link" href="">Best Sellers</a>
-                <a href="./on-sale.html">On Sale</a>
-                <a class="nav-link" href="">Games</a>
-                <a class="nav-link" href="">Consoles</a>
-                <a class="nav-link" href="">Controllers</a>
-                <a class="nav-link" href="">Accessories</a>
+              <!-- products ცალკეა გამოტანილი, ვინაიდან აქვს dropdown -->
+              <a class="header-nav-link active" href="./products.html"
+                >Products</a
+              >
+
+              <div class="header-products-dropdown">
+                <a class="header-nav-link" href="./best-sellers.html"
+                  >Best Sellers</a
+                >
+                <a class="header-nav-link" href="./games.html">Games</a>
+                <a class="header-nav-link" href="./consoles.html">Consoles</a>
+                <a class="header-nav-link" href="./controllers.html"
+                  >Controllers</a
+                >
+                <a class="header-nav-link" href="./accessories.html"
+                  >Accessories</a
+                >
               </div>
             </div>
+
             <div class="header-menu-on-sale">
-              <a class="nav-link" href="">On Sale</a>
+              <a class="header-nav-link" href="./on-sale.html">On Sale</a>
             </div>
+
             <div class="header-menu-contact-us">
-              <a class="nav-link" href="">Contact Us</a>
+              <a class="header-nav-link" href="../contact/contact-us.html"
+                >Contact Us</a
+              >
             </div>
           </div>
+
           <div class="header-desktop-log-in">
             <div class="log-in">
               <label class="log-in-open" for="log-in-click">
-                <img src="./Header/Log-in.png" alt="Log in" />
+                <img
+                  src="../files/images/header/header-log-in.webp"
+                  alt="Log in"
+                />
                 <p>Log In</p>
               </label>
             </div>
@@ -76,7 +81,7 @@
               <label class="cart-button" for="cart-click">
                 <img
                   class="cart-icon"
-                  src="./Header/Cart.png"
+                  src="../files/images/header/header-cart.webp"
                   alt="Shopping cart"
                 />
               </label>
@@ -84,14 +89,14 @@
           </div>
         </div>
 
-        <!-- ჰედერის მობილურის ვერსია -->
+        <!-- ჰედერის მობილურის ვერსია: აქვს მხოლოდ ლოგო, საყიდლების კალათა და ბურგერ მენიუ -->
 
         <div class="header-mobile">
           <div class="header-mobile-cart">
             <label class="cart-button" for="cart-click">
               <img
                 class="cart-icon"
-                src="./Header/Cart.png"
+                src="../files/images/header/header-cart.webp"
                 alt="Shopping cart"
               />
             </label>
@@ -105,7 +110,10 @@
             <div class="header-mobile-menu-big">
               <div class="header-mobile-menu-big-header">
                 <label class="header-mobile-log-in" for="log-in-click">
-                  <img src="./Header/Log-in.png" alt="Log in" />
+                  <img
+                    src="../files/images/header/header-log-in.webp"
+                    alt="Log in"
+                  />
                   <p>Log In</p>
                 </label>
                 <label class="header-mobile-menu-close" for="mobile-menu-click">
@@ -141,21 +149,33 @@
                         ></path>
                       </svg>
                     </label>
-                    <a class="nav-link" href="">Products</a>
+                    <a class="header-nav-link active" href="./products.html"
+                      >Products</a
+                    >
                   </div>
                   <div class="header-mobile-products-dropdown-menu">
-                    <a class="nav-link" href="">Best Sellers</a>
-                    <a class="nav-link" href="">Games</a>
-                    <a class="nav-link" href="">Consoles</a>
-                    <a class="nav-link" href="">Controllers</a>
-                    <a class="nav-link" href="">Accessories</a>
+                    <a class="header-nav-link" href="./best-sellers.html"
+                      >Best Sellers</a
+                    >
+                    <a class="header-nav-link" href="./games.html">Games</a>
+                    <a class="header-nav-link" href="./consoles.html"
+                      >Consoles</a
+                    >
+                    <a class="header-nav-link" href="./controllers.html"
+                      >Controllers</a
+                    >
+                    <a class="header-nav-link active" href="./accessories.html"
+                      >Accessories</a
+                    >
                   </div>
                 </div>
                 <div class="header-mobile-menu-on-sale">
-                  <a class="nav-link" href="">On Sale</a>
+                  <a class="header-nav-link" href="./on-sale.html">On Sale</a>
                 </div>
                 <div class="header-mobile-menu-contact-us">
-                  <a class="nav-link" href="">Contact Us</a>
+                  <a class="header-nav-link" href="../contact/contact-us.html"
+                    >Contact Us</a
+                  >
                 </div>
               </div>
             </div>
@@ -261,223 +281,454 @@
         </aside>
       </div>
     </header>
+
     <main class="products-page">
       <aside class="products-sidebar">
-        <h2>Browse by</h2>
+        <nav class="home-to-category">
+          <a href="../index.html">Home</a>
 
-        <nav class="products-categories">
-          <a href="./products.html">All Products</a>
-          <a class="active-category" href="./accessories.html">Accessories</a>
-          <a href="./best-sellers.html">Best Sellers</a>
-          <a href="./consoles.html">Consoles</a>
-          <a href="./controllers.html">Controllers</a>
-          <a href="./games.html">Games</a>
-          <a href="./on-sale.html">On Sale</a>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
+            ></path>
+          </svg>
+
+          <span>Accessories</span>
         </nav>
+
+        <div class="products-categories">
+          <h2>Browse by</h2>
+
+          <nav class="products-categories-list">
+            <a href="./products.html">All Products</a>
+            <a class="active-category" href="./accessories.html">Accessories</a>
+            <a href="./best-sellers.html">Best Sellers</a>
+            <a href="./consoles.html">Consoles</a>
+            <a href="./controllers.html">Controllers</a>
+            <a href="./games.html">Games</a>
+            <a href="./on-sale.html">On Sale</a>
+          </nav>
+        </div>
+
+        <div class="products-filter">
+          <h2>Filter by</h2>
+
+          <details class="price-filter" open>
+            <summary>Price</summary>
+
+            <div class="price-filter-controls">
+              <div class="price-range">
+                <input
+                  class="price-range-min"
+                  type="range"
+                  min="24"
+                  max="1000"
+                  value="24"
+                />
+
+                <input
+                  class="price-range-max"
+                  type="range"
+                  min="24"
+                  max="1000"
+                  value="1000"
+                />
+              </div>
+
+              <div class="price-values">
+                <span class="price-min-value">$24</span>
+                <span class="price-max-value">$1,000</span>
+              </div>
+            </div>
+          </details>
+        </div>
       </aside>
+
       <section class="products-catalog">
         <h1>Accessories</h1>
+        <input type="checkbox" id="filter-sort-click" />
+        <div class="products-toolbar">
+          <p class="products-count">8 products</p>
 
-        <div class="products-grid">
-          <!-- 1. L503 Headset -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
+          <details class="products-sort">
+            <summary>
+              <span>
+                Sort by:
+                <span class="selected-sort">Recommended</span>
               </span>
+
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M18.2546728,8.18171329 L18.9617796,8.88882007 L12.5952867,15.2537133 L12.5978964,15.2558012 L11.8907896,15.962908 L11.8882867,15.9607133 L11.8874628,15.9617796 L11.180356,15.2546728 L11.1812867,15.2527133 L4.81828671,8.88882007 L5.52539349,8.18171329 L11.8882867,14.5457133 L18.2546728,8.18171329 Z"
+                ></path>
+              </svg>
+            </summary>
+
+            <div class="products-sort-options">
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Recommended"
+                  checked
+                />
+                <span>Recommended</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Newest" />
+                <span>Newest</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Price (low to high)"
+                />
+                <span>Price (low to high)</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Price (high to low)"
+                />
+                <span>Price (high to low)</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Name A-Z" />
+                <span>Name A-Z</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Name Z-A" />
+                <span>Name Z-A</span>
+              </label>
+            </div>
+          </details>
+          <label class="filter-sort-button" for="filter-sort-click">
+            Filter &amp; Sort
+          </label>
+        </div>
+        <div class="mobile-filter-sort">
+          <div class="mobile-filter-sort-header">
+            <div class="mobile-filter-sort-title">
+              <h2>Filter &amp; Sort</h2>
+              <p>(26 products)</p>
             </div>
 
-            ```
+            <label class="mobile-filter-sort-close" for="filter-sort-click">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M19.2928932,3.99989322 L20,4.707 L12.7068932,11.9998932 L20,19.2928932 L19.2928932,20 L11.9998932,12.7068932 L4.707,20 L3.99989322,19.2928932 L11.2928932,11.9998932 L3.99989322,4.707 L4.707,3.99989322 L11.9998932,11.2928932 L19.2928932,3.99989322 Z"
+                ></path>
+              </svg>
+            </label>
+          </div>
+
+          <div class="mobile-filter-sort-content">
+            <details class="mobile-sort-filter">
+              <summary>Sort by:</summary>
+
+              <div class="mobile-sort-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Recommended"
+                    checked
+                  />
+                  <span>Recommended</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Newest"
+                  />
+                  <span>Newest</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Price (low to high)"
+                  />
+                  <span>Price (low to high)</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Price (high to low)"
+                  />
+                  <span>Price (high to low)</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Name A-Z"
+                  />
+                  <span>Name A-Z</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Name Z-A"
+                  />
+                  <span>Name Z-A</span>
+                </label>
+              </div>
+            </details>
+
+            <details class="price-filter mobile-price-filter">
+              <summary>
+                Price (
+                <span class="price-summary-min-value">$24</span>
+                -
+                <span class="price-summary-max-value">$1,000</span>
+                )
+              </summary>
+
+              <div class="price-filter-controls">
+                <div class="price-range">
+                  <input
+                    class="price-range-min"
+                    type="range"
+                    min="24"
+                    max="1000"
+                    value="24"
+                  />
+
+                  <input
+                    class="price-range-max"
+                    type="range"
+                    min="24"
+                    max="1000"
+                    value="1000"
+                  />
+                </div>
+
+                <div class="price-values">
+                  <span class="price-min-value">$24</span>
+                  <span class="price-max-value">$1,000</span>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="mobile-filter-sort-actions">
+            <button class="clear-filters-button" type="button">
+              Clear Filters
+            </button>
+
+            <label class="apply-filters-button" for="filter-sort-click">
+              Apply
+            </label>
+          </div>
+        </div>
+        <div class="products-grid">
+          <!-- 1. L503 Headset -->
+          <div class="product-card">
             <a href="./l503-headset.html">
               <div class="product-image">
-                <img src="./Products/l503-headset.jpg" alt="L503 Headset" />
+                <span class="product-tag">SALE</span>
+                <img
+                  src="../files/images/products/l503-headset.webp"
+                  alt="L503 Headset"
+                />
               </div>
             </a>
 
-            <p>L503 Headset</p>
+            <p class="product-name">L503 Headset</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+              <span class="new-price">$26.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 2. Echo Headset -->
-
-          <div>
+          <div class="product-card">
             <a href="./echo-headset.html">
               <div class="product-image">
-                <img src="./Products/echo-headset.jpg" alt="Echo Headset" />
+                <img
+                  src="../files/images/products/echo-headset.webp"
+                  alt="Echo Headset"
+                />
               </div>
             </a>
 
-            ```
-            <p>Echo Headset</p>
-            <p>$39.99</p>
+            <p class="product-name">Echo Headset</p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <p class="product-price">$39.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 3. Impact Gaming Chair -->
-
-          <div>
+          <div class="product-card">
             <a href="./impact-gaming-chair.html">
               <div class="product-image">
                 <img
-                  src="./Products/impact-gaming-chair.jpg"
+                  src="../files/images/products/impact-gaming-chair.webp"
                   alt="Impact Gaming Chair"
                 />
               </div>
             </a>
 
-            ```
-            <p>Impact Gaming Chair</p>
-            <p>$159.99</p>
+            <p class="product-name">Impact Gaming Chair</p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <p class="product-price">$159.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 4. Mach Gaming Chair -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./mach-gaming-chair.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
                 <img
-                  src="./Products/mach-gaming-chair.jpg"
+                  src="../files/images/products/mach-gaming-chair.webp"
                   alt="Mach Gaming Chair"
                 />
               </div>
             </a>
 
-            <p>Mach Gaming Chair</p>
+            <p class="product-name">Mach Gaming Chair</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$129.99</span>
-              <span>$116.99</span>
+              <span class="new-price">$116.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 5. X-2 Wireless Mouse -->
-
-          <div>
+          <div class="product-card">
             <a href="./x-2-wireless-mouse.html">
               <div class="product-image">
                 <img
-                  src="./Products/x-2-wireless-mouse.jpg"
+                  src="../files/images/products/x-2-wireless-mouse.webp"
                   alt="X-2 Wireless Mouse"
                 />
               </div>
             </a>
 
-            ```
-            <p>X-2 Wireless Mouse</p>
-            <p>$24.99</p>
+            <p class="product-name">X-2 Wireless Mouse</p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <p class="product-price">$24.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 6. Blaze Wireless Mouse -->
-
-          <div>
+          <div class="product-card">
             <a href="./blaze-wireless-mouse.html">
               <div class="product-image">
                 <img
-                  src="./Products/blaze-wireless-mouse.jpg"
+                  src="../files/images/products/blaze-wireless-mouse.webp"
                   alt="Blaze Wireless Mouse"
                 />
               </div>
             </a>
 
-            ```
-            <p>Blaze Wireless Mouse</p>
-            <p>$24.99</p>
+            <p class="product-name">Blaze Wireless Mouse</p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <p class="product-price">$24.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 7. Spartan Mechanical Keyboard -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./spartan-mechanical-keyboard.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
                 <img
-                  src="./Products/spartan-mechanical-keyboard.jpg"
+                  src="../files/images/products/spartan-mechanical-keyboard.webp"
                   alt="Spartan Mechanical Keyboard"
                 />
               </div>
             </a>
 
-            <p>Spartan Mechanical Keyboard</p>
+            <p class="product-name">Spartan Mechanical Keyboard</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$44.99</span>
-              <span>$40.49</span>
+              <span class="new-price">$40.49</span>
             </p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 8. CO-21 Mechanical Keyboard -->
-
-          <div>
+          <div class="product-card">
             <a href="./co-21-mechanical-keyboard.html">
               <div class="product-image">
                 <img
-                  src="./Products/co-21-mechanical-keyboard.jpg"
+                  src="../files/images/products/co-21-mechanical-keyboard.webp"
                   alt="CO-21 Mechanical Keyboard"
                 />
               </div>
             </a>
 
-            ```
-            <p>CO-21 Mechanical Keyboard</p>
-            <p>$44.99</p>
+            <p class="product-name">CO-21 Mechanical Keyboard</p>
 
-            <button type="button">Add to Cart</button>
-            ```
+            <p class="product-price">$44.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="footer-up">
         <div class="footer-up-wrapper">
           <div class="footer-logo">
-            <img src="./Footer/logo.png" alt="" />
+            <img src="../files/images/logo/logo.webp" alt="" />
             <p>ARCADE</p>
           </div>
           <div class="footer-products">
-            <a href="#" class="footer-heading">Products</a>
-            <a href="#">Games</a>
-            <a href="#">Consoles</a>
-            <a href="#">Controllers</a>
-            <a href="#">Accessories</a>
+            <a href="./products.html" class="footer-heading">Products</a>
+            <a href="./games.html">Games</a>
+            <a href="./consoles.html">Consoles</a>
+            <a href="./controllers.html">Controllers</a>
+            <a href="./accessories.html">Accessories</a>
           </div>
           <div class="footer-store">
             <a href="#" class="footer-heading">Store</a>
@@ -563,5 +814,6 @@
         </div>
       </div>
     </footer>
+    <script src="../files/javascript/products-sidebar.js"></script>
   </body>
 </html>

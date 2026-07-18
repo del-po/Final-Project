@@ -12,43 +12,65 @@
   </head>
   <body class="contact-us-body">
     <header>
+      <!-- ჰედერის ლოგო დესკტოპის და მობილურის ვერსიებისთვისაც ნარჩუნდება, ამიტომ ცალკე გამოვიტანე -->
       <div class="header-logo">
-        <img src="../files/images/logo/logo.webp" alt="ARCADE logo" />
-        <p>ARCADE</p>
+        <a href="./index.html">
+          <img src="../files/images/logo/logo.webp" alt="Logo" />
+          <p>ARCADE</p>
+        </a>
       </div>
+
+      <!-- ვიზუალური სიმარტივისათვის ჰედერის დესკტოპ და მობილური ვერსიები გამიჯნულია. ორივე მათგანი მოთავსებულია დივში header-right. -->
+
       <div class="header-right">
+        <!-- ჰედერის სამი ჩეკბოქსი: (1) ლოგინზე დაწკაპუნება, რომელსაც გამოაქვს დემო შეტყობინება, (2) საყიდლების კალათაზე დაწკაპუნება, რომელსაც გამოაქვს კალათის დიდი ბანერი, და (3) ბურგერ-მენიუზე დაწკაპუნება, რომელსაც გამოაქვს მობილური მენიუ. -->
+
         <input type="checkbox" id="log-in-click" />
         <input type="checkbox" id="cart-click" />
         <input type="checkbox" id="mobile-menu-click" />
+
+        <!-- ჰედერის დესკტოპ ვერსია: შედგება სამი მენიუს ლინკის, login-სა და საყიდლების კალათისგან -->
+
         <div class="header-desktop">
           <div class="header-desktop-menu">
             <div class="header-menu-products">
-              <a class="nav-link" href="../products/products.html">Products</a>
+              <!-- products ცალკეა გამოტანილი, ვინაიდან აქვს dropdown -->
+              <a class="header-nav-link" href="./products/products.html"
+                >Products</a
+              >
 
-              <div class="dropdown-menu">
-                <a class="nav-link" href="../products/best-sellers.html"
+              <div class="header-products-dropdown">
+                <a class="header-nav-link" href="./products/best-sellers.html"
                   >Best Sellers</a
                 >
-                <a class="nav-link" href="../products/games.html">Games</a>
-                <a class="nav-link" href="../products/consoles.html"
+                <a class="header-nav-link" href="./products/games.html"
+                  >Games</a
+                >
+                <a class="header-nav-link" href="./products/consoles.html"
                   >Consoles</a
                 >
-                <a class="nav-link" href="../products/controllers.html"
+                <a class="header-nav-link" href="./products/controllers.html"
                   >Controllers</a
                 >
-                <a class="nav-link" href="../products/accessories.html"
+                <a class="header-nav-link" href="./products/accessories.html"
                   >Accessories</a
                 >
               </div>
             </div>
+
             <div class="header-menu-on-sale">
-              <a class="nav-link" href="../products/on-sale.html">On Sale</a>
+              <a class="header-nav-link" href="./products/on-sale.html"
+                >On Sale</a
+              >
             </div>
 
             <div class="header-menu-contact-us">
-              <a class="nav-link active" href="./contact-us.html">Contact Us</a>
+              <a class="header-nav-link" href="./contact/contact-us.html"
+                >Contact Us</a
+              >
             </div>
           </div>
+
           <div class="header-desktop-log-in">
             <div class="log-in">
               <label class="log-in-open" for="log-in-click">
@@ -72,6 +94,9 @@
             </div>
           </div>
         </div>
+
+        <!-- ჰედერის მობილურის ვერსია: აქვს მხოლოდ ლოგო, საყიდლების კალათა და ბურგერ მენიუ -->
+
         <div class="header-mobile">
           <div class="header-mobile-cart">
             <label class="cart-button" for="cart-click">
@@ -92,7 +117,7 @@
               <div class="header-mobile-menu-big-header">
                 <label class="header-mobile-log-in" for="log-in-click">
                   <img
-                    src="../files/images/header/header-log-in.webp"
+                    src="./files/images/header/header-log-in.webp"
                     alt="Log in"
                   />
                   <p>Log In</p>
@@ -102,6 +127,7 @@
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
                     <path
                       fill-rule="evenodd"
@@ -122,51 +148,55 @@
                         viewBox="0 0 9.2828 4.89817"
                         fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
                         <path
                           d="M4.64116,4.89817a.5001.5001,0,0,1-.34277-.13574L.15727.86448A.50018.50018,0,0,1,.84282.136L4.64116,3.71165,8.44.136a.50018.50018,0,0,1,.68555.72852L4.98393,4.76243A.5001.5001,0,0,1,4.64116,4.89817Z"
                         ></path>
                       </svg>
                     </label>
-                    <a class="nav-link" href="../products/products.html"
+                    <a class="nav-link" href="./products/products.html"
                       >Products</a
                     >
                   </div>
                   <div class="header-mobile-products-dropdown-menu">
-                    <a class="nav-link" href="../products/best-sellers.html"
+                    <a class="nav-link" href="./products/best-sellers.html"
                       >Best Sellers</a
                     >
-                    <a class="nav-link" href="../products/games.html">Games</a>
-                    <a class="nav-link" href="../products/consoles.html"
+                    <a class="nav-link" href="./products/games.html">Games</a>
+                    <a class="nav-link" href="./products/consoles.html"
                       >Consoles</a
                     >
-                    <a class="nav-link" href="../products/controllers.html"
+                    <a class="nav-link" href="./products/controllers.html"
                       >Controllers</a
                     >
-                    <a class="nav-link" href="../products/accessories.html"
+                    <a class="nav-link" href="./products/accessories.html"
                       >Accessories</a
                     >
                   </div>
                 </div>
                 <div class="header-mobile-menu-on-sale">
-                  <a class="nav-link" href="../products/on-sale.html"
-                    >On Sale</a
-                  >
+                  <a class="nav-link" href="./products/on-sale.html">On Sale</a>
                 </div>
-
                 <div class="header-mobile-menu-contact-us">
-                  <a class="nav-link" href="./contact-us.html">Contact Us</a>
+                  <a class="nav-link" href="./contact/contact-us.html"
+                    >Contact Us</a
+                  >
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- დემო შეტყობინება - იხსნება ლოგინზე დაკლიკებით -->
+
         <div class="demo-notification">
           <label class="log-in-close" for="log-in-click">
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <defs>
                 <filter
@@ -227,6 +257,9 @@
             </label>
           </div>
         </div>
+
+        <!-- დიდი საყიდლების კალათა - იხსნება საყიდლების კალათაზე დაკლიკებით -->
+
         <label class="cart-fade" for="cart-click"></label>
         <aside class="cart-big">
           <div class="cart-big-header">
@@ -239,6 +272,7 @@
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   fill-rule="evenodd"
@@ -253,6 +287,7 @@
         </aside>
       </div>
     </header>
+
     <main class="contact-page">
       <section class="contact-section">
         <div class="contact-wrapper">

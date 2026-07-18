@@ -6,18 +6,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!track || !leftArrow || !rightArrow) return;
 
-    const originalProducts = Array.from(track.children);
+    const originalItems = Array.from(track.children).filter(
+      (item) => !item.classList.contains("product-gallery-clone"),
+    );
 
-    let visibleProducts;
-    let currentPosition;
+    if (!originalItems.length) return;
+
+    const isCategorySlider = slider.classList.contains("category-slider");
+
+    let clonedItems = 0;
+    let currentPosition = 0;
     let isMoving = false;
+    let isActive = false;
     let resizeTimer;
 
+    function shouldActivateSlider() {
+      if (isCategorySlider) {
+        return window.innerWidth <= 750;
+      }
+
+      return true;
+    }
+
+    function getVisibleItems() {
+      if (isCategorySlider) {
+        return 1;
+      }
+
+      return window.innerWidth <= 750 ? 1 : 4;
+    }
+
     function getStepSize() {
-      const productWidth = originalProducts[0].getBoundingClientRect().width;
+      const itemWidth = originalItems[0].getBoundingClientRect().width;
       const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
 
-      return productWidth + gap;
+      return itemWidth + gap;
     }
 
     function moveSlider(animate = true) {
@@ -28,44 +51,66 @@ document.addEventListener("DOMContentLoaded", () => {
       }px)`;
     }
 
-    function createInfiniteTrack() {
+    function removeClones() {
       track
         .querySelectorAll(".product-gallery-clone")
         .forEach((clone) => clone.remove());
+    }
 
-      visibleProducts = window.innerWidth <= 750 ? 1 : 4;
+    function resetSlider() {
+      removeClones();
 
-      const firstClones = originalProducts
-        .slice(0, visibleProducts)
-        .map((product) => {
-          const clone = product.cloneNode(true);
-          clone.classList.add("product-gallery-clone");
+      clonedItems = 0;
+      currentPosition = 0;
+      isMoving = false;
+      isActive = false;
 
-          return clone;
-        });
+      track.style.removeProperty("transition");
+      track.style.removeProperty("transform");
+    }
 
-      const lastClones = originalProducts
-        .slice(-visibleProducts)
-        .map((product) => {
-          const clone = product.cloneNode(true);
-          clone.classList.add("product-gallery-clone");
+    function createInfiniteTrack() {
+      removeClones();
 
-          return clone;
-        });
+      isMoving = false;
+
+      if (!shouldActivateSlider()) {
+        resetSlider();
+        return;
+      }
+
+      isActive = true;
+      clonedItems = Math.min(getVisibleItems(), originalItems.length);
+
+      const firstClones = originalItems.slice(0, clonedItems).map((item) => {
+        const clone = item.cloneNode(true);
+        clone.classList.add("product-gallery-clone");
+
+        return clone;
+      });
+
+      const lastClones = originalItems.slice(-clonedItems).map((item) => {
+        const clone = item.cloneNode(true);
+        clone.classList.add("product-gallery-clone");
+
+        return clone;
+      });
 
       track.prepend(...lastClones);
       track.append(...firstClones);
 
-      currentPosition = visibleProducts;
+      currentPosition = clonedItems;
       moveSlider(false);
 
       requestAnimationFrame(() => {
-        track.style.transition = "transform 0.4s ease";
+        if (isActive) {
+          track.style.transition = "transform 0.4s ease";
+        }
       });
     }
 
     rightArrow.addEventListener("click", () => {
-      if (isMoving) return;
+      if (!isActive || isMoving) return;
 
       isMoving = true;
       currentPosition++;
@@ -73,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     leftArrow.addEventListener("click", () => {
-      if (isMoving) return;
+      if (!isActive || isMoving) return;
 
       isMoving = true;
       currentPosition--;
@@ -81,15 +126,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     track.addEventListener("transitionend", (event) => {
-      if (event.propertyName !== "transform") return;
+      if (
+        !isActive ||
+        event.target !== track ||
+        event.propertyName !== "transform"
+      ) {
+        return;
+      }
 
-      if (currentPosition >= originalProducts.length + visibleProducts) {
-        currentPosition = visibleProducts;
+      if (currentPosition >= originalItems.length + clonedItems) {
+        currentPosition = clonedItems;
         moveSlider(false);
       }
 
-      if (currentPosition < visibleProducts) {
-        currentPosition = originalProducts.length + visibleProducts - 1;
+      if (currentPosition < clonedItems) {
+        currentPosition = originalItems.length + clonedItems - 1;
         moveSlider(false);
       }
 

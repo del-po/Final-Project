@@ -1,72 +1,68 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
+      content="Shop discounted ARCADE products, including consoles, accessories, controllers, and games currently on sale."
       name="description"
-      content="An engaging, dark template as action-packed as your merchandise. The Wix Stores slider gallery on the home page is perfect for featuring your best sellers or newest arrivals, while additional pages invite customers to explore specific product categories. At the same time, banner images and hover effects provide the captivating user experience that your site visitors value. Ready to watch your sales skyrocket? Click Edit to begin."
     />
-    <meta name="author" content="Wixpress" />
-    <meta property="og:title" content="Gaming Store Website Template | WIX" />
-    <meta
-      property="og:description"
-      content="An engaging, dark template as action-packed as your merchandise. The Wix Stores slider gallery on the home page is perfect for featuring your best sellers or newest arrivals, while additional pages invite customers to explore specific product categories. At the same time, banner images and hover effects provide the captivating user experience that your site visitors value. Ready to watch your sales skyrocket? Click Edit to begin."
-    />
-    <meta
-      property="og:image"
-      content="https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/66ba26aa9976d1589b8f2f927dec66c1501bf5851f6a38fcf485cf1b7dbca3631641744503972.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://www.wix.com/website-template/view/html/3010"
-    />
-    <meta property="og:type" content="website" />
-    <title>Gaming Store Website Template | WIX</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>On Sale | ARCADE</title>
+    <link href="../styles.css" rel="stylesheet" />
   </head>
   <body>
     <header>
+      <!-- ჰედერის ლოგო დესკტოპის და მობილურის ვერსიებისთვისაც ნარჩუნდება, ამიტომ ცალკე გამოვიტანე -->
       <div class="header-logo">
-        <img src="./Index/logo.png" alt="Logo" />
-        <p>ARCADE</p>
+        <a href="../index.html">
+          <img alt="Logo" src="../files/images/logo/logo.webp" />
+          <p>ARCADE</p>
+        </a>
       </div>
-
       <!-- ვიზუალური სიმარტივისათვის ჰედერის დესკტოპ და მობილური ვერსიები გამიჯნულია. ორივე მათგანი მოთავსებულია დივში header-right. -->
-
       <div class="header-right">
         <!-- ჰედერის სამი ჩეკბოქსი: (1) ლოგინზე დაწკაპუნება, რომელსაც გამოაქვს დემო შეტყობინება, (2) საყიდლების კალათაზე დაწკაპუნება, რომელსაც გამოაქვს კალათის დიდი ბანერი, და (3) ბურგერ-მენიუზე დაწკაპუნება, რომელსაც გამოაქვს მობილური მენიუ. -->
-
-        <input type="checkbox" id="log-in-click" />
-        <input type="checkbox" id="cart-click" />
-        <input type="checkbox" id="mobile-menu-click" />
-
-        <!-- ჰედერის დესკტოპ ვერსია -->
-
+        <input id="log-in-click" type="checkbox" />
+        <input id="cart-click" type="checkbox" />
+        <input id="mobile-menu-click" type="checkbox" />
+        <!-- ჰედერის დესკტოპ ვერსია: შედგება სამი მენიუს ლინკის, login-სა და საყიდლების კალათისგან -->
         <div class="header-desktop">
           <div class="header-desktop-menu">
             <div class="header-menu-products">
-              <a class="nav-link" href="">Products</a>
-              <div class="dropdown-menu">
-                <a class="nav-link" href="">Best Sellers</a>
-                <a href="./on-sale.html">On Sale</a>
-                <a class="nav-link" href="">Games</a>
-                <a class="nav-link" href="">Consoles</a>
-                <a class="nav-link" href="">Controllers</a>
-                <a class="nav-link" href="">Accessories</a>
+              <!-- products ცალკეა გამოტანილი, ვინაიდან აქვს dropdown -->
+              <a class="header-nav-link" href="./products.html"> Products </a>
+              <div class="header-products-dropdown">
+                <a class="header-nav-link" href="./best-sellers.html">
+                  Best Sellers
+                </a>
+                <a class="header-nav-link" href="./games.html"> Games </a>
+                <a class="header-nav-link" href="./consoles.html"> Consoles </a>
+                <a class="header-nav-link" href="./controllers.html">
+                  Controllers
+                </a>
+                <a class="header-nav-link" href="./accessories.html">
+                  Accessories
+                </a>
               </div>
             </div>
             <div class="header-menu-on-sale">
-              <a class="nav-link" href="">On Sale</a>
+              <a class="header-nav-link active" href="./on-sale.html">
+                On Sale
+              </a>
             </div>
             <div class="header-menu-contact-us">
-              <a class="nav-link" href="">Contact Us</a>
+              <a class="header-nav-link" href="../contact/contact-us.html">
+                Contact Us
+              </a>
             </div>
           </div>
           <div class="header-desktop-log-in">
             <div class="log-in">
               <label class="log-in-open" for="log-in-click">
-                <img src="./Header/Log-in.png" alt="Log in" />
+                <img
+                  alt="Log in"
+                  src="../files/images/header/header-log-in.webp"
+                />
                 <p>Log In</p>
               </label>
             </div>
@@ -75,24 +71,22 @@
             <div class="cart">
               <label class="cart-button" for="cart-click">
                 <img
-                  class="cart-icon"
-                  src="./Header/Cart.png"
                   alt="Shopping cart"
+                  class="cart-icon"
+                  src="../files/images/header/header-cart.webp"
                 />
               </label>
             </div>
           </div>
         </div>
-
-        <!-- ჰედერის მობილურის ვერსია -->
-
+        <!-- ჰედერის მობილურის ვერსია: აქვს მხოლოდ ლოგო, საყიდლების კალათა და ბურგერ მენიუ -->
         <div class="header-mobile">
           <div class="header-mobile-cart">
             <label class="cart-button" for="cart-click">
               <img
-                class="cart-icon"
-                src="./Header/Cart.png"
                 alt="Shopping cart"
+                class="cart-icon"
+                src="../files/images/header/header-cart.webp"
               />
             </label>
           </div>
@@ -105,121 +99,131 @@
             <div class="header-mobile-menu-big">
               <div class="header-mobile-menu-big-header">
                 <label class="header-mobile-log-in" for="log-in-click">
-                  <img src="./Header/Log-in.png" alt="Log in" />
+                  <img
+                    alt="Log in"
+                    src="../files/images/header/header-log-in.webp"
+                  />
                   <p>Log In</p>
                 </label>
                 <label class="header-mobile-menu-close" for="mobile-menu-click">
                   <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
+                    fill="currentColor"
+                    viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
                       d="M18.77 4 20 5.23 13.23 12 20 18.77 18.77 20 12 13.23 5.23 20 4 18.77 10.769 12 4 5.23 5.23 4 12 10.769 18.77 4Z"
+                      fill-rule="evenodd"
                     ></path>
                   </svg>
                 </label>
               </div>
               <div class="header-mobile-navigation">
                 <div class="header-mobile-menu-products">
-                  <input type="checkbox" id="mobile-products-click" />
+                  <input id="mobile-products-click" type="checkbox" />
                   <div class="header-mobile-menu-products-title">
                     <label
                       class="header-mobile-products-arrow"
                       for="mobile-products-click"
                     >
                       <svg
-                        viewBox="0 0 9.2828 4.89817"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true"
+                        fill="currentColor"
+                        viewbox="0 0 9.2828 4.89817"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           d="M4.64116,4.89817a.5001.5001,0,0,1-.34277-.13574L.15727.86448A.50018.50018,0,0,1,.84282.136L4.64116,3.71165,8.44.136a.50018.50018,0,0,1,.68555.72852L4.98393,4.76243A.5001.5001,0,0,1,4.64116,4.89817Z"
                         ></path>
                       </svg>
                     </label>
-                    <a class="nav-link" href="">Products</a>
+                    <a class="header-nav-link" href="./products.html">
+                      Products
+                    </a>
                   </div>
                   <div class="header-mobile-products-dropdown-menu">
-                    <a class="nav-link" href="">Best Sellers</a>
-                    <a class="nav-link" href="">Games</a>
-                    <a class="nav-link" href="">Consoles</a>
-                    <a class="nav-link" href="">Controllers</a>
-                    <a class="nav-link" href="">Accessories</a>
+                    <a class="header-nav-link" href="./best-sellers.html">
+                      Best Sellers
+                    </a>
+                    <a class="header-nav-link" href="./games.html"> Games </a>
+                    <a class="header-nav-link" href="./consoles.html">
+                      Consoles
+                    </a>
+                    <a class="header-nav-link" href="./controllers.html">
+                      Controllers
+                    </a>
+                    <a class="header-nav-link" href="./accessories.html">
+                      Accessories
+                    </a>
                   </div>
                 </div>
                 <div class="header-mobile-menu-on-sale">
-                  <a class="nav-link" href="">On Sale</a>
+                  <a class="header-nav-link active" href="./on-sale.html">
+                    On Sale
+                  </a>
                 </div>
                 <div class="header-mobile-menu-contact-us">
-                  <a class="nav-link" href="">Contact Us</a>
+                  <a class="header-nav-link" href="../contact/contact-us.html">
+                    Contact Us
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <!-- დემო შეტყობინება - იხსნება ლოგინზე დაკლიკებით -->
-
         <div class="demo-notification">
           <label class="log-in-close" for="log-in-click">
             <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
                 <filter
+                  height="135.5%"
                   id="close-shadow"
                   width="136.7%"
-                  height="135.5%"
                   x="-18.3%"
                   y="-17.8%"
                 >
-                  <feMorphology
+                  <femorphology
                     in="SourceAlpha"
                     operator="dilate"
                     radius="9"
                     result="shadow-spread"
-                  ></feMorphology>
-
-                  <feOffset
+                  ></femorphology>
+                  <feoffset
                     dx="2"
                     dy="12"
                     in="shadow-spread"
                     result="shadow-offset"
-                  ></feOffset>
-
-                  <feGaussianBlur
+                  ></feoffset>
+                  <fegaussianblur
                     in="shadow-offset"
-                    stdDeviation="14"
                     result="shadow-blur"
-                  ></feGaussianBlur>
-
-                  <feColorMatrix
+                    stddeviation="14"
+                  ></fegaussianblur>
+                  <fecolormatrix
                     in="shadow-blur"
+                    result="shadow-color"
                     values="0 0 0 0 0
                 0 0 0 0 0
                 0 0 0 0 0
                 0 0 0 0.15 0"
-                    result="shadow-color"
-                  ></feColorMatrix>
-
-                  <feMerge>
-                    <feMergeNode in="shadow-color"></feMergeNode>
-                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                  </feMerge>
+                  ></fecolormatrix>
+                  <femerge>
+                    <femergenode in="shadow-color"></femergenode>
+                    <femergenode in="SourceGraphic"></femergenode>
+                  </femerge>
                 </filter>
               </defs>
-
               <path
-                filter="url(#close-shadow)"
-                fill-rule="evenodd"
                 d="M18.77 4 20 5.23 13.23 12 20 18.77 18.77 20 12 13.23 5.23 20 4 18.77 10.769 12 4 5.23 5.23 4 12 10.769 18.77 4Z"
+                fill-rule="evenodd"
+                filter="url(#close-shadow)"
               ></path>
             </svg>
           </label>
@@ -231,26 +235,24 @@
             </label>
           </div>
         </div>
-
         <!-- დიდი საყიდლების კალათა - იხსნება საყიდლების კალათაზე დაკლიკებით -->
-
-        <label class="cart-fade" for="cart-click"></label>
+        <label class="cart-fade" for="cart-click"> </label>
         <aside class="cart-big">
           <div class="cart-big-header">
             <div class="cart-title">
               <h2>Cart</h2>
-              <span>(0 items)</span>
+              <span> (0 items) </span>
             </div>
             <label class="cart-close" for="cart-click">
               <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
+                fill="currentColor"
+                viewbox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
                   d="M19.2928932,3.99989322 L20,4.707 L12.7068932,11.9998932 L20,19.2928932 L19.2928932,20 L11.9998932,12.7068932 L4.707,20 L3.99989322,19.2928932 L11.2928932,11.9998932 L3.99989322,4.707 L4.707,3.99989322 L11.9998932,11.2928932 L19.2928932,3.99989322 Z"
+                  fill-rule="evenodd"
                 ></path>
               </svg>
             </label>
@@ -263,301 +265,461 @@
     </header>
     <main class="products-page">
       <aside class="products-sidebar">
-        <h2>Browse by</h2>
+        <nav class="home-to-category">
+          <a href="../index.html">Home</a>
 
-        <nav class="products-categories">
-          <a href="./products.html">All Products</a>
-          <a href="./accessories.html">Accessories</a>
-          <a href="./best-sellers.html">Best Sellers</a>
-          <a href="./consoles.html">Consoles</a>
-          <a href="./controllers.html">Controllers</a>
-          <a href="./games.html">Games</a>
-          <a class="active-category" href="./on-sale.html">On Sale</a>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
+            ></path>
+          </svg>
+
+          <span>On Sale</span>
         </nav>
+
+        <div class="products-categories">
+          <h2>Browse by</h2>
+
+          <nav class="products-categories-list">
+            <a href="./products.html">All Products</a>
+            <a href="./accessories.html">Accessories</a>
+            <a href="./best-sellers.html">Best Sellers</a>
+            <a href="./consoles.html">Consoles</a>
+            <a href="./controllers.html">Controllers</a>
+            <a href="./games.html">Games</a>
+            <a class="active-category" href="./on-sale.html">On Sale</a>
+          </nav>
+        </div>
+
+        <div class="products-filter">
+          <h2>Filter by</h2>
+
+          <details class="price-filter" open>
+            <summary>Price</summary>
+
+            <div class="price-filter-controls">
+              <div class="price-range">
+                <input
+                  class="price-range-min"
+                  type="range"
+                  min="24"
+                  max="1000"
+                  value="24"
+                />
+
+                <input
+                  class="price-range-max"
+                  type="range"
+                  min="24"
+                  max="1000"
+                  value="1000"
+                />
+              </div>
+
+              <div class="price-values">
+                <span class="price-min-value">$24</span>
+                <span class="price-max-value">$1,000</span>
+              </div>
+            </div>
+          </details>
+        </div>
       </aside>
       <section class="products-catalog">
         <h1>On Sale</h1>
+        <input type="checkbox" id="filter-sort-click" />
+        <div class="products-toolbar">
+          <p class="products-count">9 products</p>
+
+          <details class="products-sort">
+            <summary>
+              <span>
+                Sort by:
+                <span class="selected-sort">Recommended</span>
+              </span>
+
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M18.2546728,8.18171329 L18.9617796,8.88882007 L12.5952867,15.2537133 L12.5978964,15.2558012 L11.8907896,15.962908 L11.8882867,15.9607133 L11.8874628,15.9617796 L11.180356,15.2546728 L11.1812867,15.2527133 L4.81828671,8.88882007 L5.52539349,8.18171329 L11.8882867,14.5457133 L18.2546728,8.18171329 Z"
+                ></path>
+              </svg>
+            </summary>
+
+            <div class="products-sort-options">
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Recommended"
+                  checked
+                />
+                <span>Recommended</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Newest" />
+                <span>Newest</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Price (low to high)"
+                />
+                <span>Price (low to high)</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Price (high to low)"
+                />
+                <span>Price (high to low)</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Name A-Z" />
+                <span>Name A-Z</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Name Z-A" />
+                <span>Name Z-A</span>
+              </label>
+            </div>
+          </details>
+          <label class="filter-sort-button" for="filter-sort-click">
+            Filter &amp; Sort
+          </label>
+        </div>
+        <div class="mobile-filter-sort">
+          <div class="mobile-filter-sort-header">
+            <div class="mobile-filter-sort-title">
+              <h2>Filter &amp; Sort</h2>
+              <p>(26 products)</p>
+            </div>
+
+            <label class="mobile-filter-sort-close" for="filter-sort-click">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M19.2928932,3.99989322 L20,4.707 L12.7068932,11.9998932 L20,19.2928932 L19.2928932,20 L11.9998932,12.7068932 L4.707,20 L3.99989322,19.2928932 L11.2928932,11.9998932 L3.99989322,4.707 L4.707,3.99989322 L11.9998932,11.2928932 L19.2928932,3.99989322 Z"
+                ></path>
+              </svg>
+            </label>
+          </div>
+
+          <div class="mobile-filter-sort-content">
+            <details class="mobile-sort-filter">
+              <summary>Sort by:</summary>
+
+              <div class="mobile-sort-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Recommended"
+                    checked
+                  />
+                  <span>Recommended</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Newest"
+                  />
+                  <span>Newest</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Price (low to high)"
+                  />
+                  <span>Price (low to high)</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Price (high to low)"
+                  />
+                  <span>Price (high to low)</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Name A-Z"
+                  />
+                  <span>Name A-Z</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Name Z-A"
+                  />
+                  <span>Name Z-A</span>
+                </label>
+              </div>
+            </details>
+
+            <details class="price-filter mobile-price-filter">
+              <summary>
+                Price (
+                <span class="price-summary-min-value">$24</span>
+                -
+                <span class="price-summary-max-value">$1,000</span>
+                )
+              </summary>
+
+              <div class="price-filter-controls">
+                <div class="price-range">
+                  <input
+                    class="price-range-min"
+                    type="range"
+                    min="24"
+                    max="1000"
+                    value="24"
+                  />
+
+                  <input
+                    class="price-range-max"
+                    type="range"
+                    min="24"
+                    max="1000"
+                    value="1000"
+                  />
+                </div>
+
+                <div class="price-values">
+                  <span class="price-min-value">$24</span>
+                  <span class="price-max-value">$1,000</span>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="mobile-filter-sort-actions">
+            <button class="clear-filters-button" type="button">
+              Clear Filters
+            </button>
+
+            <label class="apply-filters-button" for="filter-sort-click">
+              Apply
+            </label>
+          </div>
+        </div>
         <div class="products-grid">
           <!-- 1. Gameflow Black -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./gameflow-black.html">
               <div class="product-image">
-                <img src="./Products/gameflow-black.jpg" alt="Gameflow Black" />
+                <span class="product-tag"> SALE </span>
+                <img
+                  alt="Gameflow Black"
+                  src="../files/images/products/gameflow-black.webp"
+                />
               </div>
             </a>
-
-            <p>Gameflow Black</p>
-
-            <p class="sale-price">
-              <span class="old-price">$1,000.00</span>
-              <span>$900.00</span>
+            <p class="product-name">Gameflow Black</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $1,000.00 </span>
+              <span class="new-price"> $900.00 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 2. L503 Headset -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./l503-headset.html">
               <div class="product-image">
-                <img src="./Products/l503-headset.jpg" alt="L503 Headset" />
+                <span class="product-tag"> SALE </span>
+                <img
+                  alt="L503 Headset"
+                  src="../files/images/products/l503-headset.webp"
+                />
               </div>
             </a>
-
-            <p>L503 Headset</p>
-
-            <p class="sale-price">
-              <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+            <p class="product-name">L503 Headset</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $29.99 </span>
+              <span class="new-price"> $26.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 3. Mach Gaming Chair -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./mach-gaming-chair.html">
               <div class="product-image">
+                <span class="product-tag"> SALE </span>
                 <img
-                  src="./Products/mach-gaming-chair.jpg"
                   alt="Mach Gaming Chair"
+                  src="../files/images/products/mach-gaming-chair.webp"
                 />
               </div>
             </a>
-
-            <p>Mach Gaming Chair</p>
-
-            <p class="sale-price">
-              <span class="old-price">$129.99</span>
-              <span>$116.99</span>
+            <p class="product-name">Mach Gaming Chair</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $129.99 </span>
+              <span class="new-price"> $116.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 4. Spartan Mechanical Keyboard -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./spartan-mechanical-keyboard.html">
               <div class="product-image">
+                <span class="product-tag"> SALE </span>
                 <img
-                  src="./Products/spartan-mechanical-keyboard.jpg"
                   alt="Spartan Mechanical Keyboard"
+                  src="../files/images/products/spartan-mechanical-keyboard.webp"
                 />
               </div>
             </a>
-
-            <p>Spartan Mechanical Keyboard</p>
-
-            <p class="sale-price">
-              <span class="old-price">$44.99</span>
-              <span>$40.49</span>
+            <p class="product-name">Spartan Mechanical Keyboard</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $44.99 </span>
+              <span class="new-price"> $40.49 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 5. Ghost -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./ghost.html">
               <div class="product-image">
-                <img src="./Products/ghost.jpg" alt="Ghost controller" />
+                <span class="product-tag"> SALE </span>
+                <img
+                  alt="Ghost controller"
+                  src="../files/images/products/ghost.webp"
+                />
               </div>
             </a>
-
-            <p>Ghost</p>
-
-            <p class="sale-price">
-              <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+            <p class="product-name">Ghost</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $29.99 </span>
+              <span class="new-price"> $26.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 6. Raptor -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./raptor.html">
               <div class="product-image">
-                <img src="./Products/raptor.jpg" alt="Raptor controller" />
+                <span class="product-tag"> SALE </span>
+                <img
+                  alt="Raptor controller"
+                  src="../files/images/products/raptor.webp"
+                />
               </div>
             </a>
-
-            <p>Raptor</p>
-
-            <p class="sale-price">
-              <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+            <p class="product-name">Raptor</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $29.99 </span>
+              <span class="new-price"> $26.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 7. Gameflow -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./gameflow.html">
               <div class="product-image">
-                <img src="./Products/gameflow.jpg" alt="Gameflow" />
+                <span class="product-tag"> SALE </span>
+                <img
+                  alt="Gameflow console"
+                  src="../files/images/products/gameflow.webp"
+                />
               </div>
             </a>
-
-            <p>Gameflow</p>
-
-            <p class="sale-price">
-              <span class="old-price">$579.99</span>
-              <span>$521.99</span>
+            <p class="product-name">Gameflow</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $579.99 </span>
+              <span class="new-price"> $521.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 8. Dead at Last -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./dead-at-last.html">
               <div class="product-image">
-                <img src="./Products/dead-at-last.jpg" alt="Dead at Last" />
+                <span class="product-tag"> SALE </span>
+                <img
+                  alt="Dead at Last"
+                  src="../files/images/products/dead-at-last.webp"
+                />
               </div>
             </a>
-
-            <p>Dead at Last</p>
-
-            <p class="sale-price">
-              <span class="old-price">$39.99</span>
-              <span>$35.99</span>
+            <p class="product-name">Dead at Last</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $39.99 </span>
+              <span class="new-price"> $35.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 9. Kira and the Fading Islands -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./kira-and-the-fading-islands.html">
               <div class="product-image">
+                <span class="product-tag"> SALE </span>
                 <img
-                  src="./Products/kira-and-the-fading-islands.jpg"
                   alt="Kira and the Fading Islands"
+                  src="../files/images/products/kira-and-the-fading-islands.webp"
                 />
               </div>
             </a>
-
-            <p>Kira and the Fading Islands</p>
-
-            <p class="sale-price">
-              <span class="old-price">$39.99</span>
-              <span>$35.99</span>
+            <p class="product-name">Kira and the Fading Islands</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $39.99 </span>
+              <span class="new-price"> $35.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
-
           <!-- 10. Ice Dome: Exile -->
-
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
-
-            ```
+          <div class="product-card">
             <a href="./ice-dome-exile.html">
               <div class="product-image">
+                <span class="product-tag"> SALE </span>
                 <img
-                  src="./Products/ice-dome-exile.jpg"
                   alt="Ice Dome: Exile"
+                  src="../files/images/products/ice-dome-exile.webp"
                 />
               </div>
             </a>
-
-            <p>Ice Dome: Exile</p>
-
-            <p class="sale-price">
-              <span class="old-price">$39.99</span>
-              <span>$35.99</span>
+            <p class="product-name">Ice Dome: Exile</p>
+            <p class="product-price sale-price">
+              <span class="old-price"> $39.99 </span>
+              <span class="new-price"> $35.99 </span>
             </p>
-
-            <button type="button">Add to Cart</button>
-            ```
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
         </div>
       </section>
@@ -566,99 +728,105 @@
       <div class="footer-up">
         <div class="footer-up-wrapper">
           <div class="footer-logo">
-            <img src="./Footer/logo.png" alt="" />
+            <img alt="" src="../files/images/logo/logo.webp" />
             <p>ARCADE</p>
           </div>
           <div class="footer-products">
-            <a href="#" class="footer-heading">Products</a>
-            <a href="#">Games</a>
-            <a href="#">Consoles</a>
-            <a href="#">Controllers</a>
-            <a href="#">Accessories</a>
+            <a class="footer-heading" href="./products.html"> Products </a>
+            <a href="./games.html"> Games </a>
+            <a href="./consoles.html"> Consoles </a>
+            <a href="./controllers.html"> Controllers </a>
+            <a href="./accessories.html"> Accessories </a>
           </div>
           <div class="footer-store">
-            <a href="#" class="footer-heading">Store</a>
-            <a href="#"
-              >500 Terry Francine Street <br />
-              San Francisco, CA 94158</a
-            >
-            <a href="#">Mon - Fri: 9am - 9pm</a>
-            <a href="#">info@mysite.com</a>
-            <a href="#">123-456-7890</a>
+            <a class="footer-heading" href="#"> Store </a>
+            <a href="#">
+              500 Terry Francine Street
+              <br />
+              San Francisco, CA 94158
+            </a>
+            <a href="#"> Mon - Fri: 9am - 9pm </a>
+            <a href="#"> info@mysite.com </a>
+            <a href="#"> 123-456-7890 </a>
           </div>
           <div class="footer-policy">
-            <a href="#" class="footer-heading">Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Shipping Policy</a>
-            <a href="#">Refund Policy</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
-            <a href="#">FAQ</a>
+            <a class="footer-heading" href="#"> Policy </a>
+            <a href="#"> Terms &amp; Conditions </a>
+            <a href="#"> Shipping Policy </a>
+            <a href="#"> Refund Policy </a>
+            <a href="#"> Privacy Policy </a>
+            <a href="#"> Cookie Policy </a>
+            <a href="#"> FAQ </a>
           </div>
         </div>
       </div>
       <div class="footer-down">
         <div class="footer-down-wrapper">
           <div class="footer-down-text">
-            <p><span class="footer-heading">Payment Methods</span></p>
-            <p><span class="footer-heading">Join the Community</span></p>
+            <p>
+              <span class="footer-heading"> Payment Methods </span>
+            </p>
+            <p>
+              <span class="footer-heading"> Join the Community </span>
+            </p>
           </div>
           <div class="footer-down-logos">
             <div class="footer-payment-logos">
               <img
-                src="https://static.wixstatic.com/media/c837a6_e0547a35fd3b42eb8fc45f9f73b77246~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Visa.png"
                 alt="Visa"
+                src="https://static.wixstatic.com/media/c837a6_e0547a35fd3b42eb8fc45f9f73b77246~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Visa.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_ad29ff701fee45629d63f3e4f3f2894b~mv2.png/v1/fill/w_50,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Master%20Card.png"
                 alt="Master Card"
+                src="https://static.wixstatic.com/media/c837a6_ad29ff701fee45629d63f3e4f3f2894b~mv2.png/v1/fill/w_50,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Master%20Card.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_f73858b81fdb40388c28ec8a78c7d69f~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/American%20Express.png"
                 alt="American Express"
+                src="https://static.wixstatic.com/media/c837a6_f73858b81fdb40388c28ec8a78c7d69f~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/American%20Express.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_1947c7dbf840480ea8638b9b0c29c030~mv2.png/v1/fill/w_37,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/JCB.png"
                 alt="JCB"
+                src="https://static.wixstatic.com/media/c837a6_1947c7dbf840480ea8638b9b0c29c030~mv2.png/v1/fill/w_37,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/JCB.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_0164b1a8ce80423890095a8b3d8a62eb~mv2.png/v1/crop/x_0,y_0,w_176,h_109/fill/w_45,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Discover.png"
                 alt="Discover"
+                src="https://static.wixstatic.com/media/c837a6_0164b1a8ce80423890095a8b3d8a62eb~mv2.png/v1/crop/x_0,y_0,w_176,h_109/fill/w_45,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Discover.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_5fa529be46ae437db9ad6e58fa085ce1~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/China%20Union%20Pay.png"
                 alt="Union Pay"
+                src="https://static.wixstatic.com/media/c837a6_5fa529be46ae437db9ad6e58fa085ce1~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/China%20Union%20Pay.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_bbd810de83bc447f96dc4bb0addbfaed~mv2.png/v1/crop/x_1,y_1,w_149,h_109/fill/w_38,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Diners.png"
                 alt="Diners Club"
+                src="https://static.wixstatic.com/media/c837a6_bbd810de83bc447f96dc4bb0addbfaed~mv2.png/v1/crop/x_1,y_1,w_149,h_109/fill/w_38,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Diners.png"
               />
               <img
-                src="https://static.wixstatic.com/media/c837a6_e0d5f0c365864fda9b7d65df15eecaf5~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PayPal.png"
                 alt="PayPal"
+                src="https://static.wixstatic.com/media/c837a6_e0d5f0c365864fda9b7d65df15eecaf5~mv2.png/v1/fill/w_44,h_28,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PayPal.png"
               />
             </div>
             <div class="footer-social-logos">
               <img
-                src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/23fd2a2be53141ed810f4d3dcdcd01fa.png"
                 alt="Facebook"
+                src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/23fd2a2be53141ed810f4d3dcdcd01fa.png"
               />
               <img
-                src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81af6121f84c41a5b4391d7d37fce12a.png"
                 alt="Instagram"
+                src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81af6121f84c41a5b4391d7d37fce12a.png"
               />
               <img
-                src="https://static.wixstatic.com/media/203dcdc2ac8b48de89313f90d2a4cda1.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/203dcdc2ac8b48de89313f90d2a4cda1.png"
                 alt="YouTube"
+                src="https://static.wixstatic.com/media/203dcdc2ac8b48de89313f90d2a4cda1.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/203dcdc2ac8b48de89313f90d2a4cda1.png"
               />
               <img
-                src="https://static.wixstatic.com/media/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png"
                 alt="TikTok"
+                src="https://static.wixstatic.com/media/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_1334e6fc91bb42a3bb0aae2d0dec4870~mv2.png"
               />
             </div>
           </div>
         </div>
       </div>
     </footer>
+    <script src="../files/javascript/products-sidebar.js"></script>
   </body>
 </html>

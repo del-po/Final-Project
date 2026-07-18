@@ -149,21 +149,33 @@
                         ></path>
                       </svg>
                     </label>
-                    <a class="header-nav-link" href="">Products</a>
+                    <a class="header-nav-link" href="./products.html"
+                      >Products</a
+                    >
                   </div>
                   <div class="header-mobile-products-dropdown-menu">
-                    <a class="header-nav-link" href="">Best Sellers</a>
-                    <a class="header-nav-link" href="">Games</a>
-                    <a class="header-nav-link" href="">Consoles</a>
-                    <a class="header-nav-link" href="">Controllers</a>
-                    <a class="header-nav-link" href="">Accessories</a>
+                    <a class="header-nav-link" href="./best-sellers.html"
+                      >Best Sellers</a
+                    >
+                    <a class="header-nav-link" href="./games.html">Games</a>
+                    <a class="header-nav-link" href="./consoles.html"
+                      >Consoles</a
+                    >
+                    <a class="header-nav-link" href="./controllers.html"
+                      >Controllers</a
+                    >
+                    <a class="header-nav-link" href="./accessories.html"
+                      >Accessories</a
+                    >
                   </div>
                 </div>
                 <div class="header-mobile-menu-on-sale">
-                  <a class="header-nav-link" href="">On Sale</a>
+                  <a class="header-nav-link" href="./on-sale.html">On Sale</a>
                 </div>
                 <div class="header-mobile-menu-contact-us">
-                  <a class="header-nav-link" href="">Contact Us</a>
+                  <a class="header-nav-link" href="../contact/contact-us.html"
+                    >Contact Us</a
+                  >
                 </div>
               </div>
             </div>
@@ -271,51 +283,293 @@
     </header>
     <main class="products-page">
       <aside class="products-sidebar">
-        <h2>Browse by</h2>
+        <nav class="home-to-category">
+          <a href="../index.html">Home</a>
 
-        <nav class="products-categories">
-          <a class="active-category" href="./products.html">All Products</a>
-          <a href="./accessories.html">Accessories</a>
-          <a href="./best-sellers.html">Best Sellers</a>
-          <a href="./consoles.html">Consoles</a>
-          <a href="./controllers.html">Controllers</a>
-          <a href="./games.html">Games</a>
-          <a href="./on-sale.html">On Sale</a>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M8.70710678,4.99810828 L15.068,11.3651083 L15.0722115,11.3620693 L15.7793183,12.0691761 L15.776,12.0721083 L15.7782433,12.0758831 L15.0711365,12.7829899 L15.069,12.7801083 L8.70710678,19.1434929 L8,18.4363861 L14.361,12.0721083 L8,5.70521506 L8.70710678,4.99810828 Z"
+            ></path>
+          </svg>
+
+          <span>All Products</span>
         </nav>
+
+        <div class="products-categories">
+          <h2>Browse by</h2>
+
+          <nav class="products-categories-list">
+            <a class="active-category" href="./products.html">All Products</a>
+            <a href="./accessories.html">Accessories</a>
+            <a href="./best-sellers.html">Best Sellers</a>
+            <a href="./consoles.html">Consoles</a>
+            <a href="./controllers.html">Controllers</a>
+            <a href="./games.html">Games</a>
+            <a href="./on-sale.html">On Sale</a>
+          </nav>
+        </div>
+
+        <div class="products-filter">
+          <h2>Filter by</h2>
+
+          <details class="price-filter" open>
+            <summary>Price</summary>
+
+            <div class="price-filter-controls">
+              <div class="price-range">
+                <input
+                  class="price-range-min"
+                  type="range"
+                  min="24"
+                  max="1000"
+                  value="24"
+                />
+
+                <input
+                  class="price-range-max"
+                  type="range"
+                  min="24"
+                  max="1000"
+                  value="1000"
+                />
+              </div>
+
+              <div class="price-values">
+                <span class="price-min-value">$24</span>
+                <span class="price-max-value">$1,000</span>
+              </div>
+            </div>
+          </details>
+        </div>
       </aside>
       <section class="products-catalog">
         <h1>All Products</h1>
+        <input type="checkbox" id="filter-sort-click" />
+        <div class="products-toolbar">
+          <p class="products-count">26 products</p>
 
+          <details class="products-sort">
+            <summary>
+              <span>
+                Sort by:
+                <span class="selected-sort">Recommended</span>
+              </span>
+
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M18.2546728,8.18171329 L18.9617796,8.88882007 L12.5952867,15.2537133 L12.5978964,15.2558012 L11.8907896,15.962908 L11.8882867,15.9607133 L11.8874628,15.9617796 L11.180356,15.2546728 L11.1812867,15.2527133 L4.81828671,8.88882007 L5.52539349,8.18171329 L11.8882867,14.5457133 L18.2546728,8.18171329 Z"
+                ></path>
+              </svg>
+            </summary>
+
+            <div class="products-sort-options">
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Recommended"
+                  checked
+                />
+                <span>Recommended</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Newest" />
+                <span>Newest</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Price (low to high)"
+                />
+                <span>Price (low to high)</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="products-sort"
+                  value="Price (high to low)"
+                />
+                <span>Price (high to low)</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Name A-Z" />
+                <span>Name A-Z</span>
+              </label>
+
+              <label>
+                <input type="radio" name="products-sort" value="Name Z-A" />
+                <span>Name Z-A</span>
+              </label>
+            </div>
+          </details>
+          <label class="filter-sort-button" for="filter-sort-click">
+            Filter &amp; Sort
+          </label>
+        </div>
+        <div class="mobile-filter-sort">
+          <div class="mobile-filter-sort-header">
+            <div class="mobile-filter-sort-title">
+              <h2>Filter &amp; Sort</h2>
+              <p>(26 products)</p>
+            </div>
+
+            <label class="mobile-filter-sort-close" for="filter-sort-click">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M19.2928932,3.99989322 L20,4.707 L12.7068932,11.9998932 L20,19.2928932 L19.2928932,20 L11.9998932,12.7068932 L4.707,20 L3.99989322,19.2928932 L11.2928932,11.9998932 L3.99989322,4.707 L4.707,3.99989322 L11.9998932,11.2928932 L19.2928932,3.99989322 Z"
+                ></path>
+              </svg>
+            </label>
+          </div>
+
+          <div class="mobile-filter-sort-content">
+            <details class="mobile-sort-filter">
+              <summary>Sort by:</summary>
+
+              <div class="mobile-sort-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Recommended"
+                    checked
+                  />
+                  <span>Recommended</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Newest"
+                  />
+                  <span>Newest</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Price (low to high)"
+                  />
+                  <span>Price (low to high)</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Price (high to low)"
+                  />
+                  <span>Price (high to low)</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Name A-Z"
+                  />
+                  <span>Name A-Z</span>
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="mobile-products-sort"
+                    value="Name Z-A"
+                  />
+                  <span>Name Z-A</span>
+                </label>
+              </div>
+            </details>
+
+            <details class="price-filter mobile-price-filter">
+              <summary>
+                Price (
+                <span class="price-summary-min-value">$24</span>
+                -
+                <span class="price-summary-max-value">$1,000</span>
+                )
+              </summary>
+
+              <div class="price-filter-controls">
+                <div class="price-range">
+                  <input
+                    class="price-range-min"
+                    type="range"
+                    min="24"
+                    max="1000"
+                    value="24"
+                  />
+
+                  <input
+                    class="price-range-max"
+                    type="range"
+                    min="24"
+                    max="1000"
+                    value="1000"
+                  />
+                </div>
+
+                <div class="price-values">
+                  <span class="price-min-value">$24</span>
+                  <span class="price-max-value">$1,000</span>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="mobile-filter-sort-actions">
+            <button class="clear-filters-button" type="button">
+              Clear Filters
+            </button>
+
+            <label class="apply-filters-button" for="filter-sort-click">
+              Apply
+            </label>
+          </div>
+        </div>
         <input type="checkbox" id="load-more-products" />
 
         <div class="products-grid">
           <!-- 1. Gameflow Black -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./gameflow-black.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/gameflow-black.webp"
                   alt="Gameflow Black"
                 />
               </div>
             </a>
-            <p>Gameflow Black</p>
-            <p class="sale-price">
+
+            <p class="product-name">Gameflow Black</p>
+
+            <p class="product-price sale-price">
               <span class="old-price">$1,000.00</span>
-              <span>$900.00</span>
+              <span class="new-price">$900.00</span>
             </p>
-            <button type="button">Add to Cart</button>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 2. Playbox XZ Gold Edition -->
 
-          <div>
+          <div class="product-card">
             <a href="./playbox-xz-gold-edition.html">
               <div class="product-image">
                 <img
@@ -324,21 +578,23 @@
                 />
               </div>
             </a>
-            <p>Playbox XZ Gold Edition</p>
-            <p>$1,000.00</p>
-            <button type="button">Add to Cart</button>
+
+            <p class="product-name">Playbox XZ Gold Edition</p>
+
+            <p class="product-price">$1,000.00</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 3. L503 Headset -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./l503-headset.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/l503-headset.webp"
                   alt="L503 Headset"
@@ -346,19 +602,21 @@
               </div>
             </a>
 
-            <p>L503 Headset</p>
+            <p class="product-name">L503 Headset</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+              <span class="new-price">$26.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 4. Echo Headset -->
 
-          <div>
+          <div class="product-card">
             <a href="./echo-headset.html">
               <div class="product-image">
                 <img
@@ -367,15 +625,19 @@
                 />
               </div>
             </a>
-            <p>Echo Headset</p>
-            <p>$39.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Echo Headset</p>
+
+            <p class="product-price">$39.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 5. Impact Gaming Chair -->
 
-          <div>
+          <div class="product-card">
             <a href="./impact-gaming-chair.html">
               <div class="product-image">
                 <img
@@ -384,22 +646,23 @@
                 />
               </div>
             </a>
-            <p>Impact Gaming Chair</p>
-            <p>$159.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Impact Gaming Chair</p>
+
+            <p class="product-price">$159.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 6. Mach Gaming Chair -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./mach-gaming-chair.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/mach-gaming-chair.webp"
                   alt="Mach Gaming Chair"
@@ -407,19 +670,21 @@
               </div>
             </a>
 
-            <p>Mach Gaming Chair</p>
+            <p class="product-name">Mach Gaming Chair</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$129.99</span>
-              <span>$116.99</span>
+              <span class="new-price">$116.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 7. X-2 Wireless Mouse -->
 
-          <div>
+          <div class="product-card">
             <a href="./x-2-wireless-mouse.html">
               <div class="product-image">
                 <img
@@ -428,15 +693,19 @@
                 />
               </div>
             </a>
-            <p>X-2 Wireless Mouse</p>
-            <p>$24.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">X-2 Wireless Mouse</p>
+
+            <p class="product-price">$24.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 8. Blaze Wireless Mouse -->
 
-          <div>
+          <div class="product-card">
             <a href="./blaze-wireless-mouse.html">
               <div class="product-image">
                 <img
@@ -445,22 +714,23 @@
                 />
               </div>
             </a>
-            <p>Blaze Wireless Mouse</p>
-            <p>$24.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Blaze Wireless Mouse</p>
+
+            <p class="product-price">$24.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 9. Spartan Mechanical Keyboard -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./spartan-mechanical-keyboard.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/spartan-mechanical-keyboard.webp"
                   alt="Spartan Mechanical Keyboard"
@@ -468,19 +738,21 @@
               </div>
             </a>
 
-            <p>Spartan Mechanical Keyboard</p>
+            <p class="product-name">Spartan Mechanical Keyboard</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$44.99</span>
-              <span>$40.49</span>
+              <span class="new-price">$40.49</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 10. CO-21 Mechanical Keyboard -->
 
-          <div>
+          <div class="product-card">
             <a href="./co-21-mechanical-keyboard.html">
               <div class="product-image">
                 <img
@@ -489,22 +761,23 @@
                 />
               </div>
             </a>
-            <p>CO-21 Mechanical Keyboard</p>
-            <p>$44.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">CO-21 Mechanical Keyboard</p>
+
+            <p class="product-price">$44.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 11. Ghost -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./ghost.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/ghost.webp"
                   alt="Ghost controller"
@@ -512,26 +785,25 @@
               </div>
             </a>
 
-            <p>Ghost</p>
+            <p class="product-name">Ghost</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+              <span class="new-price">$26.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 12. Raptor -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./raptor.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/raptor.webp"
                   alt="Raptor controller"
@@ -539,19 +811,21 @@
               </div>
             </a>
 
-            <p>Raptor</p>
+            <p class="product-name">Raptor</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$29.99</span>
-              <span>$26.99</span>
+              <span class="new-price">$26.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 13. Flint -->
 
-          <div>
+          <div class="product-card">
             <a href="./flint.html">
               <div class="product-image">
                 <img
@@ -560,15 +834,19 @@
                 />
               </div>
             </a>
-            <p>Flint</p>
-            <p>$29.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Flint</p>
+
+            <p class="product-price">$29.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 14. Libra 2.0 -->
 
-          <div>
+          <div class="product-card">
             <a href="./libra-2-0.html">
               <div class="product-image">
                 <img
@@ -577,15 +855,19 @@
                 />
               </div>
             </a>
-            <p>Libra 2.0</p>
-            <p>$29.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Libra 2.0</p>
+
+            <p class="product-price">$29.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 15. Stealth X -->
 
-          <div>
+          <div class="product-card">
             <a href="./stealth-x.html">
               <div class="product-image">
                 <img
@@ -594,15 +876,19 @@
                 />
               </div>
             </a>
-            <p>Stealth X</p>
-            <p>$29.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Stealth X</p>
+
+            <p class="product-price">$29.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 16. Wave -->
 
-          <div>
+          <div class="product-card">
             <a href="./wave.html">
               <div class="product-image">
                 <img
@@ -611,15 +897,19 @@
                 />
               </div>
             </a>
-            <p>Wave</p>
-            <p>$29.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Wave</p>
+
+            <p class="product-price">$29.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 17. Veritas VR Set -->
 
-          <div>
+          <div class="product-card">
             <a href="./veritas-vr-set.html">
               <div class="product-image">
                 <img
@@ -628,22 +918,23 @@
                 />
               </div>
             </a>
-            <p>Veritas VR Set</p>
-            <p>$629.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Veritas VR Set</p>
+
+            <p class="product-price">$629.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 18. Gameflow -->
 
-          <div>
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card">
             <a href="./gameflow.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/gameflow.webp"
                   alt="Gameflow console"
@@ -651,21 +942,23 @@
               </div>
             </a>
 
-            <p>Gameflow</p>
+            <p class="product-name">Gameflow</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$579.99</span>
-              <span>$521.99</span>
+              <span class="new-price">$521.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- Products revealed by Load More -->
 
           <!-- 19. Playbox XZ -->
 
-          <div class="additional-product">
+          <div class="product-card additional-product">
             <a href="./playbox-xz.html">
               <div class="product-image">
                 <img
@@ -674,15 +967,19 @@
                 />
               </div>
             </a>
-            <p>Playbox XZ</p>
-            <p>$579.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Playbox XZ</p>
+
+            <p class="product-price">$579.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 20. Wave Gen RX -->
 
-          <div class="additional-product">
+          <div class="product-card additional-product">
             <a href="./wave-gen-rx.html">
               <div class="product-image">
                 <img
@@ -691,22 +988,23 @@
                 />
               </div>
             </a>
-            <p>Wave Gen RX</p>
-            <p>$579.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Wave Gen RX</p>
+
+            <p class="product-price">$579.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 21. Dead at Last -->
 
-          <div class="additional-product">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card additional-product">
             <a href="./dead-at-last.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/dead-at-last.webp"
                   alt="Dead at Last"
@@ -714,26 +1012,25 @@
               </div>
             </a>
 
-            <p>Dead at Last</p>
+            <p class="product-name">Dead at Last</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$39.99</span>
-              <span>$35.99</span>
+              <span class="new-price">$35.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 22. Kira and the Fading Islands -->
 
-          <div class="additional-product">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card additional-product">
             <a href="./kira-and-the-fading-islands.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/kira-and-the-fading-islands.webp"
                   alt="Kira and the Fading Islands"
@@ -741,19 +1038,21 @@
               </div>
             </a>
 
-            <p>Kira and the Fading Islands</p>
+            <p class="product-name">Kira and the Fading Islands</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$39.99</span>
-              <span>$35.99</span>
+              <span class="new-price">$35.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 23. Ancient Souls -->
 
-          <div class="additional-product">
+          <div class="product-card additional-product">
             <a href="./ancient-souls.html">
               <div class="product-image">
                 <img
@@ -762,22 +1061,23 @@
                 />
               </div>
             </a>
-            <p>Ancient Souls</p>
-            <p>$39.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Ancient Souls</p>
+
+            <p class="product-price">$39.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 24. Ice Dome: Exile -->
 
-          <div class="additional-product">
-            <div class="sale-tag-wrapper">
-              <span class="sale-tag">
-                <span>SALE</span>
-              </span>
-            </div>
+          <div class="product-card additional-product">
             <a href="./ice-dome-exile.html">
               <div class="product-image">
+                <span class="product-tag">SALE</span>
+
                 <img
                   src="../files/images/products/ice-dome-exile.webp"
                   alt="Ice Dome: Exile"
@@ -785,19 +1085,21 @@
               </div>
             </a>
 
-            <p>Ice Dome: Exile</p>
+            <p class="product-name">Ice Dome: Exile</p>
 
-            <p class="sale-price">
+            <p class="product-price sale-price">
               <span class="old-price">$39.99</span>
-              <span>$35.99</span>
+              <span class="new-price">$35.99</span>
             </p>
 
-            <button type="button">Add to Cart</button>
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 25. Chronosplit -->
 
-          <div class="additional-product">
+          <div class="product-card additional-product">
             <a href="./chronosplit.html">
               <div class="product-image">
                 <img
@@ -806,15 +1108,19 @@
                 />
               </div>
             </a>
-            <p>Chronosplit</p>
-            <p>$39.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Chronosplit</p>
+
+            <p class="product-price">$39.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
 
           <!-- 26. Cyber Kid Infinite -->
 
-          <div class="additional-product">
+          <div class="product-card additional-product">
             <a href="./cyber-kid-infinite.html">
               <div class="product-image">
                 <img
@@ -823,10 +1129,14 @@
                 />
               </div>
             </a>
-            <p>Cyber Kid Infinite</p>
-            <p>$39.99</p>
 
-            <button type="button">Add to Cart</button>
+            <p class="product-name">Cyber Kid Infinite</p>
+
+            <p class="product-price">$39.99</p>
+
+            <button class="add-to-cart-button" type="button">
+              Add to Cart
+            </button>
           </div>
         </div>
 
@@ -933,5 +1243,6 @@
         </div>
       </div>
     </footer>
+    <script src="../files/javascript/products-sidebar.js"></script>
   </body>
 </html>
