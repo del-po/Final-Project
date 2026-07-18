@@ -2667,179 +2667,112 @@ body:has(#filter-sort-click:checked) {
     font-size: 15px;
   }
 }
-.policy-page {
+.policy-section {
   width: 100%;
   min-height: 675px;
-  padding: 58px 6.25% 28px;
+  padding: 58px 6.25% 45px;
   background-color: rgb(6, 5, 6);
   color: white;
 }
-.policy-page .policy-wrapper {
+.policy-section .policy-section-wrapper {
   width: 100%;
   max-width: 1260px;
   margin: 0 auto;
 }
-.policy-page .policy-wrapper h1 {
-  margin-bottom: 105px;
+.policy-section .policy-section-wrapper .policy-upper .policy-title {
+  margin: 0 0 105px;
   font-family: "Montserrat", sans-serif;
-  font-size: 68px;
+  font-size: 70px;
   font-weight: 700;
   line-height: 1.1;
 }
-.policy-page .policy-wrapper .policy-text {
+.policy-section .policy-section-wrapper .policy-upper .policy-columns {
+  width: 100%;
+  max-width: 440px;
   display: grid;
-  grid-template-columns: 430px 500px;
-  gap: 75px;
+  grid-template-columns: minmax(0, 440px);
   font-family: "Proxima Nova", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
 }
-.policy-page .policy-wrapper .policy-text .policy-column {
+.policy-section .policy-section-wrapper .policy-upper .policy-columns:has(.policy-column-two) {
+  max-width: 1005px;
+  grid-template-columns: minmax(0, 430px) minmax(0, 500px);
+  -moz-column-gap: 75px;
+       column-gap: 75px;
+}
+.policy-section .policy-section-wrapper .policy-upper .policy-columns .policy-column-one,
+.policy-section .policy-section-wrapper .policy-upper .policy-columns .policy-column-two {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.policy-page .policy-wrapper .policy-text ol {
+.policy-section .policy-section-wrapper .policy-upper .policy-columns ol {
   padding-left: 29px;
 }
-.policy-page .policy-wrapper .policy-text a {
+.policy-section .policy-section-wrapper .policy-upper .policy-columns a {
   color: white;
   text-decoration: underline;
 }
-
-.policy-page.shipping-policy-page,
-.policy-page.refund-policy-page {
-  min-height: 677px;
-  padding-top: 0;
-  padding-bottom: 15px;
+.policy-section .policy-section-wrapper .policy-bottom {
+  margin-top: 65px;
 }
-.policy-page.shipping-policy-page .policy-wrapper h1,
-.policy-page.refund-policy-page .policy-wrapper h1 {
-  margin-bottom: 101px;
-  font-size: 68px;
-  text-transform: uppercase;
-}
-.policy-page.shipping-policy-page .policy-wrapper .policy-text,
-.policy-page.refund-policy-page .policy-wrapper .policy-text {
-  width: 440px;
-  display: block;
-}
-.policy-page.shipping-policy-page .policy-wrapper .policy-text .policy-column,
-.policy-page.refund-policy-page .policy-wrapper .policy-text .policy-column {
-  gap: 22px;
-}
-.policy-page.shipping-policy-page .policy-wrapper .policy-text ol,
-.policy-page.refund-policy-page .policy-wrapper .policy-text ol {
-  padding-left: 28px;
-}
-.policy-page.shipping-policy-page .policy-wrapper .policy-divider,
-.policy-page.refund-policy-page .policy-wrapper .policy-divider {
-  width: 943px;
-  max-width: 100%;
-  margin: 65px 0 59px;
+.policy-section .policy-section-wrapper .policy-bottom .policy-bottom-line {
+  width: 100%;
+  max-width: 1005px;
+  margin: 0 0 59px;
   border: 0;
   border-top: 1px solid rgb(77, 77, 77);
 }
-.policy-page.shipping-policy-page .policy-wrapper .policy-disclaimer,
-.policy-page.refund-policy-page .policy-wrapper .policy-disclaimer {
+.policy-section .policy-section-wrapper .policy-bottom .policy-bottom-text {
+  width: 100%;
   max-width: 760px;
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 16px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.4;
 }
-.policy-page.shipping-policy-page .policy-page.privacy-policy-page,
-.policy-page.shipping-policy-page .policy-page.cookies-policy-page,
-.policy-page.refund-policy-page .policy-page.privacy-policy-page,
-.policy-page.refund-policy-page .policy-page.cookies-policy-page {
-  min-height: 830px;
-  padding-bottom: 45px;
-}
-.policy-page.shipping-policy-page .policy-page.privacy-policy-page .policy-wrapper h1,
-.policy-page.shipping-policy-page .policy-page.cookies-policy-page .policy-wrapper h1,
-.policy-page.refund-policy-page .policy-page.privacy-policy-page .policy-wrapper h1,
-.policy-page.refund-policy-page .policy-page.cookies-policy-page .policy-wrapper h1 {
-  text-transform: uppercase;
-}
-.policy-page.shipping-policy-page .policy-page.privacy-policy-page .policy-wrapper .policy-divider,
-.policy-page.shipping-policy-page .policy-page.cookies-policy-page .policy-wrapper .policy-divider,
-.policy-page.refund-policy-page .policy-page.privacy-policy-page .policy-wrapper .policy-divider,
-.policy-page.refund-policy-page .policy-page.cookies-policy-page .policy-wrapper .policy-divider {
-  width: 943px;
-  max-width: 100%;
-  margin: 65px 0 59px;
-  border: 0;
-  border-top: 1px solid rgb(77, 77, 77);
-}
-.policy-page.shipping-policy-page .policy-page.privacy-policy-page .policy-wrapper .policy-disclaimer,
-.policy-page.shipping-policy-page .policy-page.cookies-policy-page .policy-wrapper .policy-disclaimer,
-.policy-page.refund-policy-page .policy-page.privacy-policy-page .policy-wrapper .policy-disclaimer,
-.policy-page.refund-policy-page .policy-page.cookies-policy-page .policy-wrapper .policy-disclaimer {
-  max-width: 760px;
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.4;
-}
-.policy-page.shipping-policy-page .policy-page.cookies-policy-page,
-.policy-page.refund-policy-page .policy-page.cookies-policy-page {
-  min-height: 677px;
-}
-
 @media (max-width: 750px) {
-  .policy-page {
+  .policy-section {
     min-height: auto;
-    padding: 50px 20px 80px;
+    padding: 50px 20px 70px;
   }
-  .policy-page .policy-wrapper h1 {
+  .policy-section .policy-section-wrapper {
+    width: 100%;
+    max-width: 320px;
+  }
+  .policy-section .policy-section-wrapper .policy-upper .policy-title {
     margin-bottom: 55px;
     font-size: 40px;
   }
-  .policy-page .policy-wrapper .policy-text {
+  .policy-section .policy-section-wrapper .policy-upper .policy-columns,
+  .policy-section .policy-section-wrapper .policy-upper .policy-columns:has(.policy-column-two) {
+    width: 100%;
+    max-width: 100%;
     grid-template-columns: 1fr;
-    gap: 40px;
-    font-size: 16px;
-    line-height: 1.5;
+    row-gap: 40px;
+    -moz-column-gap: 0;
+         column-gap: 0;
   }
-  .policy-page .policy-wrapper .policy-text ol {
+  .policy-section .policy-section-wrapper .policy-upper .policy-columns ol,
+  .policy-section .policy-section-wrapper .policy-upper .policy-columns:has(.policy-column-two) ol {
     padding-left: 22px;
   }
-  .policy-page.shipping-policy-page,
-  .policy-page.refund-policy-page {
-    padding: 40px 20px 70px;
+  .policy-section .policy-section-wrapper .policy-bottom {
+    margin-top: 50px;
   }
-  .policy-page.shipping-policy-page .policy-wrapper h1,
-  .policy-page.refund-policy-page .policy-wrapper h1 {
-    margin-bottom: 55px;
-    font-size: 40px;
-  }
-  .policy-page.shipping-policy-page .policy-wrapper .policy-text,
-  .policy-page.refund-policy-page .policy-wrapper .policy-text {
+  .policy-section .policy-section-wrapper .policy-bottom .policy-bottom-line {
     width: 100%;
+    margin-bottom: 40px;
   }
-  .policy-page.shipping-policy-page .policy-wrapper .policy-divider,
-  .policy-page.refund-policy-page .policy-wrapper .policy-divider {
-    margin: 50px 0 40px;
-  }
-  .policy-page.shipping-policy-page .policy-wrapper .policy-disclaimer,
-  .policy-page.refund-policy-page .policy-wrapper .policy-disclaimer {
-    max-width: 100%;
-  }
-  .policy-page.privacy-policy-page,
-  .policy-page.cookies-policy-page {
-    min-height: auto;
-    padding-bottom: 70px;
-  }
-  .policy-page.privacy-policy-page .policy-wrapper .policy-divider,
-  .policy-page.cookies-policy-page .policy-wrapper .policy-divider {
-    margin: 50px 0 40px;
-  }
-  .policy-page.privacy-policy-page .policy-wrapper .policy-disclaimer,
-  .policy-page.cookies-policy-page .policy-wrapper .policy-disclaimer {
+  .policy-section .policy-section-wrapper .policy-bottom .policy-bottom-text {
     max-width: 100%;
   }
 }
+
 .hero {
   position: relative;
   width: 100%;
