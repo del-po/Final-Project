@@ -4,6 +4,7 @@
   $card-width: 280px,
   $mobile-card-width: 238px,
   $image-ratio: 1,
+  // რატომღაც 1/1 სინტაქსი არ მუშაობს.
   $image-width: 280px,
   $mobile-image-width: 238px,
   $tag-width: 58.53px,
@@ -65,13 +66,14 @@
 
   .product-name {
     margin-top: 20px;
+    margin-bottom: 0;
     font-family: "Proxima Nova", sans-serif;
     font-size: 18px;
     font-weight: 700;
   }
 
   .product-price {
-    margin-top: 10px;
+    margin-top: 1px;
     margin-bottom: 20px;
     font-family: "Proxima Nova", sans-serif;
     font-size: 16px;
@@ -141,24 +143,58 @@
   $product-gap: 30px,
   $arrow-size: 40px,
   $arrow-gap: 30px,
-  $visible-products: 4
+  $total-product-gap: $product-gap * 3,
+  $product-width: calc((100% - #{$total-product-gap}) / 4) // ვერ მივაღწიე, რომ ოთხ პროდუქტს გალერეის მთლიანი სიგანე თანაბრად შეევსო და ამავდროულად განლაგება რესპონსიული დარჩენილიყო. გამოსავალია, რომ გალერეის სრული სიგანიდან ჯერ სამი შუალედის საერთო სიგანე გამოაკლდეს, ხოლო დარჩენილი სივრცე ოთხზე გაიყოს. მიღებული შედეგი თითოეული პროდუქტის სიგანეა.
 ) {
-  $total-product-gap: $product-gap * ($visible-products - 1);
-  $product-width: calc((100% - #{$total-product-gap}) / #{$visible-products});
-
   width: 100%;
   min-height: 730px;
-  padding: 100px 0 80px;
-
+  padding-top: 100px;
+  padding-right: 0;
+  padding-bottom: 80px;
+  padding-left: 0;
   background-color: black;
   color: white;
 
-  .product-slider {
-    width: min(100%, calc(82.6% + 140px));
-    margin: 0 auto;
+  // მარცხენა ისარი
 
+  .left-arrow {
+    grid-area: left;
+    width: $arrow-size;
+    height: $arrow-size;
+    margin-top: 120px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  // სლაიდერი
+
+  .product-slider {
+    width: min(
+      100%,
+      calc(82.6% + 140px)
+    ); // აქ ლოგიკა შემდეგია: მე მინდოდა, რომ სლაიდერი ყოფილიყო იმავე სიგანეზე, რაც ჰედერის ლოგო, ან hero-ს ბანერი. ჰედერს აქვს padding 8.7% მარცხნივ და მარჯვნივ, ამიტომ იდეალური იქნებოდა იგივე ქონოდა სლაიდერსაც. თუმცა, სლაიდერს აქვს ასევე მარცხენა და მარჯვენა ისრები, ამიტომ padding მათზეც გავრცელდებოდა. ამიტომ სლაიდერს მივეცი სიგანე 82.6% + 140px - რაც არის ისრების ზომა და მათი gap-ები. ამავდროულად, ეს ყველაფერი რა თქმა უნდა არ უნდა გაცდეს მშობელის 100%-ს.
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
     display: grid;
-    grid-template-columns: $arrow-size minmax(0, 1fr) $arrow-size;
+    grid-template-columns: $arrow-size minmax(0, 1fr) $arrow-size; // სამი კოლუმნი ისრებისათვის და გალერისთვის.
     grid-template-areas:
       ". title ."
       "left gallery right";
@@ -167,17 +203,17 @@
     align-items: start;
   }
 
+  // სლაიდერის სათაური
+
   .product-slider-title {
     grid-area: title;
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     p {
       margin: 0;
-
       color: white;
       font-family: "Montserrat", sans-serif;
       font-size: 42px;
@@ -189,23 +225,17 @@
       width: 132px;
       height: 38px;
       padding: 0;
-      flex-shrink: 0;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       background-color: white;
       border: 2px solid white;
       border-radius: 100px;
-
-      color: rgb(136, 88, 237);
+      color: #8858ed;
       font-family: "Montserrat", sans-serif;
       font-size: 15px;
       font-weight: 700;
-
       cursor: pointer;
-
       transition:
         background-color 0.4s,
         color 0.4s;
@@ -218,13 +248,16 @@
     }
   }
 
+  // პროდუქციის გალერეა
+
   .product-gallery {
     grid-area: gallery;
-
     width: 100%;
     min-width: 0;
     overflow: hidden;
   }
+
+  // გალერეას track
 
   .product-gallery-track {
     width: 100%;
@@ -233,6 +266,8 @@
     align-items: stretch;
     gap: $product-gap;
   }
+
+  // Products inside the gallery track
 
   .product-gallery-track > .product-card {
     position: relative;
@@ -249,7 +284,6 @@
     .product-image {
       width: 100%;
       aspect-ratio: 1 / 1;
-
       display: block;
       overflow: hidden;
 
@@ -257,26 +291,24 @@
         display: block;
         width: 100%;
         height: 100%;
-
         object-fit: cover;
       }
     }
   }
 
-  .left-arrow,
+  // მარჯვენა ისარი
+
   .right-arrow {
+    grid-area: right;
     width: $arrow-size;
     height: $arrow-size;
     margin-top: 120px;
     padding: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: transparent;
     border: none;
-
     color: white;
     cursor: pointer;
 
@@ -291,33 +323,30 @@
     }
   }
 
-  .left-arrow {
-    grid-area: left;
-  }
-
-  .right-arrow {
-    grid-area: right;
-  }
+  // Mobile version
 
   @media (max-width: 750px) {
     $mobile-arrow-size: 28px;
     $mobile-product-width: 238px;
     $mobile-product-gap: 20px;
-
     min-height: 0;
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-right: 0;
+    padding-bottom: 60px;
+    padding-left: 0;
 
     .product-slider {
       width: 100%;
-      margin: 0 auto;
-
+      margin-top: 0;
+      margin-right: auto;
+      margin-bottom: 0;
+      margin-left: auto;
       grid-template-columns:
         $mobile-arrow-size $mobile-product-width
         $mobile-arrow-size;
       grid-template-areas:
         ". title ."
         "left gallery right";
-
       justify-content: center;
       column-gap: 8px;
       row-gap: 30px;
@@ -325,7 +354,6 @@
 
     .product-slider-title {
       width: 100%;
-
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
@@ -351,9 +379,13 @@
       gap: $mobile-product-gap;
     }
 
-    .product-gallery-track > .product-card {
-      width: 100%;
-      flex: 0 0 100%;
+    .product-gallery-track {
+      .product-card {
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: auto;
+      }
 
       .product-image {
         width: 100%;

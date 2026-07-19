@@ -308,9 +308,11 @@
     <section class="hero">
       <div class="hero-banner-wrapper">
         <div class="hero-banner">
-          <p>Power up your game</p>
-          <p>CYBER KID INFINITE</p>
-          <p>Now Available on PC &amp; Console</p>
+          <p class="hero-banner-subtitle">Power up your game</p>
+          <p class="hero-banner-title">CYBER KID INFINITE</p>
+          <p class="hero-banner-description">
+            Now Available on PC &amp; Console
+          </p>
 
           <button
             type="button"
@@ -570,18 +572,13 @@
     <section class="shop-by-category">
       <div class="shop-by-category-wrapper">
         <h2>SHOP BY CATEGORY</h2>
-
-        <div class="shop-by-gallery product-slider category-slider">
-          <button
-            class="category-arrow category-arrow-left left-arrow"
-            type="button"
-            aria-label="Previous category"
-          >
+        <div class="product-slider category-slider">
+          <button class="left-arrow" type="button">
             <svg
-              class="slideshow-arrow"
               width="23"
               height="39"
               viewBox="0 0 23 39"
+              style="transform: scaleX(-1)"
             >
               <path
                 d="M857.005,231.479L858.5,230l18.124,18-18.127,18-1.49-1.48L873.638,248Z"
@@ -589,58 +586,39 @@
               ></path>
             </svg>
           </button>
-
-          <div class="product-gallery category-gallery">
-            <div class="category-list product-gallery-track">
+          <div class="category-gallery">
+            <div class="product-gallery-track">
               <a class="category-card" href="#">
                 <div class="category-image">
                   <img
                     src="./files/images/home/Shop-By-Category-Section/consoles.webp"
                     alt="Gaming consoles"
                   />
-                  <div class="category-overlay"></div>
                 </div>
-
                 <p>Consoles</p>
               </a>
-
               <a class="category-card" href="#">
                 <div class="category-image">
                   <img
                     src="./files/images/home/Shop-By-Category-Section/accessories.jpg"
                     alt="Gaming accessories"
                   />
-                  <div class="category-overlay"></div>
                 </div>
-
                 <p>Accessories</p>
               </a>
-
               <a class="category-card" href="#">
                 <div class="category-image">
                   <img
                     src="./files/images/home/Shop-By-Category-Section/controllers.jpg"
                     alt="Gaming controllers"
                   />
-                  <div class="category-overlay"></div>
                 </div>
-
                 <p>Controllers</p>
               </a>
             </div>
           </div>
-
-          <button
-            class="category-arrow category-arrow-right right-arrow"
-            type="button"
-            aria-label="Next category"
-          >
-            <svg
-              class="slideshow-arrow"
-              width="23"
-              height="39"
-              viewBox="0 0 23 39"
-            >
+          <button class="right-arrow" type="button">
+            <svg width="23" height="39" viewBox="0 0 23 39">
               <path
                 d="M857.005,231.479L858.5,230l18.124,18-18.127,18-1.49-1.48L873.638,248Z"
                 transform="translate(-855 -230)"
@@ -656,12 +634,10 @@
         <div class="deals-banner">
           <div class="deals-banner-wrapper">
             <p class="deals-small-title">THIS WEEK'S DEALS</p>
-
             <p class="deals-discount">
               <span class="deals-discount-percentage">10%</span><br />
               <span class="deals-discount-text">off all games</span>
             </p>
-
             <button type="button">Shop Now</button>
           </div>
         </div>
@@ -672,14 +648,12 @@
               alt="Kira and the Fading Islands"
             />
           </div>
-
           <div class="deal-image deal-image-center">
             <img
               src="./files/images/home/Deals-Section/dead-at-last.webp"
               alt="Dead at Last"
             />
           </div>
-
           <div class="deal-image deal-image-right">
             <img
               src="./files/images/home/Deals-Section/chronosplit.webp"
@@ -1115,26 +1089,30 @@
             <p>ARCADE</p>
           </div>
           <div class="footer-products">
-            <a href="./products/products.html" class="footer-heading"
-              >Products</a
-            >
+            <p class="footer-heading">Products</p>
+
             <a href="./products/games.html">Games</a>
             <a href="./products/consoles.html">Consoles</a>
             <a href="./products/controllers.html">Controllers</a>
             <a href="./products/accessories.html">Accessories</a>
           </div>
+
           <div class="footer-store">
-            <a href="#" class="footer-heading">Store</a>
-            <a href="#"
-              >500 Terry Francine Street <br />
-              San Francisco, CA 94158</a
-            >
-            <a href="#">Mon - Fri: 9am - 9pm</a>
-            <a href="#">info@mysite.com</a>
-            <a href="#">123-456-7890</a>
+            <p class="footer-heading">Store</p>
+
+            <p>
+              500 Terry Francine Street <br />
+              San Francisco, CA 94158
+            </p>
+
+            <p>Mon - Fri: 9am - 9pm</p>
+            <p>info@mysite.com</p>
+            <p>123-456-7890</p>
           </div>
+
           <div class="footer-policy">
-            <a href="#" class="footer-heading">Policy</a>
+            <p class="footer-heading">Policy</p>
+
             <a href="./policy/terms-and-conditions.html">Terms & Conditions</a>
             <a href="./policy/shipping-policy.html">Shipping Policy</a>
             <a href="./policy/refund-policy.html">Refund Policy</a>
@@ -1147,8 +1125,13 @@
       <div class="footer-down">
         <div class="footer-down-wrapper">
           <div class="footer-down-text">
-            <p><span class="footer-heading">Payment Methods</span></p>
-            <p><span class="footer-heading">Join the Community</span></p>
+            <p class="footer-payment">
+              <span class="footer-heading">Payment Methods</span>
+            </p>
+
+            <p class="footer-community">
+              <span class="footer-heading">Join the Community</span>
+            </p>
           </div>
           <div class="footer-down-logos">
             <div class="footer-payment-logos">

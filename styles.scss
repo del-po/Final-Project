@@ -14,11 +14,9 @@
 
 .hero {
   position: relative;
-
   width: 100%;
   height: 698px;
   padding-left: 8.7%;
-
   background-image: url("./files/images/home/Hero-Section/hero-section-background.jpg");
   background-size: cover;
   background-position: center;
@@ -28,7 +26,6 @@
     position: relative;
     top: 82px;
     z-index: 3;
-
     width: 609px;
     height: 384px;
 
@@ -39,37 +36,31 @@
       padding-right: 60px;
       padding-bottom: 47px;
       padding-left: 72px;
-
       display: flex;
       flex-direction: column;
-
       background-color: #8858ed;
       border-radius: 30px;
-      box-shadow: rgba(6, 5, 6, 0.41) 4.23px 9.06px 14px 6px;
-
+      box-shadow: rgba(6, 5, 6, 0.41) 4.23px 9.06px 14px 6px; // ნიშნავს, რომ 41%-იანი დაბურულობით ჩრდილი წანაცვლებულია 4.23px მარჯვნივ და 9.06px ქვემოთ, აქვს 14px დაბინდვა და 6px გაშლა.
       color: white;
 
-      p:first-child {
+      .hero-banner-subtitle {
         margin-bottom: 15px;
-
         font-family: "Roboto", sans-serif;
         font-size: 22px;
         font-weight: 700;
         line-height: 33px;
       }
 
-      p:nth-child(2) {
+      .hero-banner-title {
         margin-bottom: 11px;
-
         font-family: "Montserrat", sans-serif;
         font-size: 70px;
         font-weight: 700;
         line-height: 70px;
       }
 
-      p:nth-child(3) {
+      .hero-banner-description {
         margin-bottom: 23px;
-
         font-family: "Roboto", sans-serif;
         font-size: 22px;
         font-weight: 700;
@@ -79,17 +70,13 @@
       button {
         width: 132px;
         height: 48px;
-        flex-shrink: 0;
-
         background-color: white;
         border: 2px solid white;
         border-radius: 100px;
-
         color: #8858ed;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
         font-weight: 700;
-
         cursor: pointer;
 
         transition:
@@ -110,25 +97,23 @@
     top: 82px;
     right: 11.6%;
     z-index: 2;
-
     width: 536px;
     height: 689px;
     display: block;
-
     object-fit: cover;
     border-radius: 30px;
-    box-shadow: rgba(34, 33, 34, 0.6) 2.27px 4.46px 15px 5px;
+    box-shadow: rgba(34, 33, 34, 0.6) 2.27px 4.46px 15px 5px; // ნიშნავს, რომ 60%-იანი გაუმჭვირვალობით ჩრდილი წანაცვლებულია 2.27px მარჯვნივ და 4.46px ქვემოთ, აქვს 15px დაბინდვა და 5px გაშლა.
   }
-}
-
-.product-card {
-  @include product;
 }
 
 .best-sellers,
 .upgrade-gear,
 .trending-games {
   @include gallery-section;
+
+  .product-card {
+    @include product;
+  }
 }
 
 .shop-by-category {
@@ -138,19 +123,14 @@
   padding-top: 67px;
   padding-bottom: 54px;
   overflow: hidden;
-
-  box-sizing: border-box;
-
-  background:
-    linear-gradient(rgba(77, 77, 77, 0.4), rgba(77, 77, 77, 0.4)), rgb(6, 5, 6);
+  background-color: #222222;
 
   .shop-by-category-wrapper {
-    width: calc(100% - 300px);
-    margin: 0 auto;
+    width: 82.6%;
+    margin-left: auto;
+    margin-right: auto;
 
     h2 {
-      margin: 0;
-
       color: white;
       font-family: "Montserrat", sans-serif;
       font-size: 42px;
@@ -158,100 +138,99 @@
       line-height: 59px;
     }
 
-    .shop-by-gallery {
+    .product-slider {
       position: relative;
-
-      .category-arrow {
-        display: none;
-      }
     }
 
-    .category-list {
+    .left-arrow {
+      display: none;
+    }
+
+    .category-gallery {
+      width: 100%;
+    }
+
+    .product-gallery-track {
       width: 100%;
       margin-top: 57px;
-
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       column-gap: 36px;
+    }
 
-      .category-card {
+    .category-card {
+      width: 100%;
+      height: auto;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+
+      .category-image {
+        position: relative;
         width: 100%;
         height: auto;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+        border-radius: 30px;
 
-        color: white;
-        text-align: center;
-        text-decoration: none;
-
-        .category-image {
-          position: relative;
-
-          width: 100%;
-          height: auto;
-          aspect-ratio: 3 / 4;
-          overflow: hidden;
-
-          border-radius: 30px;
-
-          img {
-            display: block;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-            transform: scale(1);
-
-            transition: transform 0.7s ease-in-out;
-          }
-
-          .category-overlay {
-            position: absolute;
-            inset: 0;
-
-            background-color: rgba(136, 88, 237, 0.3);
-            opacity: 0;
-
-            pointer-events: none;
-
-            transition: opacity 0.4s ease-in-out;
-          }
-
-          &:hover {
-            img {
-              transform: scale(1.1);
-            }
-
-            .category-overlay {
-              opacity: 1;
-            }
-          }
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: #8858ed4d;
+          opacity: 0;
+          content: "";
+          pointer-events: none;
+          transition: opacity 0.4s ease-in-out;
         }
 
-        p {
-          margin-top: 22px;
-          margin-bottom: 0;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: scale(1);
+          transition: transform 0.7s ease-in-out;
+        }
 
-          color: white;
-          font-family: $font-roboto;
-          font-size: 22px;
-          font-weight: 400;
-          line-height: 22px;
-          text-align: center;
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+
+          &::after {
+            opacity: 1;
+          }
         }
       }
+
+      p {
+        margin-top: 22px;
+        margin-bottom: 0;
+        color: white;
+        font-family: $font-roboto;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: center;
+      }
+    }
+
+    .right-arrow {
+      display: none;
     }
   }
 }
 
 .deals {
   position: relative;
-
   width: 100%;
   height: auto;
   padding-top: clamp(35px, 3.67vw, 55px);
   padding-bottom: clamp(50px, 5.67vw, 85px);
   overflow: hidden;
-
   background-color: black;
 
   view-timeline-name: --deals-animation;
@@ -890,23 +869,18 @@
     padding-right: 20px;
     padding-bottom: 40px;
     padding-left: 20px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 40px;
-
-    background-attachment: scroll;
+    background-attachment: scroll; // მობილურის ვერსიაზე ფონად არსებული სურათი უკვე გვერდთან ერთად სქროლავს.
 
     .hero-banner-wrapper {
       position: relative;
       top: 0;
-      z-index: 3;
-
       width: 280px;
       height: 262px;
-      flex-shrink: 0;
 
       .hero-banner {
         width: 280px;
@@ -915,55 +889,42 @@
         padding-right: 27px;
         padding-bottom: 26px;
         padding-left: 27px;
-
         display: flex;
         flex-direction: column;
-
         background-color: #8858ed;
         border-radius: 30px;
-
         color: white;
 
-        transform: none;
-
-        // Now Available on PC & Console
-
-        p:nth-child(3) {
+        .hero-banner-description {
           order: 1;
-          margin: 0;
-
+          margin-top: 0;
+          margin-right: 0;
+          margin-bottom: 0;
+          margin-left: 0;
           font-family: "Roboto", sans-serif;
           font-size: 16px;
           font-weight: 400;
           line-height: 20px;
         }
 
-        // CYBER KID INFINITE
-
-        p:nth-child(2) {
+        .hero-banner-title {
           order: 2;
-
           margin-top: 16px;
           margin-right: 0;
           margin-bottom: 0;
           margin-left: 0;
-
           font-family: "Montserrat", sans-serif;
           font-size: 38px;
           font-weight: 700;
           line-height: 39px;
         }
 
-        // Power up your game
-
-        p:first-child {
+        .hero-banner-subtitle {
           order: 3;
-
           margin-top: 2px;
           margin-right: 0;
           margin-bottom: 0;
           margin-left: 0;
-
           font-family: "Roboto", sans-serif;
           font-size: 16px;
           font-weight: 400;
@@ -972,21 +933,16 @@
 
         button {
           order: 4;
-
           width: 120px;
           height: 42px;
           margin-top: auto;
-          flex-shrink: 0;
-
           background-color: white;
           border: 2px solid white;
           border-radius: 100px;
-
           color: #8858ed;
           font-family: "Montserrat", sans-serif;
           font-size: 14px;
           font-weight: 700;
-
           cursor: pointer;
         }
       }
@@ -994,118 +950,100 @@
 
     .hero-img {
       position: static;
-
       width: 280px;
       height: 360px;
       max-width: none;
       display: block;
-      flex-shrink: 0;
-
       object-fit: cover;
       border-radius: 30px;
     }
   }
 
   .shop-by-category {
-    min-height: 0;
-    padding-top: 28px;
-    padding-bottom: 54px;
+    min-height: 0; // არესეტებს დესკტოპის min-height: 997px წესს.
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     .shop-by-category-wrapper {
       width: 100%;
+      max-width: 320px;
 
       h2 {
-        width: 280px;
-        margin: 0 auto;
-
         font-size: 24px;
         line-height: 1.2;
       }
 
-      .shop-by-gallery {
-        width: 280px;
-        margin: 32px auto 0;
-
+      .product-slider {
+        margin-top: 40px;
         display: grid;
-        grid-template-columns: 22px 196px 22px;
+        grid-template-columns: 28px 238px 28px;
         grid-template-areas: "left gallery right";
-        align-items: start;
-        column-gap: 20px;
+        justify-content: center;
+        column-gap: 8px;
+        align-items: center;
+      }
 
-        .category-arrow {
+      .left-arrow {
+        grid-area: left;
+        width: 28px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+
+        svg {
           width: 22px;
-          height: 39px;
-          margin-top: 128px;
-          padding: 0;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          background-color: transparent;
-          border: none;
-
-          color: white;
-          cursor: pointer;
-
-          .slideshow-arrow {
-            width: 22px;
-            height: 39px;
-            fill: currentColor;
-          }
-
-          &:disabled {
-            opacity: 0.35;
-            cursor: default;
-          }
-        }
-
-        .category-arrow-left {
-          grid-area: left;
-
-          .slideshow-arrow {
-            transform: rotate(180deg);
-          }
-        }
-
-        .category-arrow-right {
-          grid-area: right;
+          height: 37.3px;
+          fill: white;
         }
       }
 
       .category-gallery {
         grid-area: gallery;
-
-        width: 196px;
-        min-width: 0;
+        width: 238px;
         overflow: hidden;
       }
 
-      .category-list {
+      .product-gallery-track {
         width: 100%;
         margin-top: 0;
-
         display: flex;
-        align-items: flex-start;
-        gap: 20px;
+        column-gap: 0px;
+      }
 
-        .category-card {
-          width: 160px;
-          min-width: 0;
-          flex: 0 0 160px;
+      .category-card {
+        min-width: 196px;
 
-          .category-image {
-            width: 160px;
-            aspect-ratio: 3 / 4;
-            border-radius: 30px;
-          }
+        .category-image {
+          width: 160.66px;
+          margin-left: auto;
+          margin-right: auto;
+          aspect-ratio: 3 / 4;
+        }
+      }
 
-          p {
-            margin-top: 15px;
+      .right-arrow {
+        grid-area: right;
+        width: 28px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
 
-            font-size: 22px;
-            line-height: 1;
-          }
+        svg {
+          width: 22px;
+          height: 37.3px;
+          fill: white;
         }
       }
     }

@@ -4,11 +4,9 @@ header {
   width: 100%;
   height: 130px;
   padding-inline: 8.7%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background-color: #060506;
 
   &.header-home {
@@ -21,7 +19,6 @@ header {
       display: flex;
       align-items: center;
       gap: 14px;
-
       color: white;
       text-decoration: none;
 
@@ -32,7 +29,6 @@ header {
 
       p {
         margin: 0;
-
         color: white;
         font-family: $font-montserrat;
         font-size: 22px;
@@ -42,8 +38,14 @@ header {
   }
 
   .header-right {
-    #log-in-click,
-    #cart-click,
+    #log-in-click {
+      display: none;
+    }
+
+    #cart-click {
+      display: none;
+    }
+
     #mobile-menu-click {
       display: none;
     }
@@ -54,7 +56,6 @@ header {
       font-size: 16px;
       font-weight: 400;
       text-decoration: none;
-
       transition: color 0.2s ease;
 
       &:hover,
@@ -77,33 +78,28 @@ header {
 
         .header-menu-products {
           position: relative;
-          padding: 20px 0;
+          padding-top: 20px;
+          padding-bottom: 20px;
 
           .header-products-dropdown {
             position: absolute;
             top: 100%;
             right: -30%;
             z-index: 200;
-
             min-width: 113.31px;
             min-height: 155px;
-
             display: flex;
             flex-direction: column;
-
             background-color: #060506;
-
             visibility: hidden;
             opacity: 0;
             pointer-events: none;
-
             transition:
               opacity 0.2s ease,
               visibility 0s linear 0.3s;
 
             .header-nav-link {
               padding: 0 15px;
-
               line-height: 31px;
               white-space: nowrap;
             }
@@ -114,7 +110,6 @@ header {
               visibility: visible;
               opacity: 1;
               pointer-events: auto;
-
               transition-delay: 0s;
             }
           }
@@ -127,14 +122,11 @@ header {
             display: flex;
             align-items: center;
             gap: 15px;
-
             color: white;
             font-family: $font-proxima-nova;
             font-size: 16px;
             font-weight: 300;
-
             cursor: pointer;
-
             transition: opacity 0.2s ease;
 
             img {
@@ -171,7 +163,7 @@ header {
       }
     }
 
-    // Mobile header
+    // მობილურის ჰედერი
 
     .header-mobile {
       display: none;
@@ -182,7 +174,6 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-
         cursor: pointer;
 
         .cart-icon {
@@ -198,49 +189,40 @@ header {
         .header-mobile-menu-open {
           width: 22px;
           height: 20px;
-
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-
           cursor: pointer;
 
           .burger-menu-line {
             width: 100%;
             height: 2px;
-
             background-color: white;
           }
         }
 
         .header-mobile-menu-big {
           position: fixed;
-          inset: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
           z-index: 1200;
-
           width: 100%;
           height: 100vh;
-          height: 100dvh;
           padding: 10%;
-
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-
-          overflow-y: auto;
-
           visibility: hidden;
-
           background-color: #060506;
           color: white;
 
           .header-mobile-menu-big-header {
             position: relative;
-
             width: 100%;
             min-height: 24px;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -249,12 +231,10 @@ header {
               display: flex;
               align-items: center;
               gap: 15px;
-
               color: white;
               font-family: $font-proxima-nova;
               font-size: 16px;
               font-weight: 400;
-
               cursor: pointer;
 
               img {
@@ -264,7 +244,6 @@ header {
 
               p {
                 margin: 0;
-
                 transition: opacity 0.2s ease;
 
                 &:hover {
@@ -276,13 +255,10 @@ header {
             .header-mobile-menu-close {
               position: absolute;
               right: 0;
-
               display: flex;
               align-items: center;
               justify-content: center;
-
               color: white;
-
               cursor: pointer;
 
               svg {
@@ -295,7 +271,6 @@ header {
           .header-mobile-navigation {
             width: 100%;
             margin-top: 55px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -335,7 +310,6 @@ header {
 
               .header-mobile-menu-products-title {
                 position: relative;
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -343,18 +317,13 @@ header {
                 .header-mobile-products-arrow {
                   position: absolute;
                   right: calc(100% + 27px);
-
                   width: 20px;
                   height: 20px;
-
                   display: flex;
                   align-items: center;
                   justify-content: center;
-
                   color: white;
-
                   cursor: pointer;
-
                   transition: transform 0.2s ease;
 
                   svg {
@@ -376,38 +345,32 @@ header {
       }
     }
 
-    // Demo notification
+    // Demo შეტყობინება
 
     .demo-notification {
       position: fixed;
-      inset: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       z-index: 1300;
-
       width: 100%;
       height: 100vh;
-      height: 100dvh;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       visibility: hidden;
-
       background-color: #060506;
 
       .log-in-close {
         position: absolute;
         top: 16px;
         right: 16px;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
         color: white;
-
         cursor: pointer;
-
         transition: opacity 0.2s ease;
 
         svg {
@@ -424,18 +387,15 @@ header {
         width: 100%;
         height: 210px;
         padding-inline: 20px;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-
         color: white;
         text-align: center;
 
         h1 {
           margin: 0;
-
           font-family: $font-montserrat;
           font-size: clamp(36px, 5vw, 48px);
           font-weight: 300;
@@ -444,7 +404,6 @@ header {
 
         p {
           margin: 0;
-
           font-family: $font-proxima-nova;
           font-size: 16px;
           font-weight: 300;
@@ -453,19 +412,14 @@ header {
         .demo-notification-button {
           width: 190px;
           height: 48px;
-
           display: flex;
           align-items: center;
           justify-content: center;
-
           background-color: #8858ed;
           color: white;
-
           font-family: $font-proxima-nova;
           font-size: 16px;
-
           cursor: pointer;
-
           transition: opacity 0.2s ease;
 
           &:hover {
@@ -481,19 +435,19 @@ header {
       }
     }
 
-    // Shopping cart
+    // საყიდლების კალათა
 
     .cart-fade {
       position: fixed;
-      inset: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       z-index: 1000;
-
       background-color: rgba(255, 255, 255, 0.3);
-
       visibility: hidden;
       opacity: 0;
       pointer-events: none;
-
       transition:
         opacity 0.3s ease,
         visibility 0s linear 0.3s;
@@ -504,17 +458,17 @@ header {
       top: 0;
       right: 0;
       z-index: 1100;
-
-      width: min(420px, 100vw);
+      width: min(
+        420px,
+        100vw
+      ); // 420px-ზე დიდ ეკრანზე დიდი კარტის სიგანე არის 420px; უფრო პატარა ეკრანზე არის მთლიანი ეკრანის სიგანე.
       height: 100vh;
-      height: 100dvh;
       padding: 20px;
-
       background-color: #060506;
       color: white;
-
-      visibility: hidden;
-      transform: translateX(100%);
+      transform: translateX(
+        100%
+      ); // ეს წევს დიდ კალათას ეკრანიდან მარჯვნივ და ქმნის მარცხნივ გამოწევის ეფექტს.
 
       transition:
         transform 0.3s ease,
@@ -523,11 +477,9 @@ header {
       .cart-big-header {
         width: 100%;
         height: 69px;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         border-bottom: 1px solid white;
 
         .cart-title {
@@ -537,7 +489,6 @@ header {
 
           h2 {
             margin: 0;
-
             font-family: $font-montserrat;
             font-size: 20px;
             font-weight: 700;
@@ -554,7 +505,6 @@ header {
           display: flex;
           align-items: center;
           justify-content: center;
-
           color: white;
 
           cursor: pointer;
@@ -576,12 +526,10 @@ header {
 
       .cart-empty {
         padding-top: 150px;
-
         text-align: center;
 
         p {
           margin: 0;
-
           color: white;
           font-family: $font-proxima-nova;
           font-size: 20px;
@@ -595,15 +543,11 @@ header {
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
-
         transition-delay: 0s;
       }
 
       ~ .cart-big {
-        visibility: visible;
         transform: translateX(0);
-
-        transition-delay: 0s;
       }
     }
 
@@ -622,8 +566,11 @@ header {
 @media (max-width: 750px) {
   header {
     height: 84px;
-    padding-inline: max(20px, calc((100% - 320px) / 2));
-
+    padding-left: max(
+      20px,
+      calc((100% - 320px) / 2)
+    ); // მინიმუმ 20px მაგრამ მობილურის ვერსიაზე მაქსიმალური სიგანე ნარჩუნდება 320px, როგორც wix-ზე.
+    padding-right: max(20px, calc((100% - 320px) / 2));
     background-color: #060506;
 
     &.header-home {
